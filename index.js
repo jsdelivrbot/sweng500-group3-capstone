@@ -31,4 +31,8 @@ app.get('/db', function (request, response) {
   });
 });
 
+app.get('/diego', function (request, response) {
+  response.render('pages/db', {results: result.rows} );
+});
+
 
