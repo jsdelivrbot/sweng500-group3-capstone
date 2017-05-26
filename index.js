@@ -32,5 +32,5 @@ app.get('/db', function (request, response) {
 });
 
 app.get('/diego', function (request, response) {
-  response.send('hello diego');
+  response.render('pages/diego');
 });
