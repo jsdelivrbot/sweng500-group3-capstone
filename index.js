@@ -38,3 +38,10 @@ app.get('/diego', function (request, response) {
 app.get('/james', function (request, response) {  
   response.render('pages/james');
 });
+
+app.get('/mike', function (request, response) {
+    response.render('pages/mike');
+});
+
+
+
