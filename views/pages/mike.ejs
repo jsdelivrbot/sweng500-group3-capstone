@@ -21,8 +21,8 @@ function fetchPage (url) {
     var start = new Date()
     http.get({host:url},
         function (res) {
-            console.log("Got response from: " + url);
-            console.log('Request took:' new Date() - start, 'ms');
+            response.write("Got response from: " + url);
+            response.write('Request took:' new Date() - start, 'ms');
 });
 }
 
