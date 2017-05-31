@@ -1568,6 +1568,7 @@
 	}
 
 	body {
+		/*modified*/
 		/*background: #fff;*/
 		background: #fafafa;
 	}
@@ -2721,7 +2722,9 @@
 	}
 
 		.subpage #header {
-			background: #5385c1;
+			/*modified*/
+			/*background: #5385c1;*/
+			background: #9a9a9a;
 			top: 0;
 			height: 44px;
 			line-height: 44px;
@@ -2767,7 +2770,7 @@
 			transition: color 0.2s ease-in-out;
 			display: inline-block;
 			padding: 0 0.75em;
-			/*Modified*/
+			/*modified*/
 			/*color: inherit;*/
 			color: #fafafa;
 			text-decoration: none;
@@ -2775,7 +2778,7 @@
 		}
 
 			#header a:hover {
-				/*Modified*/
+				/*modified*/
 				/*color: #ffffff;*/
 				/*color: #6692c8;*/
 				color: #bacee6;
@@ -2951,6 +2954,7 @@
 		background-attachment: fixed;
 		background-repeat: no-repeat;
 		text-align: center;
+		/*modified*/
 		/*border-top: 0.5em solid #5385c1;*/
 		border-top: 0.5em solid #fafafa;
 	}

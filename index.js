@@ -21,6 +21,18 @@ app.get('/elements', function(request, response) {
   response.render('pages/elements');
 });
 
+app.get('/episodesurvey', function(request, response) {
+  response.render('pages/episodesurvey');
+});
+
+app.get('/adjustmentresponsesurvey', function(request, response) {
+  response.render('pages/adjustmentresponsesurvey');
+});
+
+app.get('/emotionalstatesurvey', function(request, response) {
+  response.render('pages/emotionalstatesurvey');
+});
+
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
