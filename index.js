@@ -17,6 +17,10 @@ app.get('/generic', function(request, response) {
   response.render('pages/generic');
 });
 
+app.get('/elements', function(request, response) {
+  response.render('pages/elements');
+});
+
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
