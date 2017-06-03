@@ -33,6 +33,10 @@ app.get('/emotionalstatesurvey', function(request, response) {
   response.render('pages/emotionalstatesurvey');
 });
 
+app.get('/faq', function(request, response) {
+  response.render('pages/faq');
+});
+
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
