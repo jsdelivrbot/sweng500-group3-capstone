@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<!--
+	Theory by TEMPLATED
+	templated.co @templatedco
+	Edited by James Huckestein for PSU MSSWENG Cohort-15 Capstone project
+-->
+<html>
+	<head>
+		<title>Episode Survey</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="/" class="logo">Sense</a>
+					<nav id="nav">
+						<a href="/">Home</a>
+						<a href="/episodesurvey">Episode</a>
+						<a href="/adjustmentresponsesurvey">Adjustment Response</a>
+						<a href="/emotionalstatesurvey">Emotional State</a>
+						<a href="/faq">FAQ</a>
+					</nav>
+					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+				</div>
+			</header>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="inner">
+					<header class="align-center">
+						<h2>Episode Survey</h2>
+					</header>
+
+				<!-- Content -->
+					<h2 id="content">Short Survey of an Unordinary, Disorienting, or Unexpected Experience</h2>
+					<p>Think of a specific episode within the past few days when you felt you had to adjust to the host culture.  The experience could be enjoyable/positive or frustrating/negative.  You were reminded that you are not at home because the episode was disorienting, confusing, difficult to understand, or unexpected.</p>
+					
+
+				<hr class="major" />
+				<form action="cgi-bin/episode.js" method="post">
+				Please give this episode a short descriptive title: <input type="text" name="title" value="" ="25" maxlength="75" /><p>
+				Where were you? (work, school, shopping, in your residence, etc.): <input type="text" name="location" value="" ="25" maxlength="75" /><p>
+				For each item below, check only one response that best describes the episode.<p>
+				1. Compared to similar experiences at home in my own familiar culture, this episode is:<p>
+				  <input type="radio" name="one" value="No different"> No different/very similar <br/>
+				  <input type="radio" name="one" value="Somewhat atypical"> Somewhat atypical/unusual <br/>
+				  <input type="radio" name="one" value="Extreme"> Extremely unusual <br/>
+				<p>
+				2. Given my knowledge, preparation, and what I have learned so far about the host culture, this episode: <p>
+				  <input type="radio" name="two" value="exactly"> Unfolded exactly as I expected or planned; I knew what to do/say <br/>
+				  <input type="radio" name="two" value="more"> Happened more or less as I expected; I managed myself effectively <br/>
+				  <input type="radio" name="two" value="not"> Was not at all what I was expecting or what I planned for; I was not sure what to do or say <br/>
+				<p>
+				3. This episode made me feel: <p> 
+				  <input type="radio" name="three" value="extremely"> Extremely disoriented or confused; shocked; not sure what to think <br/>
+				  <input type="radio" name="three" value="somewhat"> Somewhat disoriented; uncertain; a little awkward or perplexed <br/>
+				  <input type="radio" name="three" value="sense"> Not at all disoriented; confident; everything made sense to me <br/>
+				<p>
+				4. This episode also made me feel: <p>
+				  <input type="radio" name="four" value="extremely"> Extremely stressed <br/>
+				  <input type="radio" name="four" value="moderate"> Moderately stressed <br/>
+				  <input type="radio" name="four" value="not"> Not stressed <br/>
+				<p>
+				5. My words and actions during this episode were: <p>
+				  <input type="radio" name="five" value="consistent"> Consistent with my value; beliefs, attitudes and the norms I usually follow <br/>
+				  <input type="radio" name="five" value="notconsistent"> Not consistent with my values; beliefs, attitudes and the norms I usually follow <br/>
+				  <input type="radio" name="five" value="uncomfortable"> Uncomfortably different from my values, beliefs, attitudes, and the norms I usually follow <br/>
+				<p>
+				6. To what extent were cultural differences an important and relevant factor in this episode? <p>
+				  <input type="radio" name="six" value="very"> Very much so/almost entirely (90-100%) <br/>
+				  <input type="radio" name="six" value="quite"> Quite a bit (75-90%) <br/>
+				  <input type="radio" name="six" value="more"> More than half (50-75%) <br/>
+				  <input type="radio" name="six" value="relevant"> Relevant (35-50%) <br/>
+				  <input type="radio" name="six" value="somewhat"> Somewhat (15-24%) <br/>
+				  <input type="radio" name="six" value="slightly"> Slightly / just a little (5-10%) <br/>
+				  <input type="radio" name="six" value="not"> Not at all (0%) <br/>
+				<p>
+				<b> How did you respond during this episode?  Circle the number between 0 and 6 that best describes your responses to the episode, where zero means "not at all" and 6 means "to a great extent." </b><p>
+				7. I listened, observed, and learned "on the spot" in order to interpret and understand this episode. <p>
+				  <input type="radio" name="seven" value="zero"> Not at all - 0 <br/>
+				  <input type="radio" name="seven" value="one"> Very Little - 1 <br/>
+				  <input type="radio" name="seven" value="two"> 2 <br/>
+				  <input type="radio" name="seven" value="three"> 3 <br/>
+				  <input type="radio" name="seven" value="four"> 4 <br/>
+				  <input type="radio" name="seven" value="five"> 5 <br/>
+				  <input type="radio" name="seven" value="six"> To a great extent - 6 <br/>
+				<p>
+				8. This episode changed the way I see myself and the possible roles that I can play <p>
+				  <input type="radio" name="eight" value="zero"> Not at all - 0 <br/>
+				  <input type="radio" name="eight" value="one"> Very Little - 1 <br/>
+				  <input type="radio" name="eight" value="two"> 2 <br/>
+				  <input type="radio" name="eight" value="three"> 3 <br/>
+				  <input type="radio" name="eight" value="four"> 4 <br/>
+				  <input type="radio" name="eight" value="five"> 5 <br/>
+				  <input type="radio" name="eight" value="six"> To a great extent - 6 <br/>
+				<p>
+				9. I relied on my own values, beliefs, and what I already know in order to interpret what was going on and understand this episode. <p>
+				  <input type="radio" name="nine" value="zero"> Not at all - 0 <br/>
+				  <input type="radio" name="nine" value="one"> Very Little - 1 <br/>
+				  <input type="radio" name="nine" value="two"> 2 <br/>
+				  <input type="radio" name="nine" value="three"> 3 <br/>
+				  <input type="radio" name="nine" value="four"> 4 <br/>
+				  <input type="radio" name="nine" value="five"> 5 <br/>
+				  <input type="radio" name="nine" value="six"> To a great extent - 6 <br/>
+				<p>
+				10. Throughout this episode, I behaved according to my own training, habits, customs, and routines. <p>
+				  <input type="radio" name="ten" value="zero"> Not at all - 0 <br/>
+				  <input type="radio" name="ten" value="one"> Very Little - 1 <br/>
+				  <input type="radio" name="ten" value="two"> 2 <br/>
+				  <input type="radio" name="ten" value="three"> 3 <br/>
+				  <input type="radio" name="ten" value="four"> 4 <br/>
+				  <input type="radio" name="ten" value="five"> 5 <br/>
+				  <input type="radio" name="ten" value="six"> To a great extent - 6 <br/>
+				<p>
+				11. Following the cues from the situation, I adapted my behavior to try to blend in and act like everyone else in this episode. <p>
+				  <input type="radio" name="eleven" value="zero"> Not at all - 0 <br/>
+				  <input type="radio" name="eleven" value="one"> Very Little - 1 <br/>
+				  <input type="radio" name="eleven" value="two"> 2 <br/>
+				  <input type="radio" name="eleven" value="three"> 3 <br/>
+				  <input type="radio" name="eleven" value="four"> 4 <br/>
+				  <input type="radio" name="eleven" value="five"> 5 <br/>
+				  <input type="radio" name="eleven" value="six"> To a great extent - 6 <br/>
+				<p>
+				12. My experience in this episode prompted me to re-evaluate or revise my overall assignment goal(s) to something more personalized and appropriate to my situation. <p>
+				  <input type="radio" name="twelve" value="zero"> Not at all - 0 <br/>
+				  <input type="radio" name="twelve" value="one"> Very Little - 1 <br/>
+				  <input type="radio" name="twelve" value="two"> 2 <br/>
+				  <input type="radio" name="twelve" value="three"> 3 <br/>
+				  <input type="radio" name="twelve" value="four"> 4 <br/>
+				  <input type="radio" name="twelve" value="five"> 5 <br/>
+				  <input type="radio" name="twelve" value="six"> To a great extent - 6 <br/>
+				<p>
+				13. My commitment to my overall assigned goal(s) changed because of situational pressures or the specific circumstances of this episode. <p>
+				  <input type="radio" name="thirteen" value="zero"> Not at all - 0 <br/>
+				  <input type="radio" name="thirteen" value="one"> Very Little - 1 <br/>
+				  <input type="radio" name="thirteen" value="two"> 2 <br/>
+				  <input type="radio" name="thirteen" value="three"> 3 <br/>
+				  <input type="radio" name="thirteen" value="four"> 4 <br/>
+				  <input type="radio" name="thirteen" value="five"> 5 <br/>
+				  <input type="radio" name="thirteen" value="six"> To a great extent - 6 <br/>
+				<p>
+				14. In order to feel more comfortable during this episode, I tried to change the situation and/or seek information and support from those around me at the time.
+				  <input type="radio" name="fourteen" value="zero"> Not at all - 0 <br/>
+				  <input type="radio" name="fourteen" value="one"> Very Little - 1 <br/>
+				  <input type="radio" name="fourteen" value="two"> 2 <br/>
+				  <input type="radio" name="fourteen" value="three"> 3 <br/>
+				  <input type="radio" name="fourteen" value="four"> 4 <br/>
+				  <input type="radio" name="fourteen" value="five"> 5 <br/>
+				  <input type="radio" name="fourteen" value="six"> To a great extent - 6 <br/>
+				<p>
+				15. I tried to ignore anything that made me uncomfortable in this episode; I endured this episode until it passed. <p>
+				  <input type="radio" name="fifteen" value="zero"> Not at all - 0 <br/>
+				  <input type="radio" name="fifteen" value="one"> Very Little - 1 <br/>
+				  <input type="radio" name="fifteen" value="two"> 2 <br/>
+				  <input type="radio" name="fifteen" value="three"> 3 <br/>
+				  <input type="radio" name="fifteen" value="four"> 4 <br/>
+				  <input type="radio" name="fifteen" value="five"> 5 <br/>
+				  <input type="radio" name="fifteen" value="six"> To a great extent - 6 <br/>
+				<p>
+				16. I reacted emotionally to this episode. <p>
+				  <input type="radio" name="sixteen" value="zero"> Not at all - 0 <br/>
+				  <input type="radio" name="sixteen" value="one"> Very Little - 1 <br/>
+				  <input type="radio" name="sixteen" value="two"> 2 <br/>
+				  <input type="radio" name="sixteen" value="three"> 3 <br/>
+				  <input type="radio" name="sixteen" value="four"> 4 <br/>
+				  <input type="radio" name="sixteen" value="five"> 5 <br/>
+				  <input type="radio" name="sixteen" value="six"> To a great extent - 6 <br/>
+				<p>
+				 
+	
+				
+				  
+				 
+				  
+				
+				</form>
+						
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
