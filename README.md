@@ -9,8 +9,8 @@ Built using Node.js and [Express 4](http://expressjs.com/).
 Make sure you have [Node.js](http://nodejs.org/) and the [Heroku CLI](https://cli.heroku.com/) installed.
 
 ```sh
-$ git clone git@github.com:heroku/node-js-getting-started.git # or clone your own fork
-$ cd node-js-getting-started
+$ git clone https://github.com/stupendous-man/sweng500-group3-capstone.git or clone your own fork
+$ cd sweng500-group3-capstone
 $ npm install
 $ npm start
 ```
