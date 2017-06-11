@@ -1,8 +1,8 @@
-# node-js-getting-started
+# Sense
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
+A social sensing website specializing in the Ecological Momentary Assessment method.
 
-This application supports the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
+Built using Node.js and [Express 4](http://expressjs.com/).
 
 ## Running Locally
 
