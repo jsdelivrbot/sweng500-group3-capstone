@@ -26,22 +26,21 @@
     </div>
 </header>
 
-<!-- DB Logic starts... -->
-
-<div class="container">
-    <h2>Database Results</h2>
-
-    <ul>
-        <% results.forEach(function(r) { %>
-        <li><%= r.id %> - <%= r.name %></li>
-        <% }); %>
-    </ul>
-</div>
-
-<!-- DB Logic end... -->
-
 <!-- Main -->
 <section id="main" class="wrapper">
+    <!-- DB Logic starts... -->
+
+    <div class="container">
+        <h2>Database Results</h2>
+
+        <ul>
+            <% results.forEach(function(r) { %>
+            <li><%= r.id %> - <%= r.name %></li>
+            <% }); %>
+        </ul>
+    </div>
+
+    <!-- DB Logic end... -->
     <div class="inner">
         <header class="align-center">
             <h2>Elements</h2>
