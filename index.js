@@ -67,18 +67,50 @@ app.get('/dblogic', function (request, response) {
 //     });
 // });
 
-var bodyParser = require('body-parser');
-app.use(bodyParser.json()); //support json encoded bodies
-app.use(bodyParser.urlencoded({extended: true})); //support encoded bodies
-
-app.post('/dblogic', function (request, response) {
+app.get('/dblogicins', function (request, response) {
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-        client.query('INSERT INTO test_table(id, name) VALUES($1, $2)', [request.body.id, request.body.name], function(err, result) {
-            done();
-            if (err)
-            { console.error(err); response.send("Error " + err); }
-            else
-            { response.render('pages/dblogic', {results: result.rows} ); }
-        });
+        if (typeof request.param('id') != 'undefined') {
+            client.query('INSERT INTO test_table(id, name) VALUES($1, $2)', [request.param('id'), request.param('name')], function(err, result) {
+                done();
+                if (err) {
+                    console.error(err); response.send("Error " + err);
+                }
+                else {
+                    client.query('SELECT * FROM test_table', function(err, result) {
+                        done();
+                        if (err) {
+                            console.error(err); response.send("Error " + err);
+                        } else {
+                            response.render('pages/dblogic', {results: result.rows} );
+                        }
+                    });
+                }
+            });
+        } else {
+            client.query('SELECT * FROM test_table', function(err, result) {
+                done();
+                if (err) {
+                    console.error(err); response.send("Error " + err);
+                } else {
+                    response.render('pages/dblogic', {results: result.rows} );
+                }
+            });
+        }
     });
 });
+
+// var bodyParser = require('body-parser');
+// app.use(bodyParser.json()); //support json encoded bodies
+// app.use(bodyParser.urlencoded({extended: true})); //support encoded bodies
+//
+// app.post('/dblogic', function (request, response) {
+//     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+//         client.query('INSERT INTO test_table(id, name) VALUES($1, $2)', [request.body.id, request.body.name], function(err, result) {
+//             done();
+//             if (err)
+//             { console.error(err); response.send("Error " + err); }
+//             else
+//             { response.render('pages/dblogic', {results: result.rows} ); }
+//         });
+//     });
+// });
