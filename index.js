@@ -57,7 +57,7 @@ app.get('/dblogic', function (request, response) {
 
 app.post('/dblogic/record', function (request, response) {
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-        client.query('INSERT INTO test_table(id, name) VALUES(${id}, ${name})', function(err, result) {
+        client.query('INSERT INTO test_table(id, name) VALUES($1, $2)', [request.id, request.name], function(err, result) {
             done();
             if (err)
             { console.error(err); response.send("Error " + err); }
