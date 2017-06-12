@@ -67,6 +67,10 @@ app.get('/dblogic', function (request, response) {
 //     });
 // });
 
+var bodyParser = require('body-parser');
+app.use(bodyParser.json()); //support json encoded bodies
+app.use(bodyParser.urlencoded({extended: true})); //support encoded bodies
+
 app.post('/dblogic', function (request, response) {
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
         client.query('INSERT INTO test_table(id, name) VALUES($1, $2)', [request.body.id, request.body.name], function(err, result) {
