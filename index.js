@@ -100,6 +100,7 @@ app.get('/dblogic', function (request, response) {
 });
 
 //TODO: Enable body-parser functionality in heroku
+//TODO: Enable post operation for database updates/inserts
 // var bodyParser = require('body-parser');
 // app.use(bodyParser.json()); //support json encoded bodies
 // app.use(bodyParser.urlencoded({extended: true})); //support encoded bodies
