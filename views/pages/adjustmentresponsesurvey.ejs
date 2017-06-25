@@ -71,18 +71,25 @@
 					and edited to include the boxes for Name and Short description
 					-->
 					<h2 id="content">Survey</h2>
-					<p>For this survey, you will be asked to choose your option from 1 meaning “mostly allegiant” to 6 “mostly independent”. </p>
+					<p>For this survey, you will be asked to choose your option from 1. meaning “mostly allegiant” to 6. “mostly independent”. </p>
 					<input type="text" name="ARname" id="name" value="" placeholder="Name" />
 					<br>
 					<input type="text" name="ARIDnumber" id="IDNumber" value="" placeholder="ID Number" />
 					<br>
 					<input type="text" name="Adjustmentnumber" id="surveynumber" placeholder="Survey Number"  />
 					<br>
-					<input type="text" name="ARGCdescription" id="description" value="" placeholder="Goal Commitment" />
-					<br>
-					<input type="text" name="ARGCquestion" id="description" value="" placeholder="When you think about your commitment to your assigned goals for this global experience, would you say you were mostly independent
-					(i.e., you acted independently to revise your goals according to the situation and/or your personal needs at the time) OR mostly allegiant
-					(i.e., regardless of situational pressures or your needs at the time, you remained totally committed to your original assigned goals)?" />
+					<hr class="major" />
+					<form action="cgi-bin/episode.js" method="post">
+
+							For each question below, choose 1 (mostly independent) thru 6 (mostly allegiant).<p>
+							1. When you think about your commitment to your assigned goals for this global experience, would you <p>
+							say you were mostly independent (i.e., you acted independently to revise your goals according to the <p>
+							situation and/or your personal needs at the time) OR mostly allegiant (i.e., regardless of situational<p>
+							pressures or your needs at the time, you remained totally committed to your original assigned goals)?<p>
+							<input type="radio" name="one" value="No different"> No different/very similar <br/>
+							<input type="radio" name="one" value="Somewhat atypical"> Somewhat atypical/unusual <br/>
+							<input type="radio" name="one" value="Extreme"> Extremely unusual <br/>
+						<p>
 					<br>
 					<!--<textarea name="message" id="ARGCQuestion" placeholder="Describe your episode here" rows="6"></textarea> -->
 					<br>
