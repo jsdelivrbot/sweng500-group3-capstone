@@ -76,7 +76,14 @@
 							<img class="scale" data-scale="best-fit-down" data-align="center" src="images/UpdatedGCimage.JPG">
 						</div>
 
-							<input id="slider1" type="range" min="0" max="6" step="1" />
+							<input id="slider1" type="range" min="0" max="6" step="1" onchange="showValue(this.value)" />
+                        <span id=""range">0</span>
+                        <script type="text/javascript">
+                            function showValue(newValue)
+                            {
+                                document.getElementById("range").innerHTML=newValue;
+                            }
+
 						<p>
 							<b><p> Managing Stress</b><p>
 								When you think about how you managed stress during this episode, would you say you were <b><i>mostly <br>
