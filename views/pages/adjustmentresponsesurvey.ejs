@@ -73,10 +73,20 @@
 							pressures or your needs at the time, you remained totally committed to your original assigned goals)?<br>
 
 						<div class="image-container">
-							<img class="scale" data-scale="best-fit-down" data-align="center" src="images/GCimage.JPG">
+							<img class="scale" data-scale="best-fit-down" data-align="center" src="images/UpdatedGCimage.JPG">
 						</div>
 
-							<input id="slider1" type="range" min="0" max="6" step="1" />
+							<input id="slider1" type="range" min="0" max="6" step="1" onchange="showValue(this.value)" />
+                        <span id=""range">6</form>
+                        <script type="text/javascript">
+                            function showValue(newValue)
+                            {
+                                document.getElementById("range").innerHTML=newValue;
+                            }
+                        </script>
+                        </body>
+                        </html>
+
 						<p>
 							<b><p> Managing Stress</b><p>
 								When you think about how you managed stress during this episode, would you say you were <b><i>mostly <br>
@@ -85,7 +95,7 @@
 							stress without trying to change the situation).<br>
 
 						<div class="image-container">
-							<img class="scale" data-scale="best-fit-down" data-align="center" src="images/MSimage.JPG">
+							<img class="scale" data-scale="best-fit-down" data-align="center" src="images/UpdatedMSimage.JPG">
 						</div>
 
 							<input id="slider1" type="range" min="0" max="6" step="1" />
@@ -99,7 +109,7 @@
 							self-concept, values, and beliefs provided the frame for you to interpret this experience.<br>
 
 						<div class="image-container">
-							<img class="scale" data-scale="best-fit-down" data-align="center" src="images/FRimage.JPG">
+							<img class="scale" data-scale="best-fit-down" data-align="center" src="images/UpdatedFRimage.JPG">
 						</div>
 
 							<input id="slider1" type="range" min="0" max="6" step="1" />
