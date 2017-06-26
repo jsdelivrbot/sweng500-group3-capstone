@@ -118,7 +118,6 @@
 						<div class="image-container">
 							<img class="scale" data-scale="best-fit-down" data-align="center" src="images/UpdatedFRimage.JPG">
 						</div>
-
 							<input id="slider1" type="range" min="0" max="6" step="1" />
                         <span id=""range">6</form>
                         <script type="text/javascript">
@@ -140,9 +139,16 @@
 						<div class="image-container">
 							<img class="scale" data-scale="best-fit-down" data-align="center" src="images/UpdatedBimage.JPG">
 						</div>
-
 							<input id="slider1" type="range" min="0" max="6" step="1" />
-
+                        <span id=""range">6</form>
+                        <script type="text/javascript">
+                        function showValue(newValue)
+                        {
+                          document.getElementById("range").innerHTML=newValue;
+                        }
+                        </script>
+                        </body>
+                        </html>
 						<p>
 					<br>
 					<!--<textarea name="message" id="ARGCQuestion" placeholder="Describe your episode here" rows="6"></textarea> -->
