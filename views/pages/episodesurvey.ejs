@@ -42,10 +42,14 @@
 					
 
 				<hr class="major" />
-				<form action="cgi-bin/episode.js" method="post">
-				Please give this episode a short descriptive title: <input type="text" name="title" value="" ="25" maxlength="75" /><p>
-				Where were you? (work, school, shopping, in your residence, etc.): <input type="text" name="location" value="" ="25" maxlength="75" /><p>
-				For each item below, check only one response that best describes the episode.<p>
+				<form name ="submit_episode" action="assets/js/episode.js" method="post">
+				Please give this episode a short descriptive title: <input type="text" name="title" value="" ="25" maxlength="250" /><p>
+				Where were you? (work, school, shopping, in your residence, etc.): <input type="text" name="location" value="" ="25" maxlength="250" /><p>
+				What city did this episode occur: <input type="text" name="city" value"" ="25" maxlength="50" /><p>
+				What country did this episode occur: <input type="text" name="country" value"" ="25" maxlength="50" /><p>
+				What date did this episode occur: <input type="text" name="date" value"" ="25" maxlength="50" /><p>
+				What is your User Number: <input type="text" name="user" value"" ="25" maxlength="50" /><p>
+						For each item below, check only one response that best describes the episode.<p>
 				1. Compared to similar experiences at home in my own familiar culture, this episode is:<p>
 				  <input type="radio" name="one" value="No different"> No different/very similar <br/>
 				  <input type="radio" name="one" value="Somewhat atypical"> Somewhat atypical/unusual <br/>
@@ -68,7 +72,7 @@
 				<p>
 				5. My words and actions during this episode were: <p>
 				  <input type="radio" name="five" value="consistent"> Consistent with my value; beliefs, attitudes and the norms I usually follow <br/>
-				  <input type="radio" name="five" value="notconsistent"> Not consistent with my values; beliefs, attitudes and the norms I usually follow <br/>
+				  <input type="radio" name="five" value="not consistent"> Not consistent with my values; beliefs, attitudes and the norms I usually follow <br/>
 				  <input type="radio" name="five" value="uncomfortable"> Uncomfortably different from my values, beliefs, attitudes, and the norms I usually follow <br/>
 				<p>
 				6. To what extent were cultural differences an important and relevant factor in this episode? <p>
@@ -171,6 +175,8 @@
 				  <input type="radio" name="sixteen" value="five"> 5 <br/>
 				  <input type="radio" name="sixteen" value="six"> To a great extent - 6 <br/>
 				<p>
+				<p>
+				<input type="button" name="submit"	value="Submit" onclick="submitForm();" >
 				 
 	
 				
@@ -182,10 +188,8 @@
 						
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="assets/js/episode.js"></script>
+
 
 	</body>
 </html>
