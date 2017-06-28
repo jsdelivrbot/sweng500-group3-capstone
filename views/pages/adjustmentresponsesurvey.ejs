@@ -62,12 +62,10 @@
 					<input type="text" name="Adjustmentnumber" id="surveynumber" placeholder="Survey Number"  />
 					<br>
 					<hr class="major" />
-					<form action="cgi-bin/episode.js" method="post">
+					<form action="cgi-bin/episode.js" method="POST">
 
-						<input type="ARname"><br>
-
-						<input type="Usernumber"><br>
-						<input type="Submit" value="Submit">
+						<textarea name = 'ARname'></textarea> <br><br>
+						<input type = 'submit' value = 'Submit'>
 					</form>
 
 
@@ -81,7 +79,7 @@
 							<img class="scale" data-scale="best-fit-down" data-align="center" src="images/UpdatedGCimage.JPG">
 						</div>
 							<input id="slider1" type="range" min="0" max="6" step="1" onchange="showValue(this.value)" />
-                        <span id="range">6</form>
+                        <span id="range"> <6> </span>
                         <script type="text/javascript">
                             function showValue(newValue)
                             {
@@ -114,7 +112,7 @@
 
 						<p>
 						<p>
-							<b><p> Frame of Reference</b><p>
+							<b><p> Frame of Reference</p><p>
 								When you think about how you framed and made sense of this episode, would you say you stretched <br>
 							your frame of reference (<b><i>elastic</i></b>) because you considered to new ways of thinking, new roles, and new <br>
 							possibilities, or did you not need to re-frame (<b><i>inelastic</i></b>) because your own cultural frame of reference,<br>
@@ -124,7 +122,7 @@
 							<img class="scale" data-scale="best-fit-down" data-align="center" src="images/UpdatedFRimage.JPG">
 						</div>
 							<input id="slider1" type="range" min="0" max="6" step="1" />
-                        <span id=""range">6</form>
+                        <span id="range">6</form>
                         <script type="text/javascript">
                         function showValue(newValue)
                         {
