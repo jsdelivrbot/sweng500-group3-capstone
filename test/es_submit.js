@@ -8,6 +8,12 @@
     //added alerts within function to see what happens
 
 
+
+function buttonClicked() {
+
+            alert("I'm about to start some &*$#"");
+
+
             var db=require('postgres');
 
             var con = db.createConnection({
@@ -17,7 +23,7 @@
                 database: “d7b08angkmth1h”,
                 });
 
-            function buttonClicked() {
+
             alert('button click called');
 
             con.connect(function(err) {
@@ -36,7 +42,7 @@
                  alert("I might have done something");
                 });
             });
-            }
+}
 
 
 
