@@ -4,6 +4,7 @@
 
 //6/30/17 - ML
 // testing a submit script for the emotional state survey
+    //attempts to create connection, gather info from page by id, then insert to db
 
 
             var db=require('postgres');
