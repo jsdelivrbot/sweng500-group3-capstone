@@ -20,7 +20,7 @@
                 console.log("Connected!");
                 var sql = "INSERT INTO ES_table (ESname, ESIDnumber, ESsurveynumber, ESdescription, ESmessage)";
                 con.query(sql,function (err, result) {
-                 if (err) thow err;
+                 if (err) throw err;
                  console.log("1 record inseted");
                 });
             });
