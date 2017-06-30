@@ -17,11 +17,11 @@
                 });
 
             function buttonClicked() {
-
+            alert('button click called');
 
             con.connect(function(err) {
                 if (err) throw err;
-                window.alert("Connected!");
+               alert("Connected!");
 
                 var 1 = emotionalstatesurvey.getElementById('name');
                 var 2 = emotionalstatesurvey.getElementById('IDNumber');
@@ -32,7 +32,7 @@
                 var sql = "INSERT INTO ES_table (ESname, ESIDnumber, ESsurveynumber, ESdescription, ESmessage)" VALUES (1, 2, 3, 4, 5);
                 con.query(sql,function (err, result) {
                  if (err) throw err;
-                 window.confirm("I might have done something");
+                 alert("I might have done something");
                 });
             });
             }
