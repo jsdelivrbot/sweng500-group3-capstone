@@ -16,6 +16,9 @@
                 database: “d7b08angkmth1h”,
                 });
 
+            function buttonClicked() {
+
+
             con.connect(function(err) {
                 if (err) throw err;
                 window.alert("Connected!");
@@ -32,5 +35,7 @@
                  window.confirm("I might have done something");
                 });
             });
+            }
+
 
 
