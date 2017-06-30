@@ -17,11 +17,18 @@
 
             con.connect(function(err) {
                 if (err) throw err;
-                console.log("Connected!");
-                var sql = "INSERT INTO ES_table (ESname, ESIDnumber, ESsurveynumber, ESdescription, ESmessage)";
+                window.alert("Connected!");
+
+                var 1 = emotionalstatesurvey.getElementById('name');
+                var 2 = emotionalstatesurvey.getElementById('IDNumber');
+                var 3 = emotionalstatesurvey.getElementById('surveynumber');
+                var 4 = emotionalstatesurvey.getElementById('description');
+                var 5 = emotionalstatesurvey.getElementById('ESmessage');
+
+                var sql = "INSERT INTO ES_table (ESname, ESIDnumber, ESsurveynumber, ESdescription, ESmessage)" VALUES (1, 2, 3, 4, 5);
                 con.query(sql,function (err, result) {
                  if (err) throw err;
-                 console.log("1 record inseted");
+                 window.confirm("I might have done something");
                 });
             });
 
