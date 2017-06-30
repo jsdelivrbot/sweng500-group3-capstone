@@ -57,14 +57,12 @@
 					<p>For this survey, you will be asked to choose your option from 1 - 6 raiting "Self" and "Situated-Other". </p>
 					<input type="text" name="ARname" id="name" value="" placeholder="Name" />
 					<br>
-					<input type="text" name="ARIDnumber" id="IDNumber" value="" placeholder="ID Number" />
+					<input type="text" name="Usernumber" id="IDNumber" value="" placeholder="ID Number" />
 					<br>
 					<input type="text" name="Adjustmentnumber" id="surveynumber" placeholder="Survey Number"  />
 					<br>
 					<hr class="major" />
-					<form action="cgi-bin/episode.js" method="post">
-
-
+					<form action="/cgi-bin/episode.js" method="POST">
 
 							<b><p> Goal Commitment</b><p>
 								When you think about your commitment to your assigned goals for this global experience, would you <br>
@@ -76,7 +74,7 @@
 							<img class="scale" data-scale="best-fit-down" data-align="center" src="images/UpdatedGCimage.JPG">
 						</div>
 							<input id="slider1" type="range" min="0" max="6" step="1" onchange="showValue(this.value)" />
-                        <span id=""range">6</form>
+                        <span id="range"> <6> </span>
                         <script type="text/javascript">
                             function showValue(newValue)
                             {
@@ -87,7 +85,7 @@
                         </html>
 
 						<p>
-							<b><p> Managing Stress</b><p>
+                            <p><b> Managing Stress</b><p>
 								When you think about how you managed stress during this episode, would you say you were <b><i>mostly <br>
 							problem-focused</i></b> (i.e., you analyzed the sources of stress and tried to change the situation to make it <br>
 							less stressful) or <b><i>mostly emotion-focused</i></b> (i.e., you expressed/vented your feelings or tolerated the<br>
@@ -97,7 +95,7 @@
 							<img class="scale" data-scale="best-fit-down" data-align="center" src="images/UpdatedMSimage.JPG">
 						</div>
 							<input id="slider1" type="range" min="0" max="6" step="1" />
-                        <span id=""range">6</form>
+                        <span id="range">6</form>
                          <script type="text/javascript">
                         function showValue(newValue)
                         {
@@ -109,7 +107,7 @@
 
 						<p>
 						<p>
-							<b><p> Frame of Reference</b><p>
+							<b><p> Frame of Reference</p><p>
 								When you think about how you framed and made sense of this episode, would you say you stretched <br>
 							your frame of reference (<b><i>elastic</i></b>) because you considered to new ways of thinking, new roles, and new <br>
 							possibilities, or did you not need to re-frame (<b><i>inelastic</i></b>) because your own cultural frame of reference,<br>
@@ -119,7 +117,7 @@
 							<img class="scale" data-scale="best-fit-down" data-align="center" src="images/UpdatedFRimage.JPG">
 						</div>
 							<input id="slider1" type="range" min="0" max="6" step="1" />
-                        <span id=""range">6</form>
+                        <span id="range">6</form>
                         <script type="text/javascript">
                         function showValue(newValue)
                         {
@@ -156,7 +154,7 @@
 					<input type="submit" value="Submit Survey" />
 
 					<hr class="major" />
-					<!-- ML: ends section for a question, a text field and a submit button -->
+					<!-- Wendy Hartman: ends section for a question, a text field and a submit button -->
 
 
 
