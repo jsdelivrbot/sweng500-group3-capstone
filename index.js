@@ -71,26 +71,9 @@ var pg = require('pg');
 //     });
 // });
 
-app.get('/dblogic', function (request, response) {
+app.get('/dblogic', function(request, response) {
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-        if (typeof request.param('id') != 'undefined') {
-            client.query('INSERT INTO test_table(id, name) VALUES($1, $2)', [request.param('id'), request.param('name')], function(err, result) {
-                done();
-                if (err) {
-                    console.error(err); response.send("Error " + err);
-                }
-                else {
-                    client.query('SELECT * FROM test_table', function(err, result) {
-                        done();
-                        if (err) {
-                            console.error(err); response.send("Error " + err);
-                        } else {
-                            response.render('pages/dblogic', {results: result.rows} );
-                        }
-                    });
-                }
-            });
-        } else {
+
             client.query('SELECT * FROM test_table', function(err, result) {
                 done();
                 if (err) {
@@ -99,9 +82,63 @@ app.get('/dblogic', function (request, response) {
                     response.render('pages/dblogic', {results: result.rows} );
                 }
             });
-        }
+
+        });
+    response.render('pages/dblogic');
+});
+
+app.get('/dblogicquery', function (request, response) {
+    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+        client.query('INSERT INTO test_table(id, name) VALUES($1, $2)', [request.param('id'), request.param('name')], function(err, result) {
+            done();
+            if (err) {
+                console.error(err); response.send("Error " + err);
+            }
+            else {
+                client.query('SELECT * FROM test_table', function(err, result) {
+                    done();
+                    if (err) {
+                        console.error(err); response.send("Error " + err);
+                    } else {
+                        response.render('pages/dblogic', {results: result.rows} );
+                    }
+                });
+            }
+        });
     });
 });
+
+// app.get('/dblogic', function (request, response) {
+//     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+//         if (typeof request.param('id') != 'undefined') {
+//             client.query('INSERT INTO test_table(id, name) VALUES($1, $2)', [request.param('id'), request.param('name')], function(err, result) {
+//                 done();
+//                 if (err) {
+//                     console.error(err); response.send("Error " + err);
+//                 }
+//                 else {
+//                     client.query('SELECT * FROM test_table', function(err, result) {
+//                         done();
+//                         if (err) {
+//                             console.error(err); response.send("Error " + err);
+//                         } else {
+//                             response.render('pages/dblogic', {results: result.rows} );
+//                         }
+//                     });
+//                 }
+//             });
+//         } else {
+//             client.query('SELECT * FROM test_table', function(err, result) {
+//                 done();
+//                 if (err) {
+//                     console.error(err); response.send("Error " + err);
+//                 } else {
+//                     response.render('pages/dblogic', {results: result.rows} );
+//                 }
+//             });
+//         }
+//     });
+// });
 
 //TODO: Enable body-parser functionality in heroku
 //TODO: Enable post operation for database updates/inserts
