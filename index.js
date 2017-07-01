@@ -160,34 +160,34 @@ app.get('/dblogic', function (request, response) {
 
 // Javascript code entry for the Emotional State Survey Page
 // Entered by ML, 6/30/17
-app.get(‘/emotionalstate’, function (request, response) {
-    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-        if (typeof request.param('id') != 'undefined') {
-            client.query('INSERT INTO ES_table(ESname, ESIDnumber, ESsurveynumber, ESdescription,  ESmessage) VALUES($1, $2, $3, $4, $5)’, [request.param(‘ESname'), request.param(‘ESIDnumber’), request.param(‘ESsurveynumber’), request.param(‘ESdescription’), request.param(‘ESmessage’)], function(err, result) {
-                done();
-                if (err) {
-                    console.error(err); response.send("Error " + err);
-                }
-                else {
-                    client.query('SELECT * FROM ES_table', function(err, result) {
-                        done();
-                        if (err) {
-                            console.error(err); response.send("Error " + err);
-                        } else {
-                            response.render('pages/emotionalstatesurvey’, {results: result.rows} );
-                        }
-                    });
-                }
-            });
-} else {
-    client.query('SELECT * FROM ES_table', function(err, result) {
-        done();
-        if (err) {
-            console.error(err); response.send("Error " + err);
-        } else {
-            response.render('pages/emotionalstatesurvey’, {results: result.rows} );
-        }
-    });
-}
-});
-});
+// app.get(‘/emotionalstate’, function (request, response) {
+//     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+//         if (typeof request.param('id') != 'undefined') {
+//             client.query('INSERT INTO ES_table(ESname, ESIDnumber, ESsurveynumber, ESdescription,  ESmessage) VALUES($1, $2, $3, $4, $5)’, [request.param(‘ESname'), request.param(‘ESIDnumber’), request.param(‘ESsurveynumber’), request.param(‘ESdescription’), request.param(‘ESmessage’)], function(err, result) {
+//                 done();
+//                 if (err) {
+//                     console.error(err); response.send("Error " + err);
+//                 }
+//                 else {
+//                     client.query('SELECT * FROM ES_table', function(err, result) {
+//                         done();
+//                         if (err) {
+//                             console.error(err); response.send("Error " + err);
+//                         } else {
+//                             response.render('pages/emotionalstatesurvey’, {results: result.rows} );
+//                         }
+//                     });
+//                 }
+//             });
+// } else {
+//     client.query('SELECT * FROM ES_table', function(err, result) {
+//         done();
+//         if (err) {
+//             console.error(err); response.send("Error " + err);
+//         } else {
+//             response.render('pages/emotionalstatesurvey’, {results: result.rows} );
+//         }
+//     });
+// }
+// });
+// });
