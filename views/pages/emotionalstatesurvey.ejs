@@ -81,36 +81,73 @@
 
 				<hr class="major" />
 
-				
-				<!-- ML: here is where the survey begins edited on 7/1/2017 -->
-				<!-- ML: starting with a question or statement, a text field and a submit button
-                    and edited to include the boxes for Name and Short description
-				-->
-				<h2 id="content">Survey Form</h2>
-					<form method="post" action="/emotionalstatesurvey">
-					<p>For this survey, enter a short narrative of the episode you experienced. Be descriptive in illustrating what took place in the episode. </p>
-                    <input type="text" name="ESname" id="ESname" value="" placeholder="Name" />
-					<br>
-					<input type="text" name="ESIDnumber" id="ESIDNumber" value="" placeholder="ID Number" />
-					<br>
-					<input type="text" name="ESsurveynumber" id="ESsurveynumber" placeholder="Survey Number"  />
-					<br>
-                    <input type="text" name="ESdescription" id="ESdescription" value="" placeholder="Short name for this episode" />
-                    <br>
-					<textarea name="message" id="ESmessage" placeholder="Describe your episode here" rows="6"></textarea>
-					<br>
-                    <input type="button" value="Submit Survey" />
+
+				<!--&lt;!&ndash; ML: here is where the survey begins edited on 7/1/2017 &ndash;&gt;-->
+				<!--&lt;!&ndash; ML: starting with a question or statement, a text field and a submit button-->
+                    <!--and edited to include the boxes for Name and Short description-->
+				<!--&ndash;&gt;-->
+				<!--<h2 id="content">Survey Form</h2>-->
+					<!--<form method="post" action="/emotionalstatesurvey">-->
+					<!--<p>For this survey, enter a short narrative of the episode you experienced. Be descriptive in illustrating what took place in the episode. </p>-->
+                    <!--<input type="text" name="ESname" id="ESname" value="" placeholder="Name" />-->
+					<!--<br>-->
+					<!--<input type="text" name="ESIDnumber" id="ESIDNumber" value="" placeholder="ID Number" />-->
+					<!--<br>-->
+					<!--<input type="text" name="ESsurveynumber" id="ESsurveynumber" placeholder="Survey Number"  />-->
+					<!--<br>-->
+                    <!--<input type="text" name="ESdescription" id="ESdescription" value="" placeholder="Short name for this episode" />-->
+                    <!--<br>-->
+					<!--<textarea name="message" id="ESmessage" placeholder="Describe your episode here" rows="6"></textarea>-->
+					<!--<br>-->
+                    <!--<input type="button" value="Submit Survey" />-->
 
 
-					</form>
+					<!--</form>-->
 
 
-					<hr class="major" />
-				<!-- ML: ends section for a question, a text field and a submit button -->						
+					<!--<hr class="major" />-->
+				<!--&lt;!&ndash; ML: ends section for a question, a text field and a submit button &ndash;&gt;						-->
+
+
+                    <!-- Form -->
+                    <h3>Form</h3>
+
+                    <form method="post" action="/emotionalstatesurvey">
+                        <div class="row uniform">
+                            <div class="6u 12u$(xsmall)">
+                                <input type="text" name="ESname" id="ESname" value="" placeholder="Name" />
+                            </div>
+                            <div class="6u$ 12u$(xsmall)">
+                                <input type="text" name="ESIDNumber" id="ESIDNumber" value="" placeholder="ID Number" />
+                            </div>
+                            <!-- Break -->
+                            <div class="12u$">
+                                <input type="text" name="ESsurveynumber" id="ESsurveynumber" value="" placeholder="Survey Number" />
+                            </div>
+                            <!-- Break -->
+                            <div class="12u$">
+                                <input type="text" name="ESdescription" id="ESdescription" value="" placeholder="Survey Description" />
+                            </div>
+                            <!-- Break -->
+                            <div class="12u$">
+                                <input type="text" name="ESepisode" id="ESepisode" value="" placeholder="Enter episode information" />
+                            </div>
+                            <!-- Break -->
+                            <!-- Break -->
+                            <div class="12u$">
+                                <ul class="actions">
+                                    <li><input type="submit" value="Send Message" /></li>
+                                    <li><input type="reset" value="Reset" class="alt" /></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+
+                    <hr />
 
 
 
-		<!-- Footer -->
+                    <!-- Footer -->
 			<footer id="footer">
 				<div class="inner">
 					<div class="flex">
