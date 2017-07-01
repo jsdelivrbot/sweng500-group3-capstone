@@ -29,7 +29,7 @@ app.get('/adjustmentresponsesurvey', function(request, response) {
   response.render('pages/adjustmentresponsesurvey');
 });
 
-// ML - commenting original app.get for emotionalstatesurvey
+// ML - commenting out original app.get for emotionalstatesurvey
 // app.get('/emotionalstatesurvey', function(request, response) {
 //   response.render('pages/emotionalstatesurvey');
 // });
