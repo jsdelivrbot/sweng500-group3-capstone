@@ -13,7 +13,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<script> type="text/javascript" src="../test/es_submit.js" </script>
+
 	</head>
 
 
@@ -37,7 +37,19 @@
 			</header>
 
 		<!-- Main -->
-			<section id="main" class="wrapper">
+
+		<div class="container">
+			<h2>Database Results</h2>
+
+			<ul>
+                <% results.forEach(function(r) { %>
+				<li><%= r.id %> - <%= r.name %></li>
+                <% }); %>
+			</ul>
+		</div>
+
+
+		<section id="main" class="wrapper">
 				<div class="inner">
 					<header class="align-center">
 						<h2>Emotional State Survey</h2>
@@ -77,21 +89,20 @@
                     and edited to include the boxes for Name and Short description
 				-->
 				<h2 id="content">Survey Form</h2>
-					<form method="post" action="#">
+					<form method="post" action="/emotionalstate">
 					<p>For this survey, enter a short narrative of the episode you experienced. Be descriptive in illustrating what took place in the episode. </p>
-                    <input type="text" name="ESname" id="name" value="" placeholder="Name" />
+                    <input type="text" name="ESname" id="ESname" value="" placeholder="Name" />
 					<br>
-					<input type="text" name="ESIDnumber" id="IDNumber" value="" placeholder="ID Number" />
+					<input type="text" name="ESIDnumber" id="ESIDNumber" value="" placeholder="ID Number" />
 					<br>
-					<input type="text" name="ESsurveynumber" id="surveynumber" placeholder="Survey Number"  />
+					<input type="text" name="ESsurveynumber" id="ESsurveynumber" placeholder="Survey Number"  />
 					<br>
-                    <input type="text" name="ESdescription" id="description" value="" placeholder="Short name for this episode" />
+                    <input type="text" name="ESdescription" id="ESdescription" value="" placeholder="Short name for this episode" />
                     <br>
 					<textarea name="message" id="ESmessage" placeholder="Describe your episode here" rows="6"></textarea>
 					<br>
-                    <input type="button" value="Submit Survey" onclick=javascript:buttonClicked() />
-                    <br>
-                    <input type="button" value="Test Button" onclick="alert('test')"
+                    <input type="button" value="Submit Survey" />
+
 
 					</form>
 
