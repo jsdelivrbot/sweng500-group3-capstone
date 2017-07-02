@@ -1,37 +1,86 @@
+var chai = require('chai');
 var expect    = require("chai").expect;
 var request = require("request");
+var chaiHttp = require('chai-http');
+var should = chai.should();
+
+//Require the dev-dependencies
+//let chai = require('chai');
+// let chaiHttp = require('chai-http');
+// let should = chai.should();
+
+chai.use(chaiHttp);
 
 describe("Sense navigation and routing", function() {
-    describe("Sense Home page navigation", function() {
-        var url = "http://localhost:5000/";
-        it("returns status 200", function() {});
+
+    describe('Sense Home page navigation', () => {
+        it('it should return status 200', (done) => {
+            chai.request('http://localhost:5000')
+                .get('/')
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    done();
+                });
+        });
     });
 
-    describe("Sense Episode Survey page navigation", function() {
-        var url = "http://localhost:5000/episodesurvey";
-        it("returns status 200", function() {});
+    describe('Sense Episode Survey page navigation', () => {
+        it('it should return status 200', (done) => {
+            chai.request('http://localhost:5000')
+                .get('/episodesurvey')
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    done();
+                });
+        });
     });
 
-    describe("Sense Adjustment Response Survey page navigation", function() {
-        var url = "http://localhost:5000/adjustmentresponsesurvey";
-        it("returns status 200", function() {});
+    describe('Sense Adjustment Response Survey page navigation', () => {
+        it('it should return status 200', (done) => {
+            chai.request('http://localhost:5000')
+                .get('/adjustmentresponsesurvey')
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    done();
+                });
+        });
     });
 
-    describe("Sense Emotional State Survey page navigation", function() {
-        var url = "http://localhost:5000/emotionalstatesurvey";
-        it("returns status 200", function() {});
+    describe('Sense Emotional State Survey page navigation', () => {
+        it('it should return status 200', (done) => {
+            chai.request('http://localhost:5000')
+                .get('/emotionalstatesurvey')
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    done();
+                });
+        });
     });
 
-    describe("Sense Survey Reports page navigation", function() {
-        var url = "http://localhost:5000/surveyreports";
-        it("returns status 200", function() {});
+    describe('Sense Survey Reports page navigation', () => {
+        it('it should return status 200', (done) => {
+            chai.request('http://localhost:5000')
+                .get('/surveyreports')
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    done();
+                });
+        });
     });
 
-    describe("Sense FAQ page navigation", function() {
-        var url = "http://localhost:5000/faq";
-        it("returns status 200", function() {});
+    describe('Sense FAQ page navigation', () => {
+        it('it should return status 200', (done) => {
+            chai.request('http://localhost:5000')
+                .get('/faq')
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    done();
+                });
+        });
     });
+
 });
+
 
 
 
