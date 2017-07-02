@@ -21,9 +21,9 @@ app.get('/elements', function(request, response) {
   response.render('pages/elements');
 });
 
-app.get('/episodesurvey', function(request, response) {
-  response.render('pages/episodesurvey');
-});
+//app.get('/episodesurvey', function(request, response) {
+//  response.render('pages/episodesurvey');
+//});
 
 app.get('/adjustmentresponsesurvey', function(request, response) {
   response.render('pages/adjustmentresponsesurvey');
@@ -172,6 +172,41 @@ app.get('/dblogic', function (request, response) {
                     console.error(err); response.send("Error " + err);
                 } else {
                     response.render('pages/dblogic', {results: result.rows} );
+                }
+            });
+        }
+    });
+});
+
+app.get('/episodesurvey', function (request, response){
+    pg.connect(process.env.DATABASE_URL, function(err, client, done){
+        if (typeof request.param('title') != 'undefined'){
+            // DR - Fixed mapping of table columns (Start)
+            // client.query('INSERT INTO eps_table(title, location, city, country, date, user, one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22)', [request.param('title'), request.param('location'), request.param('city'), request.param('country'), request.param('date'), request.param('date'), request.param('user'), request.param('one'), request.param('two'), request.param('three'), request.param('four'), request.param('five'), request.param('six'), request.param('seven'), request.param('eight'), request.param('nine'), request.param('ten'), request.param('eleven'), request.param('twelve'), request.param('thirteen'), request.param('fourteen'), request.param('fifteen'), request.param('sixteen')], function (err, result){
+            client.query('INSERT INTO eps_table(eptitle, eplocation, epcity, epcountry, epdate, epidnumber, epq1, epq2, epq3, epq4, epq5, epq6, epq7, epq8, epq9, epq10, epq11, epq12, epq13, epq14, epq15, epq16) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22)', [request.param('title'), request.param('location'), request.param('city'), request.param('country'), request.param('date'), request.param('user'), request.param('one'), request.param('two'), request.param('three'), request.param('four'), request.param('five'), request.param('six'), request.param('seven'), request.param('eight'), request.param('nine'), request.param('ten'), request.param('eleven'), request.param('twelve'), request.param('thirteen'), request.param('fourteen'), request.param('fifteen'), request.param('sixteen')], function (err, result){
+            // DR - Fixed mapping of table columns (End)
+                done();
+                if (err){
+                    console.error(err); response.send("Error " + err);
+                }
+                else {
+                    client.query('SELECT * FROM eps_table', function(err, result){
+                        done();
+                        if (err){
+                            console.error(err); response.send("Error " + err);
+                        } else {
+                            response.render('pages/episodesurvey', {results: result.rows} );
+                        }
+                    });
+                }
+            });
+        } else {
+            client.query('SELECT * FROM eps_table', function(err, result) {
+                done();
+                if (err){
+                    console.error(err); response.send("Error " + err);
+                } else {
+                    response.render('pages/episodesurvey', {results: result.rows} );
                 }
             });
         }
