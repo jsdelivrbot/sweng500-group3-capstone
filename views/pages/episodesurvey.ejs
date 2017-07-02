@@ -42,7 +42,7 @@
 					
 
 				<hr class="major" />
-				<form name ="submit_episode" action="assets/js/episode.js" method="post">
+				<form name ="submit_episode" action="/episodesurvey" method="get">
 				Please give this episode a short descriptive title: <input type="text" name="title" value="" ="25" maxlength="250" /><p>
 				Where were you? (work, school, shopping, in your residence, etc.): <input type="text" name="location" value="" ="25" maxlength="250" /><p>
 				What city did this episode occur: <input type="text" name="city" value"" ="25" maxlength="50" /><p>
@@ -176,7 +176,7 @@
 						<input type="radio" name="sixteen" id="six16" value="6" /> <label for="six16">To a great extent - 6</label> <br/>
 				<p>
 				<p>
-				<input type="button" name="submit"	value="Submit" onclick="submitForm();" >
+				<input type="button" name="submit"	value="Submit" onclick="javascript:buttonClicked();" >
 				 
 	
 				
