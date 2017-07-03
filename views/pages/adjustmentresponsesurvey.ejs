@@ -44,10 +44,9 @@
 					<h2 id="content"> Adjustment Response Survey </h2>
 					<p>A 4-item measure of adjustment responses along a continuum between “Self” and “Situated-Other.”<br>
 						If users understand the four factors and have only a brief moment, they can use this to submit experiences. <br></p>
-
-
+					<!-- This calls the database through the get method>-->
 					<hr class="major" />
-
+                    <form method="get" action="adjustmentresponsesurvey"
 
 					<!—Wendy Hartman: here is where the survey begins -->
 					<!—Wendy Hartman: starting with a question or statement, a text field and a submit button
@@ -55,11 +54,11 @@
 					-->
 					<h2 id="content">Survey</h2>
 					<p>For this survey, you will be asked to choose your option from 1 - 6 raiting "Self" and "Situated-Other". </p>
-					<input type="text" name="ARname" id="name" value="" placeholder="Name" />
+					<input type="text" name="ARname" id="ARname" value="" placeholder="Name" />
 					<br>
-					<input type="text" name="Usernumber" id="IDNumber" value="" placeholder="ID Number" />
+					<input type="text" name="IDnumber" id="IDnumber" value="" placeholder="ID Number" />
 					<br>
-					<input type="text" name="Adjustmentnumber" id="surveynumber" placeholder="Survey Number"  />
+					<input type="text" name="Surveynumber" id="Surveynumber" placeholder="Survey Number"  />
 					<br>
 					<hr class="major" />
 					<form action="/cgi-bin/episode.js" method="POST">
