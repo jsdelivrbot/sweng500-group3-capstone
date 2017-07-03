@@ -4,14 +4,20 @@
 	templated.co @templatedco
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 	Edited on 6/11/2017 ML for PSU SWENG500
+
+	Edited on 6/30/2017 ML -- added script tag to call es_submit.js, added onclick event to submit button
 -->
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 	<head>
 		<title>Emotional State Survey</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+
 	</head>
+
+
+
 	<body class="subpage">
 
 		<!-- Header -->
@@ -31,7 +37,18 @@
 			</header>
 
 		<!-- Main -->
-			<section id="main" class="wrapper">
+
+
+
+		<!-- 6/2/2017 - ML - this section of code called database results and was used to pull data from the db to ensure working submissions  -->
+
+		<!-- 6/2/2017 - ML - removed this section of code out now that the page submits information correctly -->
+
+        <!-- 6/2/2017 - ML - end of the section of code called database results and was used to pull data from the db to ensure working submissions  -->
+
+
+
+		<section id="main" class="wrapper">
 				<div class="inner">
 					<header class="align-center">
 						<h2>Emotional State Survey</h2>
@@ -48,7 +65,7 @@
 							<p>Disorientation is experienced when:</p>
 							<ul>
 											<li>We feel dissonance (psychological discomfort) because our behaviors do not match our values, beliefs, attitudes, or norms.</li>
-											<li>We struggle to make sense of an event and we feel confused.</li>
+											<li>We struggle to make sense of a situation and we feel confused.</li>
 											<li>Our expectations about what is supposed to happen or how people are supposed to respond are disconfirmed.</li>
 							</ul>
 						</div>
@@ -57,7 +74,7 @@
 							<p>Extra-cultural disorientation refers to:</p>
 							<ul>
 											<li>episodes in which we attribute the disorientation we feel to our “foreignness” </li>
-											<li>disorienting episodes that remind us of our “foreignness,” i.e., that we are not “from here” or a member of the cultural “in-group”</li>
+											<li>disorienting episodes that remind us of our “foreignness,” , that we are not “from here” or a member of the cultural “in-group”</li>
 											<li>the realization that we lack a cultural frame of reference to effectively understand what is happening and/or anticipate what is likely to happen next when we are new to a cultural group</li>
 							</ul>
 						</div>
@@ -65,31 +82,81 @@
 
 				<hr class="major" />
 
-				
-				<!-- ML: here is where the survey begins -->
-				<!-- ML: starting with a question or statement, a text field and a submit button
-                    and edited to include the boxes for Name and Short description
-				-->
-				<h2 id="content">Survey</h2>
-					<p>For this survey, enter a short narrative of the episode you experienced. Be descriptive in illustrating what took place in the episode. </p>
-                    <input type="text" name="ESname" id="name" value="" placeholder="Name" />
-					<br>
-					<input type="text" name="ESIDnumber" id="IDNumber" value="" placeholder="ID Number" />
-					<br>
-					<input type="text" name="ESsurveynumber" id="surveynumber" placeholder="Survey Number"  />
-					<br>
-                    <input type="text" name="ESdescription" id="description" value="" placeholder="Short name for this episode" />
-                    <br>
-					<textarea name="message" id="ESmessage" placeholder="Describe your episode here" rows="6"></textarea>
-					<br>
-                    <input type="submit" value="Submit Survey" />
-									
-				<hr class="major" />													
-				<!-- ML: ends section for a question, a text field and a submit button -->						
-				
-			
 
-		<!-- Footer -->
+				<!--&lt;!&ndash; ML: here is where the survey begins edited on 7/1/2017 &ndash;&gt;-->
+				<!--&lt;!&ndash; ML: starting with a question or statement, a text field and a submit button-->
+                    <!--and edited to include the boxes for Name and Short description-->
+				<!--&ndash;&gt;-->
+				<!--<h2 id="content">Survey Form</h2>-->
+					<!--<form method="post" action="/emotionalstatesurvey">-->
+					<!--<p>For this survey, enter a short narrative of the episode you experienced. Be descriptive in illustrating what took place in the episode. </p>-->
+                    <!--<input type="text" name="ESname" id="ESname" value="" placeholder="Name" />-->
+					<!--<br>-->
+					<!--<input type="text" name="ESIDnumber" id="ESIDNumber" value="" placeholder="ID Number" />-->
+					<!--<br>-->
+					<!--<input type="text" name="ESsurveynumber" id="ESsurveynumber" placeholder="Survey Number"  />-->
+					<!--<br>-->
+                    <!--<input type="text" name="ESdescription" id="ESdescription" value="" placeholder="Short name for this episode" />-->
+                    <!--<br>-->
+					<!--<textarea name="message" id="ESmessage" placeholder="Describe your episode here" rows="6"></textarea>-->
+					<!--<br>-->
+                    <!--<input type="button" value="Submit Survey" />-->
+
+
+					<!--</form>-->
+
+
+					<!--<hr class="major" />-->
+				<!--&lt;!&ndash; ML: ends section for a question, a text field and a submit button &ndash;&gt;						-->
+
+
+                    <!-- Form -->
+                    <h3>Emotional State Survey Form</h3>
+
+                    <form method="get" action="/emotionalstatesurvey">
+                        <div class="row uniform">
+                            <div class="12u$">
+                                <input type="text" name="esname" id="esname" value="" placeholder="Name" style="width: 667px"/>
+                            </div>
+							<!-- Break -->
+                            <div class="12u$">
+                                <input type="text" name="esidnumber" id="esidnumber" value="" placeholder="ID Number" style="width: 667px"/>
+                            </div>
+                            <!-- Break -->
+                            <div class="12u$">
+                                <input type="text" name="essurveynumber" id="essurveynumber" value="" placeholder="Survey Number" style="width: 667px"/>
+                            </div>
+                            <!-- Break -->
+                            <div class="12u$">
+                                <input type="text" name="esdescription" id="esdescription" value="" placeholder="Survey Description" style="width: 667px"/>
+                            </div>
+                            <!-- Break -->
+                           <div class="12u$">
+							   <textarea id="esepisode" name="esepisode" placeholder="Enter Episode Description" rows="10" style="width: 667px"></textarea>
+						   </div>
+
+							<!--
+                            <div class="12u$">
+                                <input type="text" name="esepisode" id="esepisode" value="" placeholder="Enter Episode Description" style="width: 667px; height: 400px;" />
+                            </div>
+                           -->
+
+                            <!-- Break -->
+                            <!-- Break -->
+                            <div class="12u$">
+                                <ul class="actions">
+                                    <li><input type="submit" value="Submit" /></li>
+                                    <li><input type="reset" value="Reset" class="alt" /></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+
+                    <hr />
+
+
+
+                    <!-- Footer -->
 			<footer id="footer">
 				<div class="inner">
 					<div class="flex">
