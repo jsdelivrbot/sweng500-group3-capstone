@@ -69,7 +69,7 @@ app.get('/emotionalstatesurvey', function (request, response) {
 // ML - end of new app.get -- inserted on 7/1/2017
 
 //Wendy Hartman app.get for adjustmentresponsesurvey with function to connect to postgres
-app.post('/dblogic', function (request,response){
+app.get('/adjustmentresponsesurvey', function (request,response){
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
         if (typeof request.param('ARname') !='undefined') {
             client.query('INSERT INTO AR_table (ARname, IDnumber, Surveynumber) VALUES($1, $2, $3)',
