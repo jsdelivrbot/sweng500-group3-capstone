@@ -46,12 +46,8 @@
 						If users understand the four factors and have only a brief moment, they can use this to submit experiences. <br></p>
 					<!-- This calls the database through the get method>-->
 					<hr class="major" />
-                    <form method="get" action="adjustmentresponsesurvey"
+                    <form method="get" action="/adjustmentresponsesurvey">
 
-					<!—Wendy Hartman: here is where the survey begins -->
-					<!—Wendy Hartman: starting with a question or statement, a text field and a submit button
-					and edited to include the boxes for Name and Short description
-					-->
 					<h2 id="content">Survey</h2>
 					<p>For this survey, you will be asked to choose your option from 1 - 6 raiting "Self" and "Situated-Other". </p>
 					<input type="text" name="ARname" id="ARname" value="" placeholder="Name" />
@@ -61,7 +57,7 @@
 					<input type="text" name="Surveynumber" id="Surveynumber" placeholder="Survey Number"  />
 					<br>
 					<hr class="major" />
-					<form action="/cgi-bin/episode.js" method="POST">
+
 
 							<b><p> Goal Commitment</b><p>
 								When you think about your commitment to your assigned goals for this global experience, would you <br>
@@ -73,7 +69,7 @@
 							<img class="scale" data-scale="best-fit-down" data-align="center" src="images/UpdatedGCimage.JPG">
 						</div>
 							<input id="slider1" type="range" min="0" max="6" step="1" onchange="showValue(this.value)" />
-                        <span id=""range">6</span>
+                        <span id=""range">6</form>
                         <script type="text/javascript">
                             function showValue(newValue)
                             {
@@ -149,9 +145,18 @@
 					<br>
 					<!--<textarea name="message" id="ARGCQuestion" placeholder="Describe your episode here" rows="6"></textarea> -->
 					<br>
-					<input type="submit" value="Submit Survey" />
+							<div class="inner">
+                               <ul class="actions">
+	                             <li><input type="submit" value="Submit" /></li>
+	                             <li><input type="reset" value="Reset" class="alt" /></li>
+                            </ul>
+                       </div>
+                   </div>
+              </form>
 
-					<hr class="major" />
+<hr />
+
+<hr class="major" />
 					<!-- Wendy Hartman: ends section for a question, a text field and a submit button -->
 
 
