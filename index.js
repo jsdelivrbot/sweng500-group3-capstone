@@ -72,8 +72,9 @@ app.get('/emotionalstatesurvey', function (request, response) {
 app.get('/adjustmentresponsesurvey', function (request,response){
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
         if (typeof request.param('ARname') !='undefined') {
-            client.query('INSERT INTO AR_table (ARname, IDnumber, Surveynumber) VALUES($1, $2, $3)',
-                [request.param('ARname'), request.param('IDnumber'), request.param('Surveynumber')], function(err, result) {
+            // DR - Modified table and column mapping (Start)
+            client.query('INSERT INTO adresp_table (ARname, IDnumber) VALUES($1, $2)', [request.param('ARname'), request.param('IDnumber')], function(err, result) {
+            // DR - Modified table and column mapping (Start)
                     done();
                     if (err) {
                         console.error(err); response.send("Error " + err);
