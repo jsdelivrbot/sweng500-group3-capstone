@@ -69,8 +69,39 @@ app.get('/emotionalstatesurvey', function (request, response) {
 // ML - end of new app.get -- inserted on 7/1/2017
 
 //Wendy Hartman app.get for adjustmentresponsesurvey with function to connect to postgres
-
-        // Wendy Hartman - end of new app.get
+app.get('/adjustmentresponsesurvey', function (request,response){
+    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+        if (typeof request.param('ARname') !='undefined') {
+            client.query('INSERT INTO AR_table (ARname, IDnumber, Surveynumber) VALUES($1, $2, $3)',
+                [request.param('ARname'), request.param('IDnumber'), request.param('Surveynumber')], function(err, result) {
+                    done();
+                    if (err) {
+                        console.error(err); response.send("Error " + err);
+                    }
+                    else {
+                        client.query('SELECT * FROM AR_table', function(err, result) {
+                            done();
+                            if (err) {
+                                console.error(err); response.send("Error " + err);
+                            } else {
+                                response.render('pages/adjustmentresponsesurvey', {results: result.rows} );
+                            }
+                        });
+                    }
+                });
+        } else {
+            client.query('SELECT * FROM AR_table', function(err, result) {
+                done();
+                if (err) {
+                    console.error(err); response.send("Error " + err);
+                } else {
+                    response.render('pages/adjustmentresponsesurvey', {results: result.rows} );
+                }
+            });
+        }
+    });
+});
+// Wendy Hartman - end of new app.get
 
 app.get('/faq', function(request, response) {
   response.render('pages/faq');
