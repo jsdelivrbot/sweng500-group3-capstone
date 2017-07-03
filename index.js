@@ -87,6 +87,7 @@ app.get('adjustmentresponsesurvey', function (request,response){
                 });
             }
         });
+    });
         // Wendy Hartman - end of new app.get
 
 app.get('/faq', function(request, response) {
