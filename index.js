@@ -91,7 +91,7 @@ app.get('/adjustmentresponsesurvey', function (request,response){
                     }
                 });
         } else {
-            client.query('SELECT * FROM AR_table', function(err, result) {
+            client.query('SELECT * FROM adresp_table', function(err, result) {
                 done();
                 if (err) {
                     console.error(err); response.send("Error " + err);
