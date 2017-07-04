@@ -25,9 +25,11 @@ app.get('/elements', function(request, response) {
 //  response.render('pages/episodesurvey');
 //});
 
-app.get('/adjustmentresponsesurvey', function(request, response) {
-  response.render('pages/adjustmentresponsesurvey');
-});
+// DR - commenting out original app.get for adjustmentresponsesurvey (Start)
+// app.get('/adjustmentresponsesurvey', function(request, response) {
+//   response.render('pages/adjustmentresponsesurvey');
+// });
+// DR - commenting out original app.get for adjustmentresponsesurvey (End)
 
 // ML - commenting out original app.get for emotionalstatesurvey
 // app.get('/emotionalstatesurvey', function(request, response) {
