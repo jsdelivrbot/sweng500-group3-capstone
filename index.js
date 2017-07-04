@@ -73,9 +73,9 @@ app.get('/emotionalstatesurvey', function (request, response) {
 //Wendy Hartman app.get for adjustmentresponsesurvey with function to connect to postgres
 app.get('/adjustmentresponsesurvey', function (request,response){
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-        if (typeof request.param('ARname') !='undefined') {
+        if (typeof request.param('arname') !='undefined') {
             // DR - Modified table and column mapping (Start)
-            client.query('INSERT INTO adresp_table (arname, idnumber) VALUES($1, $2)', [request.param('ARname'), request.param('IDnumber')], function(err, result) {
+            client.query('INSERT INTO adresp_table (arname, idnumber) VALUES($1, $2)', [request.param('arname'), request.param('idnumber')], function(err, result) {
             // DR - Modified table and column mapping (Start)
                     done();
                     if (err) {
