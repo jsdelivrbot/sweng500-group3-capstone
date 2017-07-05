@@ -25,9 +25,11 @@ app.get('/elements', function(request, response) {
 //  response.render('pages/episodesurvey');
 //});
 
-app.get('/adjustmentresponsesurvey', function(request, response) {
-  response.render('pages/adjustmentresponsesurvey');
-});
+// DR - commenting out original app.get for adjustmentresponsesurvey (Start)
+// app.get('/adjustmentresponsesurvey', function(request, response) {
+//   response.render('pages/adjustmentresponsesurvey');
+// });
+// DR - commenting out original app.get for adjustmentresponsesurvey (End)
 
 // ML - commenting out original app.get for emotionalstatesurvey
 // app.get('/emotionalstatesurvey', function(request, response) {
@@ -71,15 +73,16 @@ app.get('/emotionalstatesurvey', function (request, response) {
 //Wendy Hartman app.get for adjustmentresponsesurvey with function to connect to postgres
 app.get('/adjustmentresponsesurvey', function (request,response){
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-        if (typeof request.param('ARname') !='undefined') {
-            client.query('INSERT INTO AR_table (ARname, IDnumber, Surveynumber) VALUES($1, $2, $3)',
-                [request.param('ARname'), request.param('IDnumber'), request.param('Surveynumber')], function(err, result) {
+        if (typeof request.param('arname') !='undefined') {
+            // DR - Modified table and column mapping (Start)
+            client.query('INSERT INTO adresp_table (arname, idnumber) VALUES($1, $2)', [request.param('arname'), request.param('idnumber')], function(err, result) {
+            // DR - Modified table and column mapping (Start)
                     done();
                     if (err) {
                         console.error(err); response.send("Error " + err);
                     }
                     else {
-                        client.query('SELECT * FROM AR_table', function(err, result) {
+                        client.query('SELECT * FROM adresp_table', function(err, result) {
                             done();
                             if (err) {
                                 console.error(err); response.send("Error " + err);
@@ -90,7 +93,7 @@ app.get('/adjustmentresponsesurvey', function (request,response){
                     }
                 });
         } else {
-            client.query('SELECT * FROM AR_table', function(err, result) {
+            client.query('SELECT * FROM adresp_table', function(err, result) {
                 done();
                 if (err) {
                     console.error(err); response.send("Error " + err);
