@@ -75,7 +75,7 @@ app.get('/adjustmentresponsesurvey', function (request,response){
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
         if (typeof request.param('arname') !='undefined') {
             // DR - Modified table and column mapping (Start)
-            client.query('INSERT INTO adresp_table (arname, idnumber) VALUES($1, $2)', [request.param('arname'), request.param('idnumber')], function(err, result) {
+            client.query('INSERT INTO adresp_table (arname, idnumber, arsurveynum, ardescription, argmquestion, argmanswer, armsquestion, armsanswer, arfrquestion, arfranswer, arbquestion, arbanswer  ) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)', [request.param('arname'), request.param('idnumber'), request.param('arsurveynum'), request.param('ardescription'), request.param('argmquestion'), request.param('argmanswer'), request.param('armsquestion'), request.param('armsanswer'), request.param('arfrquestion'), request.param('arfranswer'), request.param('arbquestion'), request.param('arbanswer')], function(err, result) {
             // DR - Modified table and column mapping (Start)
                     done();
                     if (err) {
