@@ -265,9 +265,10 @@ app.post('/surveyreportslogin', function (request, response) {
         client.query('SELECT role FROM User_table WHERE username=$1 AND password=$2', [request.body.username, request.body.password], function(err, result) {
             done();
             if (err)
-            { console.error(err); response.send("Error " + err); }
+            // { console.error(err); response.send("Error " + err); }
+            { response.send('ERROR: ' + err + ' ');}
             else
-            { response.send('TEST: ' + result.rows.role) + ' ';}
+            { response.send('TEST: ' + result.rows.role + ' ');}
         });
     });
 
