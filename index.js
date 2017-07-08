@@ -247,6 +247,12 @@ app.get('/episodesurvey', function (request, response){
         }
     });
 });
+app.get('/instructorSearch', function(request, response) {
+    response.render('pages/instructorSearch');
+});
+app.get('/respondentSearch', function(request, response) {
+    response.render('pages/respondentSearch');
+});
 
 //TODO: Enable body-parser functionality in heroku
 //TODO: Enable post operation for database updates/inserts
