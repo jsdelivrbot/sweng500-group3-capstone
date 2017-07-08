@@ -40,7 +40,7 @@ app.get('/elements', function(request, response) {
 app.get('/emotionalstatesurvey', function (request, response) {
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
         if (typeof request.param('esname') != 'undefined') {
-            client.query('INSERT INTO es_table (esname, usernumber, essurveynumber, esdescription, esepisode) VALUES($1, $2, $3, $4, $5)', [request.param('esname'), request.param('usernumber'), request.param('essurveynumber'), request.param('esdescription'), request.param('esepisode')], function(err, result) {
+            client.query('INSERT INTO es_table (esname, usernumber, essurveynumber, esdescription, esepisode, date) VALUES($1, $2, $3, $4, $5, $6)', [request.param('esname'), request.param('usernumber'), request.param('essurveynumber'), request.param('esdescription'), request.param('esepisode'), new Date()], function(err, result) {
                 done();
                 if (err) {
                     console.error(err); response.send("Error " + err);
