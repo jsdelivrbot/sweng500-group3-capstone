@@ -261,15 +261,15 @@ app.use(bodyParser.json()); //support json encoded bodies
 app.use(bodyParser.urlencoded({extended: true})); //support encoded bodies
 
 app.post('/surveyreportslogin', function (request, response) {
-    // pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-    //     client.query('INSERT INTO test_table(id, name) VALUES($1, $2)', [request.body.id, request.body.name], function(err, result) {
-    //         done();
-    //         if (err)
-    //         { console.error(err); response.send("Error " + err); }
-    //         else
-    //         { response.render('pages/dblogic', {results: result.rows} ); }
-    //     });
-    // });
+    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+        client.query('SELECT role FROM User_table WHERE username=$1 AND password=$2', [request.body.username, request.body.password], function(err, result) {
+            done();
+            if (err)
+            { console.error(err); response.send("Error " + err); }
+            else
+            { response.send(response.role);}
+        });
+    });
 
     var username = request.body.username;
     var password = request.body.password;
