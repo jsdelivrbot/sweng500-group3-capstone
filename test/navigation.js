@@ -4,11 +4,6 @@ var request = require("request");
 var chaiHttp = require('chai-http');
 var should = chai.should();
 
-//Require the dev-dependencies
-//let chai = require('chai');
-// let chaiHttp = require('chai-http');
-// let should = chai.should();
-
 chai.use(chaiHttp);
 
 describe("Sense navigation and routing", function() {
@@ -68,6 +63,28 @@ describe("Sense navigation and routing", function() {
         });
     });
 
+    describe('Sense Survey Reports page navigation (faculty view)', () => {
+        it('it should return status 200', (done) => {
+            chai.request('http://localhost:5000')
+                .get('/instructorSearch')
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    done();
+                });
+        });
+    });
+
+    describe('Sense Survey Reports page navigation (student view)', () => {
+        it('it should return status 200', (done) => {
+            chai.request('http://localhost:5000')
+                .get('/respondentSearch')
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    done();
+                });
+        });
+    });
+
     describe('Sense FAQ page navigation', () => {
         it('it should return status 200', (done) => {
             chai.request('http://localhost:5000')
@@ -80,7 +97,3 @@ describe("Sense navigation and routing", function() {
     });
 
 });
-
-
-
-
