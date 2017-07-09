@@ -254,7 +254,7 @@ app.get('/respondentSearch', function(request, response) {
     response.render('pages/respondentSearch');
 });
 
-//TODO: Enable post operation for database updates/inserts
+//TODO: Enable post operation for database updates/insert
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); //support json encoded bodies
 app.use(bodyParser.urlencoded({extended: true})); //support encoded bodies
