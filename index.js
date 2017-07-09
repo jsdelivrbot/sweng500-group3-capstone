@@ -259,6 +259,7 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json()); //support json encoded bodies
 app.use(bodyParser.urlencoded({extended: true})); //support encoded bodies
 
+//TODO: Change route to /surveyreports
 app.post('/surveyreportslogin', function (request, response) {
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
         client.query('SELECT userrole FROM userauth_table WHERE username=$1 AND userpassword=$2', [request.body.username, request.body.password], function(err, result) {
@@ -273,7 +274,6 @@ app.post('/surveyreportslogin', function (request, response) {
                     } else if (result.rows[0].userrole == 'faculty') {
                         // response.send('Faculty');
                         response.render('pages/instructorSearch');
-                        //TODO: Route to instructorSearch.ejs
                     } else {
                         // response.send('No Match');
                         response.render('pages/surveyreports');
