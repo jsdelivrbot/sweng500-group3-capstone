@@ -292,4 +292,28 @@ app.post('/surveyreportslogin', function (request, response) {
     // response.send(username + ' ' + password);
 });
 
+//Here is where the routes for the Instructor Search Results are
+app.get('/instructorSearchResults1', function(request, response) {
+    response.render('pages/instructorSearchResults1');
+});
+
+app.get('/instructorSearchResults2', function(request, response) {
+    response.render('pages/instructorSearchResults2');
+});
+
+app.get('/instructorSearchResults3', function(request, response) {
+    response.render('pages/instructorSearchResults3');
+});
+
+app.get('/instructorSearchResults4', function(request, response) {
+    response.render('pages/instructorSearchResults4');
+});
+
+app.get('/instructorSearchResults5', function(request, response) {
+    response.render('pages/instructorSearchResults5');
+});
+
+app.get('/instructorSearchResults6', function(request, response) {
+    response.render('pages/instructorSearchResults6');
+});
 
