@@ -254,7 +254,6 @@ app.get('/respondentSearch', function(request, response) {
     response.render('pages/respondentSearch');
 });
 
-//TODO: Enable body-parser functionality in heroku
 //TODO: Enable post operation for database updates/inserts
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); //support json encoded bodies
@@ -268,13 +267,18 @@ app.post('/surveyreportslogin', function (request, response) {
             if (err) {
                 console.error(err); response.send("Error " + err);
             } else {
-                if (result.rows[0].userrole == 'student') {
-                    response.send('Student');
-                } else if (result.rows[0].userrole == 'faculty') {
-                    response.send('Faculty');
+                if (result.rows != 'undefined') {
+                    if (result.rows[0].userrole == 'student') {
+                        response.send('Student');
+                    } else if (result.rows[0].userrole == 'faculty') {
+                        response.send('Faculty');
+                    } else {
+                        response.send('No Match');
+                    }
                 } else {
-                    response.send('No Match');
+                    response.send('Undefined');
                 }
+
                 // response.send('RESULT: ' + result.rows[0].userrole);
             }
             // { response.send('TEST: ' + result.rows[0].role + ' ');}
