@@ -267,7 +267,7 @@ app.post('/surveyreportslogin', function (request, response) {
             if (err) {
                 console.error(err); response.send("Error " + err);
             } else {
-                if (result.rows != 'undefined') {
+                if (result.rows[0].userrole != 'undefined') {
                     console.log('HEY 1');
                     if (result.rows[0].userrole == 'student') {
                         response.send('Student');
