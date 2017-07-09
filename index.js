@@ -254,27 +254,42 @@ app.get('/respondentSearch', function(request, response) {
     response.render('pages/respondentSearch');
 });
 
-//TODO: Enable body-parser functionality in heroku
 //TODO: Enable post operation for database updates/inserts
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); //support json encoded bodies
 app.use(bodyParser.urlencoded({extended: true})); //support encoded bodies
 
 app.post('/surveyreportslogin', function (request, response) {
-    // pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-    //     client.query('INSERT INTO test_table(id, name) VALUES($1, $2)', [request.body.id, request.body.name], function(err, result) {
-    //         done();
-    //         if (err)
-    //         { console.error(err); response.send("Error " + err); }
-    //         else
-    //         { response.render('pages/dblogic', {results: result.rows} ); }
-    //     });
-    // });
+    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+        client.query('SELECT userrole FROM userauth_table WHERE username=$1 AND userpassword=$2', [request.body.username, request.body.password], function(err, result) {
+            done();
+            if (err) {
+                console.error(err); response.send("Error " + err);
+            } else {
+                if (typeof result.rows[0] != 'undefined') {
+                    if (result.rows[0].userrole == 'student') {
+                        // response.send('Student');
+                        response.render('pages/respondentSearch');
+                    } else if (result.rows[0].userrole == 'faculty') {
+                        // response.send('Faculty');
+                        response.render('pages/instructorSearch');
+                        //TODO: Route to instructorSearch.ejs
+                    } else {
+                        // response.send('No Match');
+                        response.render('pages/surveyreports');
+                    }
+                } else {
+                    // response.send('Undefined');
+                    response.render('pages/surveyreports');
+                }
+            }
+        });
+    });
 
-    var username = request.body.username;
-    var password = request.body.password;
-
-    response.send(username + ' ' + password);
+    // var username = request.body.username;
+    // var password = request.body.password;
+    //
+    // response.send(username + ' ' + password);
 });
 
 
