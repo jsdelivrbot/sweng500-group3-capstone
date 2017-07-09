@@ -265,11 +265,18 @@ app.post('/surveyreportslogin', function (request, response) {
         // client.query('SELECT * FROM userauth_table WHERE username=$1 AND password=$2', [request.body.username, request.body.password], function(err, result) {
         client.query('SELECT userrole FROM userauth_table WHERE username=$1 AND userpassword=$2', [request.body.username, request.body.password], function(err, result) {
             done();
-            if (err)
-            // { console.error(err); response.send("Error " + err); }
-            { response.send('ERROR: ' + err + ' ');}
-            else
-            {response.send('RESULT: ' + result.rows[0].userrole);}
+            if (err) {
+                console.error(err); response.send("Error " + err);
+            } else {
+                if (result.rows[0].userrole == 'student') {
+                    response.send('Student');
+                } else if (result.rows[0].userrole == 'faculty') {
+                    response.send('Faculty');
+                } else {
+                    response.send('No Match');
+                }
+                // response.send('RESULT: ' + result.rows[0].userrole);
+            }
             // { response.send('TEST: ' + result.rows[0].role + ' ');}
             // response.render('pages/dblogic', {results: result.rows} );
         });
