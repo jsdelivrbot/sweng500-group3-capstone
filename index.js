@@ -269,8 +269,9 @@ app.post('/surveyreportslogin', function (request, response) {
             // { console.error(err); response.send("Error " + err); }
             { response.send('ERROR: ' + err + ' ');}
             else
+            {response.send('RESULT: ' + result.rows);}
             // { response.send('TEST: ' + result.rows[0].role + ' ');}
-            response.render('pages/dblogic', {results: result.rows} );
+            // response.render('pages/dblogic', {results: result.rows} );
         });
     });
 
