@@ -273,10 +273,10 @@ app.post('/surveyreportslogin', function (request, response) {
         });
     });
 
-    var username = request.body.username;
-    var password = request.body.password;
-
-    response.send(username + ' ' + password);
+    // var username = request.body.username;
+    // var password = request.body.password;
+    //
+    // response.send(username + ' ' + password);
 });
 
 
