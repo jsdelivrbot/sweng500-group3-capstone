@@ -263,7 +263,7 @@ app.use(bodyParser.urlencoded({extended: true})); //support encoded bodies
 app.post('/surveyreportslogin', function (request, response) {
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
         // client.query('SELECT * FROM userauth_table WHERE username=$1 AND password=$2', [request.body.username, request.body.password], function(err, result) {
-        client.query('SELECT * FROM userauth_table', function(err, result) {
+        client.query('SELECT userrole FROM userauth_table WHERE username=$1 AND password=$2', [request.body.username, request.body.password], function(err, result) {
             done();
             if (err)
             // { console.error(err); response.send("Error " + err); }
