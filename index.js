@@ -276,11 +276,11 @@ app.post('/surveyreportslogin', function (request, response) {
                         //TODO: Route to instructorSearch.ejs
                     } else {
                         // response.send('No Match');
-                        response.render('pages/surveyreportslogin');
+                        response.render('pages/surveyreports');
                     }
                 } else {
                     // response.send('Undefined');
-                    response.render('pages/surveyreportslogin');
+                    response.render('pages/surveyreports');
                 }
             }
         });
