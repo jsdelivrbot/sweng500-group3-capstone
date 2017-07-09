@@ -49,7 +49,7 @@
             <div class="6u 12u$(small)">
                 <h3>Retrieve All Surveys -All Respondents</h3>
                 <p>For the last 7 days.</p>
-                <form method="get" action="/instructorSearch" class="instRetrieve1">
+                <form method="get" action="/instructorSearchResults1" class="instRetrieve1">
                     <input type="checkbox" id="exe1" name="exe1" required>
                     <label for="exe1">Execute this query</label><br>
                     <input type="submit" class="btn btn-primary instRetrieve1Button" value="Submit" />
@@ -58,6 +58,11 @@
             <div class="6u 12u$(small)">
                 <h3>Retrieve All Surveys -All Respondents</h3>
                 <p>For the last 30 days.</p>
+                <form method="get" action="/instructorSearchResults2" class="instRetrieve2">
+                    <input type="checkbox" id="exe2" name="exe2" required>
+                    <label for="exe2">Execute this query</label><br>
+                    <input type="submit" class="btn btn-primary instRetrieve2Button" value="Submit" />
+                </form>
             </div>
             <div class="6u$ 12u$(small)">
                 <h3>Retrieve All Surveys -All Respondents</h3>
@@ -67,7 +72,7 @@
             <div class="4u 12u$(medium)">
                 <h3>Retrieve All User-IDs</h3>
                 <p>List all registered users.</p>
-                <form method="get" action="/instructorSearch" class="instRetrieve4">
+                <form method="get" action="/instructorSearchResults4" class="instRetrieve4">
                     <input type="checkbox" id="exe4" name="exe4" required>
                     <label for="exe4">Execute this query</label><br>
                     <input type="submit" class="btn btn-primary instRetrieve4Button" value="Submit" />
@@ -76,7 +81,7 @@
             <div class="4u 12u$(medium)">
                 <h3>Retrieve a Specific User</h3>
                 <p>Retrieve all surveys for a specific user.</p>
-                <form method="get" action="/instructorSearch" class="instRetrieve5">
+                <form method="get" action="/instructorSearchResults5" class="instRetrieve5">
                     <input type="text" name="usernumber" id="usernumber" value="" placeholder="User Number" required /><br/>
                     <input type="submit" class="btn btn-primary instRetrieve5Button" value="Submit" />
                 </form>
@@ -84,6 +89,15 @@
             <div class="4u$ 12u$(medium)">
                 <h3>Specific User - Specific Survey</h3>
                 <p>Select all surveys of a particular type for a specific user.</p>
+                <form method="get" action="/instructorSearchResults6" class="instRetrieve6">
+                    <input type="text" name="usernumber" id="usernumber" value="" placeholder="User Number" required /><br/>
+                    Select the type of Survey Records to Return:</br>
+                    <input type="radio" name="six" id="six1" value="Episode Surveys" /> <label for="six1">Episode Surveys</label> <br/>
+                    <input type="radio" name="six" id="six2" value="Emotional State" /> <label for="six2">Emotional State</label> <br/>
+                    <input type="radio" name="six" id="six3" value="Adjustment Response" /> <label for="six3">Adjustment Response</label> <br/>
+                    <br/>
+                    <input type="submit" class="btn btn-primary instRetrieve5Button" value="Submit" />
+                </form>
             </div>
         </div>
 
