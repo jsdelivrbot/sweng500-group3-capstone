@@ -261,31 +261,28 @@ app.use(bodyParser.urlencoded({extended: true})); //support encoded bodies
 
 app.post('/surveyreportslogin', function (request, response) {
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-        // client.query('SELECT * FROM userauth_table WHERE username=$1 AND password=$2', [request.body.username, request.body.password], function(err, result) {
         client.query('SELECT userrole FROM userauth_table WHERE username=$1 AND userpassword=$2', [request.body.username, request.body.password], function(err, result) {
             done();
             if (err) {
                 console.error(err); response.send("Error " + err);
             } else {
                 if (typeof result.rows[0] != 'undefined') {
-                    console.log(typeof result.rows[0]);
-                    console.log('HEY 1');
                     if (result.rows[0].userrole == 'student') {
-                        response.send('Student');
+                        // response.send('Student');
+                        response.render('pages/respondentSearch');
                     } else if (result.rows[0].userrole == 'faculty') {
-                        response.send('Faculty');
+                        // response.send('Faculty');
+                        response.render('pages/instructorSearch');
+                        //TODO: Route to instructorSearch.ejs
                     } else {
-                        response.send('No Match');
+                        // response.send('No Match');
+                        response.render('pages/surveyreportslogin');
                     }
                 } else {
-                    console.log('HEY 2');
-                    response.send('Undefined');
+                    // response.send('Undefined');
+                    response.render('pages/surveyreportslogin');
                 }
-
-                // response.send('RESULT: ' + result.rows[0].userrole);
             }
-            // { response.send('TEST: ' + result.rows[0].role + ' ');}
-            // response.render('pages/dblogic', {results: result.rows} );
         });
     });
 
