@@ -49,6 +49,10 @@
             <div class="6u 12u$(small)">
                 <h3>Retrieve All Surveys -All Respondents</h3>
                 <p>For the last 7 days.</p>
+                <form method="get" action="/instructorSearch" class="instRetrieve1">
+                    <input type="checkbox" name="exe" value="true" required>Execute this query.<br>
+                    <input type="submit" class="btn btn-primary instRetrieve1Button" value="Submit" />
+                </form>
             </div>
             <div class="6u 12u$(small)">
                 <h3>Retrieve All Surveys -All Respondents</h3>
@@ -62,10 +66,18 @@
             <div class="4u 12u$(medium)">
                 <h3>Retrieve All User-IDs</h3>
                 <p>List all registered users.</p>
+                <form method="get" action="/instructorSearch" class="instRetrieve4">
+                    <input type="checkbox" name="exe" value="true" required>Execute this query.<br>
+                    <input type="submit" class="btn btn-primary instRetrieve4Button" value="Submit" />
+                </form>
             </div>
             <div class="4u 12u$(medium)">
                 <h3>Retrieve a Specific User</h3>
                 <p>Retrieve all surveys for a specific user.</p>
+                <form method="get" action="/instructorSearch" class="instRetrieve5">
+                    <input type="text" name="usernumber" id="usernumber" value="" placeholder="User Number" required /><br/>
+                    <input type="submit" class="btn btn-primary instRetrieve5Button" value="Submit" />
+                </form>
             </div>
             <div class="4u$ 12u$(medium)">
                 <h3>Specific User - Specific Survey</h3>
