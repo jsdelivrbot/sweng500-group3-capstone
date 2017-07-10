@@ -84,37 +84,17 @@
             </div>
         </div>
                 <hr>
-                <h3>Your Report! 2</h3>
+                <h3>Your Report! 3</h3>
                 Name: <input type="text" id="myText">
                 User Number: <input type="text" id="myText">
                 Name of Report: <input type="text" id="myText">
-                Date Report Was Ran: <input type="date" id="myDate"/>
+                Date Report Was Ran: <input type="text" id="Date">
                 <script>
                     function myFunction() {
                         document.getElementById("myText").disabled = true;
-
+                        document.getElementById("Date").innerHTML = Date();
                     }
-
-
-                        <script type="text/javascript">
-                        function SetDate()
-                        {
-                            var date = new Date();
-
-                            var day = date.getDate();
-                            var month = date.getMonth() + 1;
-                            var year = date.getFullYear();
-
-                            if (month < 10) month = "0" + month;
-                            if (day < 10) day = "0" + day;
-
-                            var today = year + "-" + month + "-" + day;
-
-
-                            document.getElementById('date').value = (new Date()).format("m/dd/yy");
-                        }
                 </script>
-
 
 <!-- Footer -->
 <footer id="footer">
