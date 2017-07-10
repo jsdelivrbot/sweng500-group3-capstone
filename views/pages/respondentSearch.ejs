@@ -47,7 +47,7 @@
         <p>The forms below allow the respondent to retrieve their own surveys from the collection of surveys.  Surveys are saved for up to one year.</p>
 <hr>
 
-        <!-- code for hoover drop down menu for reports -->
+        <!-- code for drop down menu for reports -->
 
                 <style>
                     .dropdown {
@@ -70,7 +70,7 @@
                 </head>
                 <body>
 
-                <h3>Select your report!19</h3>
+                <h3>Select your report!21</h3>
                 <script type="text/javascript">
                     function configureDropDownLists(ddl1,ddl2) {
                         var reports = ['Please chose a report', 'Select Last 7 days', 'Select Last 30 days', 'Select a date range','Select a type of survey'];
@@ -104,6 +104,11 @@
                 </script>
 
                 <select id="ddl1"onchange="configureDropDownLists(this,document.getElementById('ddl2'))">
+                    if(this.value == "Select a type of survey"){
+                    $('ddl2').show();
+                    }else{
+                    $('ddl2').hide();
+                    }
                     <option value="Please chose a report">Please chose a report</option>
                     <option value="Select Last 7 days">Select Last 7 days</option>
                     <option value="Select Last 30 days">Select Last 30 days</option>
