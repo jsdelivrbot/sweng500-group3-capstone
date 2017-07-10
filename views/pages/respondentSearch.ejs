@@ -71,69 +71,11 @@
                 <body>
 
                 <h3>Select your report!25</h3>
-                <script type="text/javascript">
-                    function configureDropDownLists(ddl1,ddl2) {
-                        var reports = ['Please chose a report', 'Select Last 7 days', 'Select Last 30 days', 'Select a date range','Select a type of survey'];
-                        var surveys = ['Please chose a report', 'Episode', 'Adjustment Response','Emotional State'];
 
 
-                        switch (ddl1.value) {
-                            case 'Reports':
-                                ddl2.options.length = 0;
-                                for (i = 0; i < reports.length; i++) {
-                                    createOption(ddl2, reports[i], reports[i]);
-                                }
-                                break;
-                            case 'Surveys':
-                                ddl2.options.length = 0;
-                                for (i = 0; i < surveys.length; i++) {
-                                    createOption(ddl2, surveys[i], surveys[i]);
-                                }
-                                break;
-
-                        }
-
-                    }
-
-                    function createOption(ddll, text, value) {
-                        var opt = document.createElement('option');
-                        opt.value = value;
-                        opt.text = text;
-                        ddl.options.add(opt);
-                        }
-                    (function(){
-                            var reports = document.getElementByID('ddl1');
-                            var surveys = document.getElementByID('ddl2');
 
 
-                            <!-- Select a type of survey-->
 
-                        var selectatypeofsurvey = {
-                        esurvey: 'Episode',
-                        arsurvey: 'Adjustment Response',
-                        esssurvey: 'Emotional State'
-                    };
-                    addEvent(type, 'change', function(){
-                        if(this.value === 'choose'){
-                            surveys.innerHTML = '<option>Please chose a report first</option>';
-                            return;
-                        }
-                        var surveys = getModels(this.value);
-                        var options = '<option>Please chose a survey</option>'
-                        for (var key in surveys){
-                            options += '<option value="' + key + '">' + surveys[key]+'</option>';
-                        }
-                        surveys.innerHTML = options;
-                    });
-                    function getModels(ddl1){
-                        if (ddl1 === 'selectatypeofsurvey'){
-                            return selectatypeofsurvey;
-                        }
-                    }
-                    }());
-
-
-                </script>
 
                 <select id="ddl1"onchange="configureDropDownLists(this,document.getElementById('ddl2'))">
 
