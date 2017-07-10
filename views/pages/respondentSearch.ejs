@@ -70,33 +70,72 @@
                 </head>
                 <body>
 
-                <h3>Select your report!</h3>
+                <h3>Select your report!18</h3>
+                <script type="text/javascript">
+                    function configureDropDownLists(ddl1,ddl2) {
+                        var reports = ['Please chose a report', 'Select Last 7 days', 'Select Last 30 days', 'Select a date range','Select a type of survey'];
+                        var surveys = ['Please chose a report', 'Episode', 'Adjustment Response','Emotional State'];
 
-                <select id="mySelect">
+
+                        switch (ddl1.value) {
+                            case 'Reports':
+                                ddl2.options.length = 0;
+                                for (i = 0; i < reports.length; i++) {
+                                    createOption(ddl2, reports[i], reports[i]);
+                                }
+                                break;
+                            case 'Surveys':
+                                ddl2.options.length = 0;
+                                for (i = 0; i < surveys.length; i++) {
+                                    createOption(ddl2, surveys[i], surveys[i]);
+                                }
+                                break;
+
+                        }
+
+                    }
+
+                    function createOption(ddll, text, value) {
+                        var opt = document.createElement('option');
+                        opt.value = value;
+                        opt.text = text;
+                        ddl.options.add(opt);
+                    }
+                </script>
+
+                <select id="ddl1"onchange="configureDropDownLists(this,document.getElementById('ddl2'))">
                     <option value="Please chose a report">Please chose a report</option>
                     <option value="Select Last 7 days">Select Last 7 days</option>
                     <option value="Select Last 30 days">Select Last 30 days</option>
                     <option value="Select a date range">Select a date range</option>
                     <option value="Select a type of survey">Select a type of survey</option>
                 </select>
+                <select id="ddl2">
+                    <option value="Please chose a report">Please chose a report</option>
+                    <option value="Episode">Episode</option>
+                    <option value="Adjustment Response">Adjustment Response</option>
+                    <option value="Emotional State">Emotional State</option>
+                </select>
                 </form>
                 <p></p>
                 <p></p>
 
-                <p>Click the button to return the value of the selected Report.</p>
+
                 <button type="button" onclick="myFunction()">Run</button>
 
 
 
                 <script>
                     function myFunction() {
-                        var x = document.getElementById("mySelect").value;
+                        var x = document.getElementById("dd1").value;
                         document.getElementById("NReport").innerHTML = x;
                     }
                 </script>
+
+
                 <!-- Report section begins -->
                 <hr>
-                <h3>Your Report! 17</h3>
+                <h3>Your Report!</h3>
                 <b>Name:</b> <input type="text" id="myText">
                 <b>User Number:</b> <input type="text" id="myText">
                 <b>Name of Report:</b> <p id="NReport"></p>
