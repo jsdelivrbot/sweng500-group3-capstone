@@ -85,7 +85,7 @@
                     <option value="Select a date range">Select a date range</option>
                     <option value="Select a type of survey">Select a type of survey</option>
                 </select>
-                <select id="ddl2">
+                <select id="ddl2".hidden()>
                     <option value="Please chose a report">Please chose a report</option>
                     <option value="Episode">Episode</option>
                     <option value="Adjustment Response">Adjustment Response</option>
@@ -104,6 +104,9 @@
                     function myFunction() {
                         var x = document.getElementById("ddl1").value;
                         document.getElementById("NReport").innerHTML = x;
+                        var y = dcoument.getElementById("ddl2").value;
+                        document.getElementById("NSurvey").innerHTML = y;
+
                     }
                 </script>
 
@@ -114,6 +117,7 @@
                 <b>Name:</b> <input type="text" id="myText">
                 <b>User Number:</b> <input type="text" id="myText">
                 <b>Name of Report:</b> <p id="NReport"></p>
+                <b>Name of Survey:</b> <p id="NSurvey">
                 <b>Date Report Was Ran:</b> <p id="CDate"></p>
                 <script>
                         document.getElementById("CDate").innerHTML = Date();
