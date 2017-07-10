@@ -70,7 +70,7 @@
                 </head>
                 <body>
 
-                <h3>Select your report!23</h3>
+                <h3>Select your report!24</h3>
                 <script type="text/javascript">
                     function configureDropDownLists(ddl1,ddl2) {
                         var reports = ['Please chose a report', 'Select Last 7 days', 'Select Last 30 days', 'Select a date range','Select a type of survey'];
@@ -104,7 +104,7 @@
                     }
                 </script>
 
-                <select id="ddl1"onchange="configureDropDownLists(this,document.getElementById('ddl2').style.visibility = "hidden")">
+                <select id="ddl1"onchange="configureDropDownLists(this,document.getElementById('ddl2'))">
 
                     <option value="Please chose a report">Please chose a report</option>
                     <option value="Select Last 7 days">Select Last 7 days</option>
@@ -113,6 +113,11 @@
                     <option value="Select a type of survey">Select a type of survey</option>
                 </select>
                 <select id="ddl2">
+                    <script>
+                        function myFunction() {
+                            document.getElementById("ddl2").style.visibility = "hidden";
+                        }
+                    </script>
                     <option value="Please chose a report">Please chose a report</option>
                     <option value="Episode">Episode</option>
                     <option value="Adjustment Response">Adjustment Response</option>
