@@ -70,7 +70,7 @@
                 </head>
                 <body>
 
-                <h3>Select your report!24</h3>
+                <h3>Select your report!25</h3>
                 <script type="text/javascript">
                     function configureDropDownLists(ddl1,ddl2) {
                         var reports = ['Please chose a report', 'Select Last 7 days', 'Select Last 30 days', 'Select a date range','Select a type of survey'];
@@ -101,7 +101,38 @@
                         opt.text = text;
                         ddl.options.add(opt);
                         }
+                    (function(){
+                            var reports = document.getElementByID('ddl1');
+                            var surveys = document.getElementByID('ddl2');
+
+
+                            <!-- Select a type of survey-->
+
+                        var selectatypeofsurvey = {
+                        esurvey: 'Episode',
+                        arsurvey: 'Adjustment Response',
+                        esssurvey: 'Emotional State'
+                    };
+                    addEvent(type, 'change', function(){
+                        if(this.value === 'choose'){
+                            surveys.innerHTML = '<option>Please chose a report first</option>';
+                            return;
+                        }
+                        var surveys = getModels(this.value);
+                        var options = '<option>Please chose a survey</option>'
+                        for (var key in surveys){
+                            options += '<option value="' + key + '">' + surveys[key]+'</option>';
+                        }
+                        surveys.innerHTML = options;
+                    });
+                    function getModels(ddl1){
+                        if (ddl1 === 'selectatypeofsurvey'){
+                            return selectatypeofsurvey;
+                        }
                     }
+                    }());
+
+
                 </script>
 
                 <select id="ddl1"onchange="configureDropDownLists(this,document.getElementById('ddl2'))">
@@ -113,11 +144,6 @@
                     <option value="Select a type of survey">Select a type of survey</option>
                 </select>
                 <select id="ddl2">
-                    <script>
-                        function myFunction() {
-                            document.getElementById("ddl2").style.visibility = "hidden";
-                        }
-                    </script>
                     <option value="Please chose a report">Please chose a report</option>
                     <option value="Episode">Episode</option>
                     <option value="Adjustment Response">Adjustment Response</option>
