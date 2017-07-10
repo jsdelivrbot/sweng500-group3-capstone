@@ -76,21 +76,24 @@
         <div class="dropdown">
             <span><a href="#">Reports</a></span>
             <div class="dropdown-content">
-                <p>Last 7 days</p>
-                <p>Last 30 days</p>
+                <select id="mySelect"></select>
+                <p><option value="Last 7 days">Last 7 days</option></p>
+                <p><option value="Last 30 days">Last 30 days</option></p>
                 <p>Select a date range</p>
                 <p>Slect a type of survey</p>
                 <hr>
             </div>
         </div>
+                <!-- Report section begins -->
                 <hr>
-                <h3>Your Report! 9</h3>
+                <h3>Your Report! 10</h3>
                 <b>Name:</b> <input type="text" id="myText">
                 <b>User Number:</b> <input type="text" id="myText">
-                <b>Name of Report:</b> <input type="text" id="myText">
+                <b>Name of Report:</b> <p id="NReport"></p>>
                 <b>Date Report Was Ran:</b> <p id="CDate"></p>
                 <script>
                         document.getElementById("CDate").innerHTML = Date();
+                        document.getElementById("NReport").innerHTML = ();
                 </script>
 
 <!-- Footer -->
