@@ -71,9 +71,7 @@
                 <body>
 
                 <h3>Select your report!</h3>
-        <p>Move the mouse over the "Reports" text below to open the dropdown content.</p>
 
-                Select your favorite fruit:
                 <select id="mySelect">
                     <option value="Please chose a report">Please chose a report</option>
                     <option value="Select Last 7 days">Select Last 7 days</option>
@@ -83,11 +81,11 @@
                 </select>
                 </form>
 
-                <p>Click the button to return the value of the selected Report.</p>
 
+                <p>Click the button to return the value of the selected Report.</p>
                 <button type="button" onclick="myFunction()">Run</button>
 
-                <p id="NReport"></p>
+
 
                 <script>
                     function myFunction() {
@@ -97,10 +95,10 @@
                 </script>
                 <!-- Report section begins -->
                 <hr>
-                <h3>Your Report! 14</h3>
+                <h3>Your Report! 15</h3>
                 <b>Name:</b> <input type="text" id="myText">
                 <b>User Number:</b> <input type="text" id="myText">
-                <b>Name of Report:</b> <input type="text" id="NReport">
+                <b>Name of Report:</b> <p id="NReport"></p>
                 <b>Date Report Was Ran:</b> <p id="CDate"></p>
                 <script>
                         document.getElementById("CDate").innerHTML = Date();
