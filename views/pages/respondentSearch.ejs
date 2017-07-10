@@ -73,22 +73,34 @@
                 <h3>Select your report!</h3>
         <p>Move the mouse over the "Reports" text below to open the dropdown content.</p>
 
-        <div class="dropdown">
-            <span><a href="#">Reports</a></span>
-            <div class="dropdown-content">
-                <p>Select Last 7 days</p>
-                <p>Select Last 30 days</p>
-                <p>Select a date range</p>
-                <p>Select a type of survey</p>
-                <hr>
-            </div>
-        </div>
+                Select your favorite fruit:
+                <select id="mySelect">
+                    <option value="Please chose a report">Please chose a report</option>
+                    <option value="Select Last 7 days">Select Last 7 days</option>
+                    <option value="Select Last 30 days">Select Last 30 days</option>
+                    <option value="Select a date range">Select a date range</option>
+                    <option value="Select a type of survey">Select a type of survey</option>
+                </select>
+                </form>
+
+                <p>Click the button to return the value of the selected Report.</p>
+
+                <button type="button" onclick="myFunction()">Run</button>
+
+                <p id="NReport"></p>
+
+                <script>
+                    function myFunction() {
+                        var x = document.getElementById("mySelect").value;
+                        document.getElementById("NReport").innerHTML = x;
+                    }
+                </script>
                 <!-- Report section begins -->
                 <hr>
-                <h3>Your Report! 13</h3>
+                <h3>Your Report! 14</h3>
                 <b>Name:</b> <input type="text" id="myText">
                 <b>User Number:</b> <input type="text" id="myText">
-                <b>Name of Report:</b> <input type="text" id="myText">
+                <b>Name of Report:</b> <input type="text" id="NReport">
                 <b>Date Report Was Ran:</b> <p id="CDate"></p>
                 <script>
                         document.getElementById("CDate").innerHTML = Date();
