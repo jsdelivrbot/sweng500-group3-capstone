@@ -248,7 +248,28 @@ app.get('/episodesurvey', function (request, response){
     });
 });
 app.get('/instructorSearch', function(request, response) {
-    response.render('pages/instructorSearch');
+    pg.connect(process.env.DATABASE_URL, function(err, client, done){
+        //There are six different retrieval forms, so use if statements to determine which was executed
+        if (typeof request.param('exe1') != 'undefined'){
+            //Execute SQL-1
+            response.render('pages/instructorSearch');
+        } else if (typeof request.param('exe2') != 'undefined'){
+            //Execute SQL-2
+            response.render('pages/instructorSearch');
+        } else if (typeof request.param('exe3') != 'undefined'){
+            //Execute SQL-3
+            response.render('pages/instructorSearch');
+        } else if (typeof request.param('exe4') != 'undefined'){
+            //Execute SQL-4
+            response.render('pages/instructorSearch');
+        } else if (typeof request.param('exe5') != 'undefined'){
+            //Execute SQL-5
+            response.render('pages/instructorSearch');
+        } else if (typeof request.param('exe6') != 'undefined'){
+            //Execute SQL-6
+            response.render('pages/instructorSearch');
+        }
+    });
 });
 app.get('/respondentSearch', function(request, response) {
     response.render('pages/respondentSearch');
@@ -290,30 +311,5 @@ app.post('/surveyreportslogin', function (request, response) {
     // var password = request.body.password;
     //
     // response.send(username + ' ' + password);
-});
-
-//Here is where the routes for the Instructor Search Results are
-app.get('/instructorSearchResults1', function(request, response) {
-    response.render('pages/instructorSearchResults1');
-});
-
-app.get('/instructorSearchResults2', function(request, response) {
-    response.render('pages/instructorSearchResults2');
-});
-
-app.get('/instructorSearchResults3', function(request, response) {
-    response.render('pages/instructorSearchResults3');
-});
-
-app.get('/instructorSearchResults4', function(request, response) {
-    response.render('pages/instructorSearchResults4');
-});
-
-app.get('/instructorSearchResults5', function(request, response) {
-    response.render('pages/instructorSearchResults5');
-});
-
-app.get('/instructorSearchResults6', function(request, response) {
-    response.render('pages/instructorSearchResults6');
 });
 
