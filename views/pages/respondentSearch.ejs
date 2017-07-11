@@ -70,7 +70,7 @@
                 </head>
                 <body>
 
-                <h3>Select your report 22!</h3>
+                <h3>Select your report 23!</h3>
 
 
                     <p>
@@ -86,7 +86,7 @@
                     </p>
                     <p>
                         <label for="ddl2" class="labelStrong">Surveys</label>
-                        <select id="ddl2" disabled>
+                        <select id="ddl2" name="ddl2">
 
                             <option value="" selected="selected">Please chose a survey</option>
                             <option value="Episode">Episode</option>
@@ -98,7 +98,7 @@
                                 if (document.getElementById("ddl1").value === "Select a type of survey"){
                                     document.getElementById("ddl2").disabled = 'true';
                                 }else{
-                                    document.getElementById("ddl2").disabled = 'false';
+                                    document.getElementById("ddl2").disabled = '';
                                 }
 
                             }
