@@ -268,6 +268,8 @@ app.get('/instructorSearch', function(request, response) {
         } else if (typeof request.param('exe6') != 'undefined'){
             //Execute SQL-6
             response.render('pages/instructorSearch');
+        } else {
+            response.render('pages/instructorSearch');
         }
     });
 });
