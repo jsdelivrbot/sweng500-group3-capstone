@@ -70,7 +70,7 @@
                 </head>
                 <body>
 
-                <h3>Select your report 11!</h3>
+                <h3>Select your report 12!</h3>
 
 
                     <p>
@@ -86,7 +86,12 @@
                     </p>
                     <p>
                         <label for="ddl2" class="labelStrong">Surveys</label>
-                        <select id="ddl2" name="ddl2">
+                        <select id="ddl2" disabled>name="ddl2"</select>
+                        <script>
+                            function myFunction() {
+                                document.getElementById("ddl2").disabled;
+                            }
+                        </script>
                             <option value="" selected="selected">Please chose a survey</option>
                             <option value="Episode">Episode</option>
                             <option value="Adjustment Response">Adjustment Response</option>
