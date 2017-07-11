@@ -70,9 +70,18 @@
                 </head>
                 <body>
 
-                <h3>Select your report 20!</h3>
+                <h3>Select your report 26!</h3>
 
+                <script>
+                    function check() {
+                        if (document.getElementById("ddl1").value!=="Select a type of survey"){
+                            document.getElementById("ddl2").disabled='false';
+                        }else{
+                            document.getElementById("ddl2").disabled= 'true';
+                        }
 
+                    }
+                </script>
                     <p>
                         <label for="ddl1" class="labelStrong">Reports</label>
                         <select id="ddl1" name="ddl1">
@@ -86,18 +95,14 @@
                     </p>
                     <p>
                         <label for="ddl2" class="labelStrong">Surveys</label>
-                        <select id="ddl2" disabled>
+                        <select id="ddl2" name="ddl2">
 
                             <option value="" selected="selected">Please chose a survey</option>
                             <option value="Episode">Episode</option>
                             <option value="Adjustment Response">Adjustment Response</option>
                             <option value="Emotional State">Emotional State</option>
                         </select>
-                        <script>
-                            function myFunction() {
-                                document.getElementById("ddl2").disabled = true;
-                            }
-                        </script>
+
 
                     </p>
 
