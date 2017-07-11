@@ -70,35 +70,57 @@
                 </head>
                 <body>
 
-                <h3>Select your report!</h3>
-
-
-
-
-
+                <h3>Select your report1!</h3>
 
                 <select id="ddl1"onchange="configureDropDownLists(this,document.getElementById('ddl2'))">
+                    <p>
+                        <select id="ddl1" name="ddl1">
+                            <option value="" selected="selected">Please chose a report</option>
+                            <option value="<?php echo TYPE_USER;?>">Select Last 7 days</option>
+                            <option value="<?php echo TYPE_LISTING;?>">Select Last 30 days</option>
+                            <option value="<?php echo TYPE_LISTING;?>">Select a date range</option>
+                            <option value="<?php echo TYPE_LISTING;?>">Select a type of survey</option>
+                        </select>
+                        <label for="ddl1" class="labelStrong">Reports</label>
+                    </p>
+                    <p>
+                        <select id="ddl2" name="ddl2">
+                            <option value="" selected="selected">Please chose a report</option>
+                            <option value="Episode">Episode</option>
+                            <option value="Adjustment Response">Adjustment Response</option>
+                            <option value="Emotional State">Emotional State</option>
+                        </select>
+                        <label for="ddl2" class="labelStrong">Surveys</label>
+                    </p>
 
-                    <option value="Please chose a report">Please chose a report</option>
-                    <option value="Select Last 7 days">Select Last 7 days</option>
-                    <option value="Select Last 30 days">Select Last 30 days</option>
-                    <option value="Select a date range">Select a date range</option>
-                    <option value="Select a type of survey">Select a type of survey</option>
-                </select>
-                <select id="ddl2".hidden()>
-                    <option value="Please chose a report">Please chose a report</option>
-                    <option value="Episode">Episode</option>
-                    <option value="Adjustment Response">Adjustment Response</option>
-                    <option value="Emotional State">Emotional State</option>
-                </select>
-                </form>
-                <p></p>
-                <p></p>
+                    <p>
+                    <div id="calender">
+                    </div>
+                    </p>
+                <p>
+                    <input type="Run" name="Run" value="Run" id="Runit" />
+                </p>
+                $('#Runit').attr('disabled', 'disabled');
 
+                function updateFormEnabled() {
+                if (verifyAdSettings()) {
+                $('#Runit').attr('disabled', '');
+                } else {
+                $('#Runit').attr('disabled', 'disabled');
+                }
+                }
 
-                <button type="button" onclick="myFunction()">Run</button>
+                function verifyAdSettings() {
+                if ($('#ddl2').val() != '' && $('#ddl1').val() != '') {
+                return true;
+                } else {
+                return false
+                }
+                }
 
+                $('#ddl2').change(updateFormEnabled);
 
+                $('#ddl1').change(updateFormEnabled);
 
                 <script>
                     function myFunction() {
