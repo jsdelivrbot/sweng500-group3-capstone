@@ -70,7 +70,7 @@
                 </head>
                 <body>
 
-                <h3>Select your report3!</h3>
+                <h3>Select your report 4!</h3>
 
 
                     <p>
@@ -100,27 +100,7 @@
                 <p>
                     <input type="Run" name="Run" value="Run" id="Runit" />
                 </p>
-                $('#Runit').attr('disabled', 'disabled');
 
-                function updateFormEnabled() {
-                if (verifyAdSettings()) {
-                $('#Runit').attr('disabled', '');
-                } else {
-                $('#Runit').attr('disabled', 'disabled');
-                }
-                }
-
-                function verifyAdSettings() {
-                if ($('#ddl2').val() != '' && $('#ddl1').val() != '') {
-                return true;
-                } else {
-                return false
-                }
-                }
-
-                $('#ddl2').change(updateFormEnabled);
-
-                $('#ddl1').change(updateFormEnabled);
 
                 <script>
                     function myFunction() {
