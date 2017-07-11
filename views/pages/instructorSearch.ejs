@@ -68,6 +68,8 @@
                 <h3>Retrieve All Surveys -All Respondents</h3>
                 <p>Select a date range.</p>
                 <form method="get" action="/instructorSearchResults3" class="instRetrieve3">
+                    <input type="checkbox" id="exe3" name="exe3" required>
+                    <label for="exe3">Execute this query</label><br>
                 <select name="category" id="category" required>
                     <option value="">- Start Day -</option>
                     <option value="1">1</option>
@@ -183,6 +185,8 @@
                 <h3>Retrieve a Specific User</h3>
                 <p>Retrieve all surveys for a specific user.</p>
                 <form method="get" action="/instructorSearchResults5" class="instRetrieve5">
+                    <input type="checkbox" id="exe5" name="exe5" required>
+                    <label for="exe5">Execute this query</label><br>
                     <input type="text" name="usernumber" id="usernumber" value="" placeholder="User Number" required /><br/>
                     <input type="submit" class="btn btn-primary instRetrieve5Button" value="Submit" />
                 </form>
@@ -191,6 +195,8 @@
                 <h3>Specific User - Specific Survey</h3>
                 <p>Select all surveys of a particular type for a specific user.</p>
                 <form method="get" action="/instructorSearchResults6" class="instRetrieve6">
+                    <input type="checkbox" id="exe6" name="exe6" required>
+                    <label for="exe6">Execute this query</label><br>
                     <input type="text" name="usernumber" id="usernumber" value="" placeholder="User Number" required /><br/>
                     Select the type of Survey Records to Return:</br>
                     <input type="radio" name="six" id="six1" value="Episode Surveys" /> <label for="six1">Episode Surveys</label> <br/>
