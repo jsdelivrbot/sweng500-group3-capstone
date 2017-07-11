@@ -70,7 +70,7 @@
                 </head>
                 <body>
 
-                <h3>Select your report 5!</h3>
+                <h3>Select your report 6!</h3>
 
 
                     <p>
@@ -95,12 +95,15 @@
 
                     </p>
 
-                    <p>
-                    <div id="calender">
-                    </div>
-                    </p>
+
                 <p>
-                    <button onclick="myFunction()">Run</button>
+                    <button id="myBtn">My Button</button>
+                    <button onclick= "myFunction()" >Run</button>
+                    <script>
+                        function myFunction() {
+                            document.getElementById("myBtn").disabled = true;
+                        }
+                    </script>
                 </p>
 
 
