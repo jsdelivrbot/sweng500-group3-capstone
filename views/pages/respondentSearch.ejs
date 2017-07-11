@@ -70,7 +70,7 @@
                 </head>
                 <body>
 
-                <h3>Select your report 9!</h3>
+                <h3>Select your report 10!</h3>
 
 
                     <p>
@@ -87,7 +87,7 @@
                     <p>
                         <label for="ddl2" class="labelStrong">Surveys</label>
                         <select id="ddl2" name="ddl2">
-                            <option value="" selected="selected">Please chose a report</option>
+                            <option value="" selected="selected">Please chose a survey</option>
                             <option value="Episode">Episode</option>
                             <option value="Adjustment Response">Adjustment Response</option>
                             <option value="Emotional State">Emotional State</option>
@@ -98,10 +98,10 @@
 
                 <p>
 
-                    <button onclick= "myFunction()">Run</button>
+                    <button id="myBtn">Run</button>
                     <script>
                         function myFunction() {
-                            document.getElementById("myBtn").hidden();
+                            document.getElementById("myBtn").disabled = true;
                         }
                     </script>
                 </p>
