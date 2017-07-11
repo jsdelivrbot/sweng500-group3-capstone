@@ -70,12 +70,12 @@
                 </head>
                 <body>
 
-                <h3>Select your report 24!</h3>
+                <h3>Select your report 25!</h3>
 
 
                     <p>
                         <label for="ddl1" class="labelStrong">Reports</label>
-                        <select id="ddl1" name="ddl1">
+                        <select id="ddl1" name="ddl11">
                             <option value="Please chose a report" selected="selected">Please chose a report</option>
                             <option value="Select Last 7 days">Select Last 7 days</option>
                             <option value="Select Last 30 days">Select Last 30 days</option>
@@ -86,7 +86,7 @@
                     </p>
                     <p>
                         <label for="ddl2" class="labelStrong">Surveys</label>
-                        <select id="ddl2" name="ddl2">
+                        <select id="ddl2" name="ddl22">
 
                             <option value="" selected="selected">Please chose a survey</option>
                             <option value="Episode">Episode</option>
@@ -95,10 +95,10 @@
                         </select>
                         <script>
                             function myFunction() {
-                                if (document.getElementById("ddl1").value == "Select a type of survey"){
-                                    document.getElementById("ddl2").disabled = 'true';
+                                if (document.getElementById("ddl1").value === "Select a type of survey"){
+                                    document.getElementById("ddl2").disabled='true';
                                 }else{
-                                    document.getElementById("ddl2").disabled = '';
+                                    document.getElementById("ddl2").disabled= '';
                                 }
 
                             }
