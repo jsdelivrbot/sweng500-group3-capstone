@@ -252,7 +252,14 @@ app.get('/instructorSearch', function(request, response) {
         //There are six different retrieval forms, so use if statements to determine which was executed
         if (typeof request.param('exe1') != 'undefined'){
             //Try to execute get all surveys for all respondents for the past 7 days
-            response.render('pages/instructorSearch');
+            client.query('SELECT * FROM test_table', function(err, result) {
+                done();
+                if (err) {
+                    console.error(err); response.send("Error " + err);
+                } else {
+                    response.render('pages/instructorSearch', {results: result.rows} );
+                }
+            });
         } else if (typeof request.param('exe2') != 'undefined'){
             //Execute SQL-2
             response.render('pages/instructorSearch');
