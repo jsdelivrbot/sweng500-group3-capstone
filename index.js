@@ -264,12 +264,12 @@ app.get('/instructorSearch', function(request, response) {
             response.render('pages/instructorSearch');
         } else if (typeof request.param('exe5') != 'undefined'){
             //Execute SQL-5
-            response.render('pages/instructorSearch');
+            response.render('pages/dblogic');
         } else if (typeof request.param('exe6') != 'undefined'){
             //Execute SQL-6
             response.render('pages/instructorSearch');
         } else {
-            response.render('pages/dblogic');
+            response.render('pages/instructorSearch');
         }
     });
 });
