@@ -252,13 +252,6 @@ app.get('/instructorSearch', function(request, response) {
         //There are six different retrieval forms, so use if statements to determine which was executed
         if (typeof request.param('exe1') != 'undefined'){
             //Try to execute get all surveys for all respondents for the past 7 days
- //           client.query('SELECT * FROM es_table, eps_table, adresp_table WHERE date >= (now() - INTERVAL '7 DAYS')', function(err, result) {
- //               done();
- //               if (err) {
- //                   console.error(err); response.send("Error " + err);
- //               } else {
- //                   response.render('pages/instructorSearch', {results: result.rows} );
- //               }
             response.render('pages/instructorSearch');
         } else if (typeof request.param('exe2') != 'undefined'){
             //Execute SQL-2
@@ -276,7 +269,7 @@ app.get('/instructorSearch', function(request, response) {
             //Execute SQL-6
             response.render('pages/instructorSearch');
         } else {
-            response.render('pages/instructorSearch');
+            response.render('pages/dblogic');
         }
     });
 });
