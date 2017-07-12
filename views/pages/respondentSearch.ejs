@@ -90,12 +90,13 @@
                 <p></p>
                 <p></p>
 
-
+                <!-- This button populates the myFunction fields -->
                 <button type="button" onclick="myFunction()">Run</button>
-
-
-
                 </p>
+
+
+
+                <!-- This function populates the report fields -->
 <script>
                 function myFunction() {
                     var x = document.getElementById("ddl1").value;
@@ -106,17 +107,17 @@
 </script>
                 <!-- Report section begins -->
                 <hr>
-                <h3>Your Report 10!</h3>
+                <h3>Your Report!</h3>
                 <b>Name:</b> <input type="text" id="myText">
                 <b>User Number:</b> <input type="text" id="myText">
                 <b>Name of Report:</b> <p id="NReport"></p>
                 <b>Name of Survey:</b> <p id="NSurvey"></p>
                 <b>Date Report Was Ran:</b> <p id="CDate"></p>
 
-                <script>
+                <!-- This code populates current date in the report area-->
 
+                <script>
                         document.getElementById("CDate").innerHTML = Date();
-                        document.getElementById("NReport").valueOf();
 
                 </script>
 
