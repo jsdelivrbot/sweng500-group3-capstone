@@ -121,6 +121,29 @@
 
                 </script>
 
+<!-- testing drop down code -->
+                <script>
+                    function disable() {
+                        document.getElementById("mySelect").disabled=true;
+                    }
+                    function enable() {
+                        document.getElementById("mySelect").disabled=false;
+                    }
+                </script>
+                </head>
+                <body>
+
+                <form>
+                    <select id="mySelect">
+                        <option>Apple</option>
+                        <option>Pear</option>
+                        <option>Banana</option>
+                        <option>Orange</option>
+                    </select>
+                    <br><br>
+                    <input type="button" onclick="disable()" value="Disable list">
+                    <input type="button" onclick="enable()" value="Enable list">
+
 
                 <h3>Body of the report</h3>
 <!-- Footer -->
