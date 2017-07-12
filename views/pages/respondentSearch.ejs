@@ -67,44 +67,82 @@
                         display: block;
                     }
                 </style>
+
+
+                <h3>Select your report! 3</h3>
+
+                <html>
+                <head>
+                    <script>
+
+                        function disable() {
+                            var ddl1;
+                            document.getElementById(ddl1).disabled = true;
+                        }
+                        function enable() {
+                            var ddl1;
+                            document.getElementById(ddl1).disabled = false;
+                        }
+                        function disable() {
+                            var ddl2;
+                            document.getElementById(ddl2).disabled = true;
+                        }
+                        function enable() {
+                            var ddl2;
+                            document.getElementById(ddl2).disabled = false;
+                        }
+                        $(function() {
+                            $("ddl1").change(function() {
+                                if ($(this).val() == "<Select a type of survey>") {
+                                    $("ddl2").prop("disabled", true);
+                                }
+                                else
+                                    $("ddl2").prop("disabled", false);
+                            });
+                        });
+
+                    </script>
                 </head>
-                <body>
+                </html>
 
-                <h3>Select your report! 2</h3>
+                <p>
+                    <label for="ddl1" class="labelStrong">Reports</label>
+                    <select id="ddl1" name="ddl1" onchange='change()'>
+                        <option value="Please chose a report" selected="selected">Please chose a report</option>
+                        <option value="Select Last 7 days">Select Last 7 days</option>
+                        <option value="Select Last 30 days">Select Last 30 days</option>
+                        <option value="Select a date range">Select a date range</option>
+                        <option value="Select a type of survey">Select a type of survey</option>
+                    </select>
 
-                <select id="ddl1"onchange="configureDropDownLists(this,document.getElementById('ddl2'))">
+                </p>
+                <p>
+                    <label for="ddl2" class="labelStrong">Surveys</label>
+                    <select id="ddl2" name="ddl2" disabled>
 
-                    <option value="Please chose a report">Please chose a report</option>
-                    <option value="Select Last 7 days">Select Last 7 days</option>
-                    <option value="Select Last 30 days">Select Last 30 days</option>
-                    <option value="Select a date range">Select a date range</option>
-                    <option value="Select a type of survey">Select a type of survey</option>
-                </select>
-                <select id="ddl2".hidden()>
-                    <option value="Please chose a report">Please chose a report</option>
-                    <option value="Episode">Episode</option>
-                    <option value="Adjustment Response">Adjustment Response</option>
-                    <option value="Emotional State">Emotional State</option>
-                </select>
-                </form>
-                <p></p>
-                <p></p>
+                        <option value="" selected="selected">Please chose a survey</option>
+                        <option value="Episode">Episode</option>
+                        <option value="Adjustment Response">Adjustment Response</option>
+                        <option value="Emotional State">Emotional State</option>
+                    </select>
+                </p>
 
                 <!-- This button populates the myFunction fields -->
                 <button type="button" onclick="myFunction()">Run</button>
-                </p>
+
 
 
 
                 <!-- This function populates the report fields -->
-<script>
+               <script>
                 function myFunction() {
                     var x = document.getElementById("ddl1").value;
                     document.getElementById("NReport").innerHTML = x;
                     var y = document.getElementById("ddl2").value;
                     document.getElementById("NSurvey").innerHTML = y;
                 }
-</script>
+              </script>
+
                 <!-- Report section begins -->
                 <hr>
                 <h3>Your Report!</h3>
