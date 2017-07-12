@@ -112,11 +112,19 @@
 
                 </p>
 
+                <script>
+                    function myFunction() {
+                        var x = document.getElementById("ddl1").value;
+                        document.getElementById("NReport").innerHTML = x;
+                        var y = document.getElementById("ddl2").value;
+                        document.getElementById("NSurvey").innerHTML = y;
 
+                    }
+                </script>
 
                 <!-- Report section begins -->
                 <hr>
-                <h3>Your Report 1!</h3>
+                <h3>Your Report 2!</h3>
                 <b>Name:</b> <input type="text" id="myText">
                 <b>User Number:</b> <input type="text" id="myText">
                 <b>Name of Report:</b> <p id="NReport"></p>
