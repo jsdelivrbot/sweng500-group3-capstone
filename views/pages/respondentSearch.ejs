@@ -69,11 +69,11 @@
                 </style>
 
 
-                <h3>Select your report! 5</h3>
+                <h3>Select your report! 6</h3>
 
                 <html>
                 <head>
-                    <!--
+
                     <script>
 
                         function disable() {
@@ -92,7 +92,7 @@
                             var ddl2;
                             document.getElementById(ddl2).disabled = false;
                         }
-                        -->
+
                     <script>
                         $(function() {
                             $("ddl1").change(function() {
@@ -121,8 +121,7 @@
                 </p>
                 <p>
                     <label for="ddl2" class="labelStrong">Surveys</label>
-
-
+                    <select id="ddl2" name="ddl2" onchange='change()'>
                         <option value="" selected="selected">Please chose a survey</option>
                         <option value="Episode">Episode</option>
                         <option value="Adjustment Response">Adjustment Response</option>
