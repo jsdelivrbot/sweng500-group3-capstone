@@ -276,7 +276,15 @@ app.get('/instructorSearch', function(request, response) {
         } else if (typeof request.param('exe6') != 'undefined'){
             //Execute SQL-6
             response.render('pages/instructorSearch');
-        } else {
+        } else {                //Here we just need a placeholder to populate results or the ejs page crashes
+            client.query('SELECT * FROM user_table WHERE usernumber="9999"', function(err, result) {
+                done();
+                if (err) {
+                    console.error(err); response.send("Error " + err);
+                } else {
+                    response.render('pages/instructorSearch', {results: result.rows} );
+                }
+            });
             response.render('pages/instructorSearch');
         }
     });
