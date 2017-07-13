@@ -277,7 +277,7 @@ app.get('/instructorSearch', function(request, response) {
             //Execute SQL-6
             response.render('pages/instructorSearch');
         } else {                //Here we just need a placeholder to populate results or the ejs page crashes
-            client.query('SELECT * FROM user_table WHERE usernumber="9999"', function(err, result) {
+            client.query("SELECT * FROM user_table WHERE usernumber='9999'", function(err, result) {
                 done();
                 if (err) {
                     console.error(err); response.send("Error " + err);
