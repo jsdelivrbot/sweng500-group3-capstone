@@ -260,6 +260,7 @@ app.get('/instructorSearch', function(request, response) {
                     response.render('pages/instructorSearch', {results: result.rows} );
                 }
             });
+
         } else if (typeof request.param('exe2') != 'undefined'){
             //Execute SQL-2
             response.render('pages/instructorSearch');
