@@ -52,12 +52,12 @@
                 <html>
                 <head>
                <script type="text/javascript">
-                    function populate(d1, d2){
+                    function populate(d1,d2){
                     var d1 = document.getElementById(d1);
                     var d2 = document.getElementById(d2);
                     d2.innerHTML = "";
                     if(d1.value == "Select a type of survey"){
-                    var optionArray = ["|","episode|Episode","adjustment response|Adjustment Response","emotional state|Emotional State"];
+                    var optionArray = ["|","Episode|Episode","Adjustment Response|Adjustment Response","Emotional State|Emotional State"];
                     }
                     for(var option in optionArray){
                     var pair =optionArray[option].split("|");
@@ -72,26 +72,28 @@
 
 
                 <body>
-                <h3>Select your report! 7</h3>
+                <h3>Select your report!</h3>
 
                 Reports:
                 <select id="ddl1" name="ddl1" onchange="populate('ddl1','ddl2')">
                     <option value=""></option>
                     <option value="Please chose a report" selected="selected">Please chose a report</option>
-                    <option value="Select Last 7 days">Select Last 7 days</option>
-                    <option value="Select Last 30 days">Select Last 30 days</option>
-                    <option value="Select a date range">Select a date range</option>
+                    <option value="Select Last 7 days - Retrieves All Surveys">Select Last 7 days - Retrieves All Surveys</option>
+                    <option value="Select Last 30 days - Retrieves All Surveys">Select Last 30 days - Retrieves All Surveys</option>
+                    <option value="Select a date range - Retrieves All Surveys">Select a date range - Retrieves All Surveys</option>
                     <option value="Select a type of survey">Select a type of survey</option>
-
+                </select>
                  Surveys:
                  <select id="ddl2" name="ddl2"></select>
+                </body>
+                <p></p>
+                <p></p>
+                <!-- This button populates the myFunction fields-->
+                <button type="button" onclick="myFunction()">Run</button>
 
-                <!-- This button populates the myFunction fields
-                <button type="button" onclick="myFunction()">Run</button> -->
 
 
-
-                <!-- This function populates the report fields
+                <!-- This function populates the report fields-->
                <script>
                 function myFunction() {
                     var x = document.getElementById("ddl1").value;
@@ -100,7 +102,7 @@
                     document.getElementById("NSurvey").innerHTML = y;
                 }
               </script>
--->
+
                 <!-- Report section begins -->
                 <hr>
                 <h3>Your Report!</h3>
