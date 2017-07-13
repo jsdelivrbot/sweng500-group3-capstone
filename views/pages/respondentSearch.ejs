@@ -57,7 +57,7 @@
                     var d2 = document.getElementById(d2);
                     d2.innerHTML = "";
                     if(d1.value == "Select a type of survey"){
-                    var optionArray = ["|","episode | Episode","adjustment response|Adjustment Response","emotional state|Emotional State"];
+                    var optionArray = ["|","episode|Episode","adjustment response|Adjustment Response","emotional state|Emotional State"];
                     }
                     for(var option in optionArray){
                     var pair =optionArray[option].split("|");
@@ -72,7 +72,7 @@
 
 
                 <body>
-                <h3>Select your report! 6</h3>
+                <h3>Select your report! 7</h3>
 
                 Reports:
                 <select id="ddl1" name="ddl1" onchange="populate('ddl1','ddl2')">
@@ -102,7 +102,7 @@
               </script>
 -->
                 <!-- Report section begins -->
-
+                <hr>
                 <h3>Your Report!</h3>
                 <b>Name:</b> <input type="text" id="myText">
                 <b>User Number:</b> <input type="text" id="myText">
