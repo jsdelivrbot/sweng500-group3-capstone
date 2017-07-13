@@ -285,7 +285,6 @@ app.get('/instructorSearch', function(request, response) {
                     response.render('pages/instructorSearch', {results: result.rows} );
                 }
             });
-            response.render('pages/instructorSearch');
         }
     });
 });
