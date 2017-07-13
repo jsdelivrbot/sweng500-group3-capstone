@@ -49,46 +49,50 @@
 
         <!-- code for drop down menu for reports -->
 
-                <h3>Select your report! 6</h3>
-
                 <html>
                 <head>
+               <script type="text/javascript">
+                    function populate(d1, d2){
+                    var d1 = document.getElementById(d1);
+                    var d2 = document.getElementById(d2);
+                    d2.innerHTML = "";
+                    if(d1.value == "Select a type of survey"){
+                    var optionArray = ["|","episode | Episode","adjustment response|Adjustment Response","emotional state|Emotional State"];
+                    }
+                    for(var option in optionArray){
+                    var pair =optionArray[option].split("|");
+                    var newOption = document.createElement("option");
+                    newOption.value = pair[0];
+                    newOption.innerHTML = pair[1];
+                    d2.options.add(newOption);
+}
+}
+               </script>
+                <html>
+                <head>
+                <body>
 
-                    <script>
-                        $(function() {
-                            $("ddl1").change(function() {
-                                if ($(this).val() == "Select a type of survey") {
-                                    $("ddl2").prop("disabled", true);
-                                }
-                                else
-                                    $("ddl2").prop("disabled", false);
-                            });
-                        });
+                <h3>Select your report!</h3>
+                <label for="ddl1" class="labelStrong">Reports</label>
+                <select id="ddl1" name="ddl1" onchange="populate(this.id,'ddl2')">
+                    <option value=""></option>
+                    <option value="Please chose a report" selected="selected">Please chose a report</option>
+                    <option value="Please chose a report" selected="selected">Please chose a report</option>
+                    <option value="Select Last 7 days">Select Last 7 days</option>
+                    <option value="Select Last 30 days">Select Last 30 days</option>
+                    <option value="Select a date range">Select a date range</option>
+                    <option value="Select a type of survey">Select a type of survey</option>
 
-                    </script>
-                </head>
-                </html>
 
-                <p>
-                    <label for="ddl1" class="labelStrong">Reports</label>
-                    <select id="ddl1" name="ddl1" onchange='change()'>
-                        <option value="Please chose a report" selected="selected">Please chose a report</option>
-                        <option value="Select Last 7 days">Select Last 7 days</option>
-                        <option value="Select Last 30 days">Select Last 30 days</option>
-                        <option value="Select a date range">Select a date range</option>
-                        <option value="Select a type of survey">Select a type of survey</option>
-                    </select>
-
-                </p>
-                <p>
                     <label for="ddl2" class="labelStrong">Surveys</label>
-                    <select id="ddl2" name="ddl2" onchange='change()'>
-                        <option value="" selected="selected">Please chose a survey</option>
-                        <option value="Episode">Episode</option>
-                        <option value="Adjustment Response">Adjustment Response</option>
-                        <option value="Emotional State">Emotional State</option>
-                    </select>
-                </p>
+                    <select id="ddl2" name="ddl2"></select>
+
+
+                </html>
+                </head>
+                </body>
+
+
 
                 <!-- This button populates the myFunction fields -->
                 <button type="button" onclick="myFunction()">Run</button>
