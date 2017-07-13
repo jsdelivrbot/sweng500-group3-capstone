@@ -214,7 +214,16 @@
 
     </div>
 
- <!-- This is where I need to put dblogic.ejs query results statements -->
+ <!-- This is where I need to put dblogic.ejs query results statements testing if it works -->
+    <div class="container">
+        <h2>Database Results</h2>
+
+        <ul>
+            <% results.forEach(function(r) { %>
+            <li><%= r.id %> - <%= r.name %></li>
+            <% }); %>
+        </ul>
+    </div>
 </section>
 
 
