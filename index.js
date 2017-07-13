@@ -268,7 +268,7 @@ app.get('/instructorSearch', function(request, response) {
             response.render('pages/instructorSearch');
         } else if (typeof request.param('exe4') != 'undefined'){
             //Execute Retrieve all userIDs
-            client.query("SELECT * FROM test_table", function(err, result) {
+            client.query("SELECT * FROM user_table", function(err, result) {
                 done();
                 if (err) {
                     console.error(err); response.send("Error " + err);
