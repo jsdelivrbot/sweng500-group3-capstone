@@ -52,7 +52,7 @@
                 <html>
                 <head>
                <script type="text/javascript">
-                    function populate(d1, d2){
+                    function populate(d1,d2){
                     var d1 = document.getElementById(d1);
                     var d2 = document.getElementById(d2);
                     d2.innerHTML = "";
@@ -72,8 +72,8 @@
 
 
                 <body>
-                <h3>Select your report! 7</h3>
-
+                <h3>Select your report! 8</h3>
+                <hr />
                 Reports:
                 <select id="ddl1" name="ddl1" onchange="populate('ddl1','ddl2')">
                     <option value=""></option>
@@ -83,9 +83,12 @@
                     <option value="Select a date range">Select a date range</option>
                     <option value="Select a type of survey">Select a type of survey</option>
 
+                    <hr />
                  Surveys:
                  <select id="ddl2" name="ddl2"></select>
-
+                </body>
+                </html>
+                </select>
                 <!-- This button populates the myFunction fields
                 <button type="button" onclick="myFunction()">Run</button> -->
 
