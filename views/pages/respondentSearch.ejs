@@ -65,18 +65,17 @@
                     newOption.value = pair[0];
                     newOption.innerHTML = pair[1];
                     d2.options.add(newOption);
-}
-}
+                    }
+               }
                </script>
-                <html>
-                <head>
-                <body>
+                </head>
 
+
+                <body>
                 <h3>Select your report!</h3>
                 <label for="ddl1" class="labelStrong">Reports</label>
                 <select id="ddl1" name="ddl1" onchange="populate(this.id,'ddl2')">
                     <option value=""></option>
-                    <option value="Please chose a report" selected="selected">Please chose a report</option>
                     <option value="Please chose a report" selected="selected">Please chose a report</option>
                     <option value="Select Last 7 days">Select Last 7 days</option>
                     <option value="Select Last 30 days">Select Last 30 days</option>
@@ -87,16 +86,14 @@
                     <label for="ddl2" class="labelStrong">Surveys</label>
                     <select id="ddl2" name="ddl2"></select>
 
-
-                </html>
-                </head>
                 </body>
+                </html>
 
 
 
-                <!-- This button populates the myFunction fields -->
-                <button type="button" onclick="myFunction()">Run</button>
 
+                <!-- This button populates the myFunction fields
+                <button type="button" onclick="myFunction()">Run</button> -->
 
 
 
