@@ -247,53 +247,54 @@ app.get('/episodesurvey', function (request, response){
         }
     });
 });
-
-//DR - Temporarily commented out to try to resolve app crash (Start)
-// app.get('/instructorSearch', function(request, response) {
-//     pg.connect(process.env.DATABASE_URL, function(err, client, done){
-//         //There are six different retrieval forms, so use if statements to determine which was executed
-//         if (typeof request.param('exe1') != 'undefined'){
-//             //Try to execute get all surveys for all respondents for the past 7 days
-//             client.query('SELECT * FROM test_table', function(err, result) {
-//                 done();
-//                 if (err) {
-//                     console.error(err); response.send("Error " + err);
-//                 } else {
-//                     response.render('pages/instructorSearch', {results: result.rows} );
-//                 }
-//             });
-//
-//         } else if (typeof request.param('exe2') != 'undefined'){
-//             //Execute SQL-2
-//             response.render('pages/instructorSearch');
-//         } else if (typeof request.param('exe3') != 'undefined'){
-//             //Execute SQL-3
-//             response.render('pages/instructorSearch');
-//         } else if (typeof request.param('exe4') != 'undefined'){
-//             //Execute SQL-4
-//             response.render('pages/instructorSearch');
-//         } else if (typeof request.param('exe5') != 'undefined'){
-//             //Execute SQL-5
-//             response.render('pages/dblogic');
-//         } else if (typeof request.param('exe6') != 'undefined'){
-//             //Execute SQL-6
-//             response.render('pages/instructorSearch');
-//         } else {                //Here we just need a placeholder to populate results or the ejs page crashes
-//             client.query("SELECT * FROM user_table WHERE usernumber='9999'", function(err, result) {
-//                 done();
-//                 if (err) {
-//                     console.error(err); response.send("Error " + err);
-//                 } else {
-//                     response.render('pages/instructorSearch', {results: result.rows} );
-//                 }
-//             });
-//         }
-//     });
-// });
-//DR - Temporarily commented out to try to resolve app crash (End)
-
 app.get('/instructorSearch', function(request, response) {
-    response.render('pages/instructorSearch');
+    pg.connect(process.env.DATABASE_URL, function(err, client, done){
+        //There are six different retrieval forms, so use if statements to determine which was executed
+        if (typeof request.param('exe1') != 'undefined'){
+            //Try to execute get all surveys for all respondents for the past 7 days
+            client.query("SELECT * FROM es_table, eps_table, adresp_table WHERE date >=(now() - INTERVAL '7 DAYS')", function(err, result) {
+                done();
+                if (err) {
+                    console.error(err); response.send("Error " + err);
+                } else {
+                    response.render('pages/instructorSearch', {results: result.rows} );
+                }
+            });
+        } else if (typeof request.param('exe2') != 'undefined'){
+            //Execute All surveys all respondents for 30 days
+            response.render('pages/instructorSearch');
+        } else if (typeof request.param('exe3') != 'undefined'){
+            //Execute All surveys all respondents for a date range
+            response.render('pages/instructorSearch');
+        } else if (typeof request.param('exe4') != 'undefined'){
+            //Execute Retrieve all userIDs
+            client.query("SELECT * FROM user_table", function(err, result) {
+                done();
+                if (err) {
+                    console.error(err); response.send("Error " + err);
+                } else {
+                    response.render('pages/instructorSearch', {results: result.rows} );
+                }
+            });
+        } else if (typeof request.param('exe5') != 'undefined'){
+            //Execute SQL-5
+            response.render('pages/dblogic');
+        } else if (typeof request.param('exe6') != 'undefined'){
+            //Execute SQL-6
+            response.render('pages/instructorSearch');
+        } else {
+            //Here we just need a placeholder to populate results, or the ejs page will crash on render
+            //Any blank table entry will do, user_table was easy and no user 9999
+            client.query("SELECT * FROM user_table WHERE usernumber='9999'", function(err, result) {
+                done();
+                if (err) {
+                    console.error(err); response.send("Error " + err);
+                } else {
+                    response.render('pages/instructorSearch', {results: result.rows} );
+                }
+            });
+        }
+    });
 });
 
 app.get('/respondentSearch', function(request, response) {
