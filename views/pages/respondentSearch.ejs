@@ -91,9 +91,8 @@
 
                 <!-- code for date range for the Select a date range report -->
                 <p>Select a date range. 5</p>
-                <select method="get" action="/respondentSearch" class="instRetrieve3">
-                  <!--  <input type="checkbox" id="exe3" name="exe3" required>
-                    <label for="exe3">Execute this query</label><br> -->
+                <form method="get" action="/respondentSearch" class="instRetrieve3">
+
                     <select name="category" id="category" required>
                         <option value="">- Start Day -</option>
                         <option value="1">1</option>
@@ -192,7 +191,7 @@
                         <option value="1">November</option>
                         <option value="1">December</option>
                     </select></br>
-                    </select
+                    </form
                 <!-- This button populates the myFunction fields-->
                 <button type="button" onclick="myFunction()">Run</button>
 
