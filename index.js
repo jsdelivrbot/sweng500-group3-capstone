@@ -248,6 +248,7 @@ app.get('/episodesurvey', function (request, response){
         }
     });
 });
+/*
 app.get('/instructorSearch', function(request, response) {
     pg.connect(process.env.DATABASE_URL, function(err, client, done){
         //First, we need a dummy result to populate the resultsX calls on instructorSearch.ejs
@@ -287,6 +288,7 @@ app.get('/instructorSearch', function(request, response) {
         }
     });
 });
+*/
 
 app.get('/respondentSearch', function(request, response) {
     response.render('pages/respondentSearch');
