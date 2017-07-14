@@ -55,7 +55,10 @@
                     function populate(d1,d2){
                     var d1 = document.getElementById(d1);
                     var d2 = document.getElementById(d2);
+                    var dateran = document.getElementById(dateran);
+
                     d2.innerHTML = "";
+                    dateran.innerHTML ="";
                     if(d1.value == "Select a type of survey"){
                     var optionArray = ["|","Episode|Episode","Adjustment Response|Adjustment Response","Emotional State|Emotional State"];
                     }
@@ -69,16 +72,23 @@
                     newOption.innerHTML = pair[1];
                     d2.options.add(newOption);
                     }
+                        for(var option in optionArray){
+                            var pair =optionArray[option].split("|");
+                            var newOption = document.createElement("option");
+                            newOption.value = pair[0];
+                            newOption.innerHTML = pair[1];
+                            dateran.options.add(newOption);
+                        }
                }
                </script>
                 </head>
 
 
                 <body>
-                <h3>Select your report 1!</h3>
+                <h3>Select your report 2!</h3>
 
                 Reports:
-                <select id="ddl1" name="ddl1" width="400" style="width:400px" onchange="populate('ddl1','ddl2')">
+                <select id="ddl1" name="ddl1" width="400" style="width:400px" onchange="populate('ddl1','ddl2','category')">
                     <option value=""></option>
                     <option value="Please chose a report" selected="selected">Please chose a report</option>
                     <option value="Select Last 7 days - Retrieves All Surveys">Select Last 7 days - Retrieves All Surveys</option>
