@@ -58,11 +58,11 @@
                     var dateran = document.getElementById(dateran);
 
                     d2.innerHTML = "";
-                    dateran.innerHTML = "";
                     if(d1.value == "Select a type of survey"){
                     var optionArray = ["|","Episode|Episode","Adjustment Response|Adjustment Response","Emotional State|Emotional State"];
                     }
-                    else if(d1.value == "Select a date range - retrieves All Surveys"){
+                    dateran.innerHTML = "";
+                    if(d1.value == "Select a date range - retrieves All Surveys"){
                     var optionArray = ["|","Select a date range|Select a date range",];
                         }
                     for(var option in optionArray){
@@ -79,7 +79,7 @@
 
 
                 <body>
-                <h3>Select your report 8!</h3>
+                <h3>Select your report 9!</h3>
 
                 Reports:
                 <select id="ddl1" name="ddl1" width="400" style="width:400px" onchange="populate('ddl1','ddl2','category')">
