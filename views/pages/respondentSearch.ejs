@@ -70,19 +70,19 @@
                     d2.options.add(newOption);
                                         }
                }
-               function disable(){
-                        document.getElementById("ddl2").disabled=true;
-               }
-                    //function enable() {
-                       // document.getElementById("ddl2").disabled=false;
-                    //}
+                    function check(){
+                        if(document.getElementById('ddl1').value!='')
+                            document.getElementById('ddl2').disabled=false;
+                        else
+                            document.getElementById('ddl2').disabled=true;
+                    }
 
                </script>
                 </head>
                 <body>
 
                 <body>
-                <h3>Select your report 11!</h3>
+                <h3>Select your report 12!</h3>
 
                 Reports types:
                 <select id="ddl1" name="ddl1" width="400" style="width:400px"onchange="populate('ddl1','ddl2')">
@@ -213,8 +213,6 @@
 
                 <!-- This button populates the myFunction fields-->
                 <button type="button" onclick="myFunction()">Submit</button>
-                <input type="button" onclick="disable()" value="Disable list">
-                <input type="button" onclick="enable()" value="Enable list">
 
 
                 <!-- This function populates the report fields-->
