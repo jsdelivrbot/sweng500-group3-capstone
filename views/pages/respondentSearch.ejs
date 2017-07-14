@@ -61,9 +61,6 @@
                     if(d1.value == "Select a type of survey"){
                     var optionArray = ["|","Episode|Episode","Adjustment Response|Adjustment Response","Emotional State|Emotional State"];
                     }
-                    else if(d1.value == "Select a date range - Retrieves All Surveys"){
-                            var optionArray = ["|","Episode|Episode",];
-                    }
 
                     for(var option in optionArray){
                     var pair =optionArray[option].split("|");
@@ -92,6 +89,8 @@
 
                  <select id="ddl2" name="ddl2" width="400" style="width:400px"></select>
                 </body>
+                <p></p>
+                <p></p>
                 <!-- date range-->
                 Date range:
                 <form method="get" action="/instructorSearch" class="instRetrieve3">
