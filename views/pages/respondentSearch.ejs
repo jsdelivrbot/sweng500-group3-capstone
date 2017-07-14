@@ -59,6 +59,9 @@
                     if(d1.value == "Select a type of survey"){
                     var optionArray = ["|","Episode|Episode","Adjustment Response|Adjustment Response","Emotional State|Emotional State"];
                     }
+                    if(d1.value == "Select a date range - retrieves All Surveys"){
+                    var optionArray = ["|","Select a date range|Select a date range","-Start Day-|-Start Day-","-Start Month-|-Start Month-","-End Day-|-End Day-","-End Month-|-End Month-"];
+                        }
                     for(var option in optionArray){
                     var pair =optionArray[option].split("|");
                     var newOption = document.createElement("option");
@@ -72,7 +75,7 @@
 
 
                 <body>
-                <h3>Select your report!</h3>
+                <h3>Select your report 1!</h3>
 
                 Reports:
                 <select id="ddl1" name="ddl1" width="400" style="width:400px" onchange="populate('ddl1','ddl2')">
