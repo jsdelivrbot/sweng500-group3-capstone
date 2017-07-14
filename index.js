@@ -259,7 +259,8 @@ app.get('/instructorSearch', function(request, response) {
                 if (err) {
                     console.error(err); response.send("Error " + err);
                 } else {
-                    response.render('pages/instructorSearch', {results: result.rows} );
+                    var dummy = result.slice(1);
+                    response.render('pages/instructorSearch', {results: result.rows}, {results1:dummy.rows} );
                 }
             });
         } else if (typeof request.param('exe2') != 'undefined'){
