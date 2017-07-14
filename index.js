@@ -295,14 +295,16 @@ app.get('/instructorSearch', function(request, response) {
         } else {
             //Here we just need a placeholder to populate results, or the ejs page will crash on render
             //Any blank table entry will do, user_table was easy and no user 9999
-            client.query("SELECT * FROM user_table WHERE usernumber='9999'", function(err, result) {
+           /* client.query("SELECT * FROM user_table WHERE usernumber='9999'", function(err, result) {
                 done();
                 if (err) {
                     console.error(err); response.send("Error " + err);
                 } else {
                     response.render('pages/instructorSearch', {results: result.rows} );
                 }
-            });
+            });   */
+
+            response.render('pages/instructorSearch', {results: dummy.rows} );
         }
     });
 });
