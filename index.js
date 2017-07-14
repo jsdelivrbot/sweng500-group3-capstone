@@ -251,14 +251,7 @@ app.get('/episodesurvey', function (request, response){
 app.get('/instructorSearch', function(request, response) {
     pg.connect(process.env.DATABASE_URL, function(err, client, done){
         //There are six different retrieval forms, so use if statements to determine which was executed
-        client.query("SELECT * FROM user_table WHERE usernumber='9999'", function(err, result) {
-            done();
-            if (err) {
-                console.error(err); response.send("Error " + err);
-            } else {
-                var dummy = result;     //Now use dummy below for not used "result"
-            }
-        });
+        var dummy = [" ", " "];
 
         if (typeof request.param('exe1') != 'undefined'){
             //Try to execute get all surveys for all respondents for the past 7 days
@@ -300,7 +293,7 @@ app.get('/instructorSearch', function(request, response) {
                 if (err) {
                     console.error(err); response.send("Error " + err);
                 } else {
-                    response.render('pages/instructorSearch', {results: result.rows} );
+                    response.render('pages/instructorSearch', {results: dummy.rows} );
                 }
             });
         }
