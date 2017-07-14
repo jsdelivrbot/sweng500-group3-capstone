@@ -90,9 +90,13 @@
                 <p></p>
 
                 <!-- code for date range for the Select a date range report -->
-                <p>Select a date range. 5</p>
+                <p>Select a date range. 6</p>
                 <form method="get" action="/respondentSearch" class="instRetrieve3">
-
+                    <script>
+                        function myFunction() {
+                            document.getElementById("category").size = "25";
+                        }
+                    </script>
                     <select name="category" id="category" required>
                         <option value="">- Start Day -</option>
                         <option value="1">1</option>
