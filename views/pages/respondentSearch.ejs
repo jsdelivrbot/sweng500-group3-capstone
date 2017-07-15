@@ -48,12 +48,12 @@
         <hr>
 
         <!-- user number must be entered and validated -->
-        <h3>Enter User Number!</h3>
+        <h3>Enter User Number! 1</h3>
         <html>
         <head>
             <script>
                 function validateForm() {
-                    var x = document.forms["myForm"]["fname"].value;
+                    var x = document.forms["myForm"]["usernumber"].value;
                     if (x == "") {
                         alert("User Number must be entered!");
                         return false;
@@ -70,7 +70,7 @@
         <span style="color: red; ">*User Number Required</span>
         <form name="myForm" action="/action_page_post.php"
               onsubmit="return validateForm()" method="post">
-            </h3><input type="number" name="fname" width="100" style="width:100px">
+            </h3><input type="number" name="usernumber" width="100" style="width:100px">
             <p></p>
             <p></p>
             <input type="submit" value="Submit">
@@ -80,30 +80,8 @@
 
         </body>
         </html>
-        <!-- hide fields until valided through user number -->
-        test2
-        <head>
-            <script>
-                src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-                $(document).ready(function () {
-                    $(".btn1").click(function () {
-                        $("p").hide();
-                    });
-                    $(".btn2").click(function () {
-                        $("p").show();
-                    });
-                });
-            </script>
-        </head>
-        <body>
 
-        <p>This is a paragraph.</p>
 
-        <button class="btn1">Hide</button>
-        <button class="btn2">Show</button>
-
-        </body>
-</html>
 
 <!-- code for drop down menu for reports-->
 
