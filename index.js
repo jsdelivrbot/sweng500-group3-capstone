@@ -265,7 +265,7 @@ app.get('/instructorSearch', function(request, response) {
             });
         } else if (typeof request.param('exe2') != 'undefined') {
             //Call the render page searchResultsInstr2 to do query and output the results.
-            client.query('SELECT * FROM es_table', function(err, result) {
+            client.query('SELECT * FROM eps_table', function(err, result) {
                 done();
                 if (err) {
                     console.error(err); response.send("Error " + err);
