@@ -249,7 +249,6 @@ app.get('/episodesurvey', function (request, response){
     });
 });
 app.get('/instructorSearch', function(request, response) {
-    pg.connect(process.env.DATABASE_URL, function(err, client, done){
         //There are six different retrieval forms, so use if statements to determine which was executed
         //and then call the correct searchResultsTemplate based rendering.
 
@@ -264,14 +263,7 @@ app.get('/instructorSearch', function(request, response) {
             response.render('pages/instructorSearch');
         } else if (typeof request.param('exe4') != 'undefined'){
             //Execute Retrieve all userIDs
-            client.query("SELECT * FROM user_table", function(err, result) {
-                done();
-                if (err) {
-                    console.error(err); response.send("Error " + err);
-                } else {
-                    response.render('pages/instructorSearch', {results: result.rows} );
-                }
-            });
+            response.render('pages/instructorSearch');
         } else if (typeof request.param('exe5') != 'undefined'){
             //Execute SQL-5
             response.render('pages/dblogic');
@@ -282,7 +274,6 @@ app.get('/instructorSearch', function(request, response) {
             //Just render the page as no query has been initiated.
             response.render('pages/instructorSearch');
         }
-    });
 });
 
 app.get('/respondentSearch', function(request, response) {
