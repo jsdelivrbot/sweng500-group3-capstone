@@ -286,7 +286,6 @@ app.get('/instructorSearch', function(request, response) {
                     response.render('pages/searchResultsInstr4', {results: result.rows} );
                 }
             });
-            response.render('pages/instructorSearch');
         } else if (typeof request.param('exe5') != 'undefined') {
             //Execute SQL-5
             response.render('pages/dblogic');
