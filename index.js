@@ -251,18 +251,11 @@ app.get('/episodesurvey', function (request, response){
 app.get('/instructorSearch', function(request, response) {
     pg.connect(process.env.DATABASE_URL, function(err, client, done){
         //There are six different retrieval forms, so use if statements to determine which was executed
+        //and then call the correct searchResultsTemplate based rendering.
 
         if (typeof request.param('exe1') != 'undefined'){
-            //Try to execute get all surveys for all respondents for the past 7 days
-            client.query("SELECT * FROM es_table, eps_table, adresp_table", function(err, result) {
-                done();
-                if (err) {
-                    console.error(err); response.send("Error " + err);
-                } else {
-                    var dummy = result.slice(0, 2);
-                    response.render('pages/instructorSearch', {results: result.rows} );
-                }
-            });
+            //Call the render page searchResultsInstr1 to do query and output the results.
+            response.render('pages/searchResultsInstr1');
         } else if (typeof request.param('exe2') != 'undefined'){
             //Execute All surveys all respondents for 30 days
             response.render('pages/instructorSearch');
@@ -339,4 +332,17 @@ app.post('/surveyreportslogin', function (request, response) {
 
 app.get('/searchResultsTemplate', function(request, response) {
     response.render('pages/searchResultsTemplate');
+});
+
+app.get('/searchResultsInstr1', function(request, response) {
+    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+        client.query("SELECT * FROM es_table", function(err, result) {
+            done();
+            if (err) {
+                console.error(err); response.send("Error " + err);
+            } else {
+                response.render('pages/searchResultsInstr1', {results: result.rows} );
+            }
+        });
+    });
 });
