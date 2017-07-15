@@ -48,7 +48,7 @@
         <hr>
 
         <!-- user number must be entered and validated -->
-        <h3>Enter User Number 9!</h3>
+        <h3>Enter User Number 11!</h3>
         <html>
         <head>
             <script>
@@ -65,20 +65,18 @@
         <html>
         <body>
         <!-- color for *User Number header-->
-        <div class="w3-container w3-red">
-        <h3>*User Number</h3>
-        <br>
-        </div>
 
+        <p><span style="color: red; ">*User Number Required</span></p>
 
         </body>
         </html>
         <form name="myForm" action="/action_page_post.php"
               onsubmit="return validateForm()" method="post">
-            </h3><input type="text" name="fname" width="400" style="width:400px">
+            </h3><input type="text" value="number" name="fname" width="400" style="width:400px">
+            <p></p>
+            <p></p>
             <input type="submit" value="Submit">
-            <p></p>
-            <p></p>
+
 
         </form>
 
