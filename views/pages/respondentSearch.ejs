@@ -47,8 +47,33 @@
         <p>The forms below allow the respondent to retrieve their own surveys from the collection of surveys.  Surveys are saved for up to one year.</p>
 <hr>
 
-        <!-- code for drop down menu for reports-->
+        <!-- user number must be entered and validated -->
+        <h3>Enter User Number!</h3>
+        <html>
+        <head>
+            <script>
+                function validateForm() {
+                    var x = document.forms["myForm"]["fname"].value;
+                    if (x == "") {
+                        alert("Name must be filled out");
+                        return false;
+                    }
+                }
+            </script>
+        </head>
+        <body>
 
+        <form name="myForm" action="/action_page_post.php"
+              onsubmit="return validateForm()" method="post">
+            Name: <input type="text" name="fname">
+            <input type="submit" value="Submit">
+        </form>
+
+        </body>
+        </html>
+
+
+        <!-- code for drop down menu for reports-->
                 <html>
                 <head>
                <script type="text/javascript">
