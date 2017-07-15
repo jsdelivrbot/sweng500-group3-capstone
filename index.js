@@ -251,29 +251,38 @@ app.get('/episodesurvey', function (request, response){
 app.get('/instructorSearch', function(request, response) {
         //There are six different retrieval forms, so use if statements to determine which was executed
         //and then call the correct searchResultsTemplate based rendering.
+    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
 
-        if (typeof request.param('exe1') != 'undefined'){
+        if (typeof request.param('exe1') != 'undefined') {
             //Call the render page searchResultsInstr1 to do query and output the results.
-            response.render('pages/searchResultsInstr1');
-        } else if (typeof request.param('exe2') != 'undefined'){
+            client.query('SELECT * FROM es_table', function(err, result) {
+                done();
+                if (err) {
+                    console.error(err); response.send("Error " + err);
+                } else {
+                    response.render('pages/searchResultsInstr1', {results: result.rows} );
+                }
+            });
+        } else if (typeof request.param('exe2') != 'undefined') {
             //Execute All surveys all respondents for 30 days
             response.render('pages/instructorSearch');
-        } else if (typeof request.param('exe3') != 'undefined'){
+        } else if (typeof request.param('exe3') != 'undefined') {
             //Execute All surveys all respondents for a date range
             response.render('pages/instructorSearch');
-        } else if (typeof request.param('exe4') != 'undefined'){
+        } else if (typeof request.param('exe4') != 'undefined') {
             //Execute Retrieve all userIDs
             response.render('pages/instructorSearch');
-        } else if (typeof request.param('exe5') != 'undefined'){
+        } else if (typeof request.param('exe5') != 'undefined') {
             //Execute SQL-5
             response.render('pages/dblogic');
-        } else if (typeof request.param('exe6') != 'undefined'){
+        } else if (typeof request.param('exe6') != 'undefined') {
             //Execute SQL-6
             response.render('pages/instructorSearch');
         } else {
             //Just render the page as no query has been initiated.
             response.render('pages/instructorSearch');
         }
+    });
 });
 
 app.get('/respondentSearch', function(request, response) {
@@ -326,14 +335,5 @@ app.get('/searchResultsTemplate', function(request, response) {
 });
 
 app.get('/searchResultsInstr1', function(request, response) {
-    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-        client.query("SELECT * FROM es_table", function(err, result) {
-            done();
-            if (err) {
-                console.error(err); response.send("Error " + err);
-            } else {
-                response.render('pages/searchResultsInstr1', {results: result.rows} );
-            }
-        });
-    });
+    response.render('pages/searchResultsInstr1', {results: result.rows} );
 });
