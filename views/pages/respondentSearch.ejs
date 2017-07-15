@@ -58,9 +58,13 @@
                         alert("User Number must be entered!");
                         return false;
                     }
-                    else{
+                    else {
                         (usernumber == "222")
                         alert("This is the correct user number");
+                    }
+                    else{
+                        (usernumber === "222")
+                        alert("This is the wrong usernumber try again");
                     }
                 }
             </script>
@@ -87,227 +91,226 @@
         </html>
 
 
+        <!-- code for drop down menu for reports-->
 
-<!-- code for drop down menu for reports-->
+        <html>
+        <head>
+            <script type="text/javascript">
+                function populate(d1, d2) {
+                    var d1 = document.getElementById(d1);
+                    var d2 = document.getElementById(d2);
 
-<html>
-<head>
-    <script type="text/javascript">
-        function populate(d1, d2) {
-            var d1 = document.getElementById(d1);
-            var d2 = document.getElementById(d2);
+                    d2.innerHTML = "";
 
-            d2.innerHTML = "";
+                    if (d1.value == "Select a type of survey") {
+                        var optionArray = ["|", "Episode|Episode", "Adjustment Response|Adjustment Response", "Emotional State|Emotional State"];
+                    }
 
-            if (d1.value == "Select a type of survey") {
-                var optionArray = ["|", "Episode|Episode", "Adjustment Response|Adjustment Response", "Emotional State|Emotional State"];
+                    for (var option in optionArray) {
+                        var pair = optionArray[option].split("|");
+                        var newOption = document.createElement("option");
+                        newOption.value = pair[0];
+                        newOption.innerHTML = pair[1];
+                        d2.options.add(newOption);
+                    }
+                }
+
+
+            </script>
+        </head>
+        <body>
+
+        <body>
+        <h3>Select your report!</h3>
+
+        Reports types:
+        <select id="ddl1" name="ddl1" width="400" style="width:400px" onchange="populate('ddl1','ddl2')">
+            <option value=""></option>
+            <option value="Please chose a report" selected="selected">Please chose a report</option>
+            <option value="Select Last 7 days - Retrieves All Surveys">Select Last 7 days - Retrieves All Surveys
+            </option>
+            <option value="Select Last 30 days - Retrieves All Surveys">Select Last 30 days - Retrieves All Surveys
+            </option>
+            <option value="Select a date range - Retrieves All Surveys">Select a date range - Retrieves All Surveys
+            </option>
+            <option value="Select a type of survey">Select a type of survey</option>
+        </select>
+
+        <select id="ddl2" name="ddl2" width="400" style="width:400px"></select>
+
+        </body>
+        <p></p>
+        <p></p>
+        <!-- date range
+        Date range:
+        <form method="get" action="/respondentSearch" class="instRetrieve3">
+
+            <select name="category" id="category" width="400" style="width:400px" required>
+                <option value="">- Start Day -</option>
+                <option value="1">1</option>
+                <option value="1">2</option>
+                <option value="1">3</option>
+                <option value="1">4</option>
+                <option value="1">5</option>
+                <option value="1">6</option>
+                <option value="1">7</option>
+                <option value="1">8</option>
+                <option value="1">9</option>
+                <option value="1">10</option>
+                <option value="1">11</option>
+                <option value="1">12</option>
+                <option value="1">13</option>
+                <option value="1">14</option>
+                <option value="1">15</option>
+                <option value="1">16</option>
+                <option value="1">17</option>
+                <option value="1">18</option>
+                <option value="1">19</option>
+                <option value="1">20</option>
+                <option value="1">21</option>
+                <option value="1">22</option>
+                <option value="1">23</option>
+                <option value="1">24</option>
+                <option value="1">25</option>
+                <option value="1">26</option>
+                <option value="1">27</option>
+                <option value="1">28</option>
+                <option value="1">29</option>
+                <option value="1">30</option>
+                <option value="1">31</option>
+            </select></br>
+            <select name="category" id="category" width="400" style="width:400px" required>
+                <option value="">- Start Month -</option>
+                <option value="1">January</option>
+                <option value="1">Febuary</option>
+                <option value="1">March</option>
+                <option value="1">April</option>
+                <option value="1">May</option>
+                <option value="1">June</option>
+                <option value="1">July</option>
+                <option value="1">August</option>
+                <option value="1">September</option>
+                <option value="1">October</option>
+                <option value="1">November</option>
+                <option value="1">December</option>
+            </select></br>
+            <select name="category" id="category" width="400" style="width:400px" required>
+                <option value="">- End Day -</option>
+                <option value="1">1</option>
+                <option value="1">2</option>
+                <option value="1">3</option>
+                <option value="1">4</option>
+                <option value="1">5</option>
+                <option value="1">6</option>
+                <option value="1">7</option>
+                <option value="1">8</option>
+                <option value="1">9</option>
+                <option value="1">10</option>
+                <option value="1">11</option>
+                <option value="1">12</option>
+                <option value="1">13</option>
+                <option value="1">14</option>
+                <option value="1">15</option>
+                <option value="1">16</option>
+                <option value="1">17</option>
+                <option value="1">18</option>
+                <option value="1">19</option>
+                <option value="1">20</option>
+                <option value="1">21</option>
+                <option value="1">22</option>
+                <option value="1">23</option>
+                <option value="1">24</option>
+                <option value="1">25</option>
+                <option value="1">26</option>
+                <option value="1">27</option>
+                <option value="1">28</option>
+                <option value="1">29</option>
+                <option value="1">30</option>
+                <option value="1">31</option>
+            </select></br>
+            <select name="category" id="category" width="400" style="width:400px" required>
+                <option value="">- End Month -</option>
+                <option value="1">January</option>
+                <option value="1">Febuary</option>
+                <option value="1">March</option>
+                <option value="1">April</option>
+                <option value="1">May</option>
+                <option value="1">June</option>
+                <option value="1">July</option>
+                <option value="1">August</option>
+                <option value="1">September</option>
+                <option value="1">October</option>
+                <option value="1">November</option>
+                <option value="1">December</option>
+            </select></br>
+        </form>-->
+
+        <!-- spaces between select your report and the button don't remove Wendy-->
+        <p></p>
+        <p></p>
+
+
+        <!-- This button populates the myFunction fields-->
+        <button type="button" onclick="myFunction()">Submit</button>
+
+
+        <!-- This function populates the report fields-->
+        <script>
+            function myFunction() {
+                var x = document.getElementById("ddl1").value;
+                document.getElementById("NReport").innerHTML = x;
+                var y = document.getElementById("ddl2").value;
+                document.getElementById("NSurvey").innerHTML = y;
+                var z = document.getElementById("ddl3").value;
+                document.getElementById("").innerHTML = z;
             }
+        </script>
 
-            for (var option in optionArray) {
-                var pair = optionArray[option].split("|");
-                var newOption = document.createElement("option");
-                newOption.value = pair[0];
-                newOption.innerHTML = pair[1];
-                d2.options.add(newOption);
-            }
-        }
+        <!-- Report section begins -->
+        <hr>
+        <h3>Your Report!</h3>
+        <b>Name:</b> <input type="text" id="myText" width="400" style="width:400px">
+        <b>User Number:</b> <input type="text" id="myText" width="400" style="width:400px">
+        <b>Name of Report:</b>
+        <p id="NReport"></p>
+        <b>Name of Survey:</b>
+        <p id="NSurvey"></p>
+        <b>Date Report Was Ran:</b>
+        <p id="CDate"></p>
 
+        <!-- This code populates current date in the report area-->
 
-    </script>
-</head>
-<body>
+        <script>
+            document.getElementById("CDate").innerHTML = Date();
 
-<body>
-<h3>Select your report!</h3>
-
-Reports types:
-<select id="ddl1" name="ddl1" width="400" style="width:400px" onchange="populate('ddl1','ddl2')">
-    <option value=""></option>
-    <option value="Please chose a report" selected="selected">Please chose a report</option>
-    <option value="Select Last 7 days - Retrieves All Surveys">Select Last 7 days - Retrieves All Surveys
-    </option>
-    <option value="Select Last 30 days - Retrieves All Surveys">Select Last 30 days - Retrieves All Surveys
-    </option>
-    <option value="Select a date range - Retrieves All Surveys">Select a date range - Retrieves All Surveys
-    </option>
-    <option value="Select a type of survey">Select a type of survey</option>
-</select>
-
-<select id="ddl2" name="ddl2" width="400" style="width:400px"></select>
-
-</body>
-<p></p>
-<p></p>
-<!-- date range
-Date range:
-<form method="get" action="/respondentSearch" class="instRetrieve3">
-
-    <select name="category" id="category" width="400" style="width:400px" required>
-        <option value="">- Start Day -</option>
-        <option value="1">1</option>
-        <option value="1">2</option>
-        <option value="1">3</option>
-        <option value="1">4</option>
-        <option value="1">5</option>
-        <option value="1">6</option>
-        <option value="1">7</option>
-        <option value="1">8</option>
-        <option value="1">9</option>
-        <option value="1">10</option>
-        <option value="1">11</option>
-        <option value="1">12</option>
-        <option value="1">13</option>
-        <option value="1">14</option>
-        <option value="1">15</option>
-        <option value="1">16</option>
-        <option value="1">17</option>
-        <option value="1">18</option>
-        <option value="1">19</option>
-        <option value="1">20</option>
-        <option value="1">21</option>
-        <option value="1">22</option>
-        <option value="1">23</option>
-        <option value="1">24</option>
-        <option value="1">25</option>
-        <option value="1">26</option>
-        <option value="1">27</option>
-        <option value="1">28</option>
-        <option value="1">29</option>
-        <option value="1">30</option>
-        <option value="1">31</option>
-    </select></br>
-    <select name="category" id="category" width="400" style="width:400px" required>
-        <option value="">- Start Month -</option>
-        <option value="1">January</option>
-        <option value="1">Febuary</option>
-        <option value="1">March</option>
-        <option value="1">April</option>
-        <option value="1">May</option>
-        <option value="1">June</option>
-        <option value="1">July</option>
-        <option value="1">August</option>
-        <option value="1">September</option>
-        <option value="1">October</option>
-        <option value="1">November</option>
-        <option value="1">December</option>
-    </select></br>
-    <select name="category" id="category" width="400" style="width:400px" required>
-        <option value="">- End Day -</option>
-        <option value="1">1</option>
-        <option value="1">2</option>
-        <option value="1">3</option>
-        <option value="1">4</option>
-        <option value="1">5</option>
-        <option value="1">6</option>
-        <option value="1">7</option>
-        <option value="1">8</option>
-        <option value="1">9</option>
-        <option value="1">10</option>
-        <option value="1">11</option>
-        <option value="1">12</option>
-        <option value="1">13</option>
-        <option value="1">14</option>
-        <option value="1">15</option>
-        <option value="1">16</option>
-        <option value="1">17</option>
-        <option value="1">18</option>
-        <option value="1">19</option>
-        <option value="1">20</option>
-        <option value="1">21</option>
-        <option value="1">22</option>
-        <option value="1">23</option>
-        <option value="1">24</option>
-        <option value="1">25</option>
-        <option value="1">26</option>
-        <option value="1">27</option>
-        <option value="1">28</option>
-        <option value="1">29</option>
-        <option value="1">30</option>
-        <option value="1">31</option>
-    </select></br>
-    <select name="category" id="category" width="400" style="width:400px" required>
-        <option value="">- End Month -</option>
-        <option value="1">January</option>
-        <option value="1">Febuary</option>
-        <option value="1">March</option>
-        <option value="1">April</option>
-        <option value="1">May</option>
-        <option value="1">June</option>
-        <option value="1">July</option>
-        <option value="1">August</option>
-        <option value="1">September</option>
-        <option value="1">October</option>
-        <option value="1">November</option>
-        <option value="1">December</option>
-    </select></br>
-</form>-->
-
-<!-- spaces between select your report and the button don't remove Wendy-->
-<p></p>
-<p></p>
+        </script>
 
 
-<!-- This button populates the myFunction fields-->
-<button type="button" onclick="myFunction()">Submit</button>
-
-
-<!-- This function populates the report fields-->
-<script>
-    function myFunction() {
-        var x = document.getElementById("ddl1").value;
-        document.getElementById("NReport").innerHTML = x;
-        var y = document.getElementById("ddl2").value;
-        document.getElementById("NSurvey").innerHTML = y;
-        var z = document.getElementById("ddl3").value;
-        document.getElementById("").innerHTML = z;
-    }
-</script>
-
-<!-- Report section begins -->
-<hr>
-<h3>Your Report!</h3>
-<b>Name:</b> <input type="text" id="myText" width="400" style="width:400px">
-<b>User Number:</b> <input type="text" id="myText" width="400" style="width:400px">
-<b>Name of Report:</b>
-<p id="NReport"></p>
-<b>Name of Survey:</b>
-<p id="NSurvey"></p>
-<b>Date Report Was Ran:</b>
-<p id="CDate"></p>
-
-<!-- This code populates current date in the report area-->
-
-<script>
-    document.getElementById("CDate").innerHTML = Date();
-
-</script>
-
-
-<h3>Body of the report</h3>
-<!-- Footer -->
-<footer id="footer">
-    <div class="inner">
-        <div class="flex">
-            <div class="copyright">
-                &copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a
-                        href="https://unsplash.com">Unsplash</a>.
+        <h3>Body of the report</h3>
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                <div class="flex">
+                    <div class="copyright">
+                        &copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a
+                                href="https://unsplash.com">Unsplash</a>.
+                    </div>
+                    <ul class="icons">
+                        <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon fa-linkedin"><span class="label">linkedIn</span></a></li>
+                        <li><a href="#" class="icon fa-pinterest-p"><span class="label">Pinterest</span></a></li>
+                        <li><a href="#" class="icon fa-vimeo"><span class="label">Vimeo</span></a></li>
+                    </ul>
+                </div>
             </div>
-            <ul class="icons">
-                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                <li><a href="#" class="icon fa-linkedin"><span class="label">linkedIn</span></a></li>
-                <li><a href="#" class="icon fa-pinterest-p"><span class="label">Pinterest</span></a></li>
-                <li><a href="#" class="icon fa-vimeo"><span class="label">Vimeo</span></a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
+        </footer>
 
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/skel.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/skel.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
 
-</body>
-</html>
+        </body>
+        </html>
