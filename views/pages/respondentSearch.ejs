@@ -55,7 +55,7 @@
                 function validateForm() {
                     var x = document.forms["myForm"]["fname"].value;
                     if (x == "") {
-                        alert("Name must be filled out");
+                        alert("User Number must be entered!");
                         return false;
                     }
                 }
@@ -65,7 +65,7 @@
 
         <form name="myForm" action="/action_page_post.php"
               onsubmit="return validateForm()" method="post">
-            Name: <input type="text" name="fname">
+            User Number: <input type="text" name="fname"width="400" style="width:400px">
             <input type="submit" value="Submit">
         </form>
 
@@ -119,9 +119,9 @@
                 </body>
                 <p></p>
                 <p></p>
-                <!-- date range-->
+                <!-- date range
                 Date range:
-                <form method="get" action="/instructorSearch" class="instRetrieve3">
+                <form method="get" action="/respondentSearch" class="instRetrieve3">
 
                     <select name="category" id="category" width="400" style="width:400px" required>
                         <option value="">- Start Day -</option>
@@ -221,7 +221,7 @@
                         <option value="1">November</option>
                         <option value="1">December</option>
                     </select></br>
-                </form>
+                </form>-->
 
                 <!-- spaces between select your report and the button don't remove Wendy-->
                 <p></p>
