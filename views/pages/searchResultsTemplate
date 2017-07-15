@@ -7,7 +7,7 @@
 -->
 <html xmlns="http://www.w3.org/1999/html">
 <head>
-    <title>Instructor Search</title>
+    <title>Search Results</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -34,17 +34,12 @@
 
 <!-- Main -->
 <section id="main" class="wrapper">
-
-
-
-
- <!-- This is where I need to put dblogic.ejs query results statements testing if it works -->
     <div class="container">
         <h2>Database Results</h2>
         <hr class="major" />
 
         <ul>
-            <!-- put your results.forEach(function(r) here and column names must match table -->
+            <!-- put your results.forEach function here and column names must match table -->
 
         </ul>
     </div>
