@@ -48,12 +48,14 @@
 <hr>
 
         <!-- user number must be entered and validated -->
-        <h3>Enter User Number 3!</h3>
+        <h3>Enter User Number 4!</h3>
         <html>
         <head>
             <script>
                 function validateForm() {
                     var x = document.forms["myForm"]["fname"].value;
+                    var str = "*";
+                    document.getElementById("*").style.color = "#ff0000";
                     if (x == "") {
                         alert("User Number must be entered!");
                         return false;
@@ -65,7 +67,7 @@
 
         <form name="myForm" action="/action_page_post.php"
               onsubmit="return validateForm()" method="post">
-            User ID: <input type="number" name="fname"width="400" style="width:400px">
+            "*"User ID: <input type="number" name="fname"width="400" style="width:400px">
             <input type="submit" value="Submit">
             <p></p>
             <p></p>
