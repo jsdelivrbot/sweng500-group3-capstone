@@ -259,7 +259,7 @@ app.get('/instructorSearch', function(request, response) {
                 if (err) {
                     console.error(err); response.send("Error " + err);
                 } else {
-                    var dummy = result.slice(1);
+                    var dummy = result.slice(0, 2);
                     response.render('pages/instructorSearch', {results: result.rows} );
                 }
             });
@@ -385,3 +385,9 @@ app.post('/surveyreportslogin', function (request, response) {
     // response.send(username + ' ' + password);
 });
 
+// Down here is where I am putting the searchResultsTemplate.  You will need to add your own searchResultsX with
+// the individual render logic tailored to the column names for that specific query.
+
+app.get('/searchResultsTemplate', function(request, response) {
+    response.render('pages/searchResultsTemplate');
+});

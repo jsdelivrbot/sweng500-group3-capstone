@@ -44,9 +44,8 @@
         <hr class="major" />
 
         <ul>
-            <% results.forEach(function(r) { %>
-            <li><%= r.usernumber %> - <%= r.userfirstname %> - <%= r.userlastname %> - <%= r.col4 %> - <%= r.col5 %> - <%= r.col6 %> - <%= r.col7 %> - <%= r.col8 %> - <%= r.col9 %> - <%= r.col10 %> - <%= r.col11 %> - <%= r.col12 %> - <%= r.col13 %> - <%= r.col14 %> - <%= r.col15 %> - <%= r.col16 %> - <%= r.col17 %> - <%= r.col18 %> - <%= r.col19 %> - <%= r.col20 %> - <%= r.col21 %> - <%= r.col22 %> - <%= r.col23 %></li>
-            <% }); %>
+            <!-- put your results.forEach(function(r) here and column names must match table -->
+
         </ul>
     </div>
     <hr class="major" />
