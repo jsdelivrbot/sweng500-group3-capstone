@@ -49,8 +49,8 @@
 
         <div class="row">
             <div class="4u 12u$(small)">
-                <h3>Retrieve All Surveys -All Respondents</h3>
-                <p>For the last 7 days.</p>
+                <h3> Retrieve All Emotional State Surveys</h3>
+                <p>All Respondents</p>
                 <form method="get" action="/instructorSearch" class="instRetrieve1">
                     <input type="checkbox" id="exe1" name="exe1" required>
                     <label for="exe1">Execute this query</label><br>
@@ -212,25 +212,6 @@
 
         <hr class="major" />
 
-    </div>
-
- <!-- This is where I need to put dblogic.ejs query results statements testing if it works -->
-    <div class="container">
-        <h2>Database Results</h2>
-
-        <ul>
-            <% results.forEach(function(r) { %>
-            <li><%= r.usernumber %> - <%= r.userfirstname %> - <%= r.userlastname %> - <%= r.col4 %> - <%= r.col5 %> - <%= r.col6 %> - <%= r.col7 %> - <%= r.col8 %> - <%= r.col9 %> - <%= r.col10 %> - <%= r.col11 %> - <%= r.col12 %> - <%= r.col13 %> - <%= r.col14 %> - <%= r.col15 %> - <%= r.col16 %> - <%= r.col17 %> - <%= r.col18 %> - <%= r.col19 %> - <%= r.col20 %> - <%= r.col21 %> - <%= r.col22 %> - <%= r.col23 %></li>
-            <% }); %>
-        </ul>
-    </div>
-
-    <div class="container">
-        <ul>
-            <% results1.forEach(function(r) { %>
-            <li><%= r.usernumber %> - <%= r.userfirstname %> - <%= r.userlastname %> - <%= r.col4 %> - <%= r.col5 %> - <%= r.col6 %> - <%= r.col7 %> - <%= r.col8 %> - <%= r.col9 %> - <%= r.col10 %> - <%= r.col11 %> - <%= r.col12 %> - <%= r.col13 %> - <%= r.col14 %> - <%= r.col15 %></li>
-            <% }); %>
-        </ul>
     </div>
 </section>
 
