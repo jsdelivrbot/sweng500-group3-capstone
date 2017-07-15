@@ -254,7 +254,7 @@ app.get('/instructorSearch', function(request, response) {
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
 
         if (typeof request.param('exe1') != 'undefined') {
-            //Call the render page searchResultsInstr1 to do query and output the results.
+            //Call the render page searchResultsInstr1 to do query and output the results for emotional survey.
             client.query('SELECT * FROM es_table', function(err, result) {
                 done();
                 if (err) {
@@ -264,7 +264,7 @@ app.get('/instructorSearch', function(request, response) {
                 }
             });
         } else if (typeof request.param('exe2') != 'undefined') {
-            //Call the render page searchResultsInstr2 to do query and output the results.
+            //Call the render page searchResultsInstr2 to do query and output the results for episode survey.
             client.query('SELECT * FROM eps_table', function(err, result) {
                 done();
                 if (err) {
@@ -277,7 +277,15 @@ app.get('/instructorSearch', function(request, response) {
             //Execute All surveys all respondents for a date range
             response.render('pages/instructorSearch');
         } else if (typeof request.param('exe4') != 'undefined') {
-            //Execute Retrieve all userIDs
+            //Execute Retrieve all userIDs using searchResultsInstr4
+            client.query('SELECT * FROM user_table', function(err, result) {
+                done();
+                if (err) {
+                    console.error(err); response.send("Error " + err);
+                } else {
+                    response.render('pages/searchResultsInstr4', {results: result.rows} );
+                }
+            });
             response.render('pages/instructorSearch');
         } else if (typeof request.param('exe5') != 'undefined') {
             //Execute SQL-5
@@ -347,4 +355,9 @@ app.get('/searchResultsInstr1', function(request, response) {
 
 app.get('/searchResultsInstr2', function(request, response) {
     response.render('pages/searchResultsInstr2', {results: result.rows} );
+});
+
+
+app.get('/searchResultsInstr4', function(request, response) {
+    response.render('pages/searchResultsInstr4', {results: result.rows} );
 });
