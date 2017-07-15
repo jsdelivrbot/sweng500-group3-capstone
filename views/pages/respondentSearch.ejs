@@ -48,7 +48,7 @@
         <hr>
 
         <!-- user number must be entered and validated -->
-        <h3>Enter User Number! 4</h3>
+        <h3>Enter User Number! 6</h3>
         <html>
         <head>
             <script>
@@ -58,13 +58,14 @@
                         alert("User Number must be entered!");
                         return false;
                     }
-                    else {
-                        (usernumber == "222")
+                    else if (usernumber == "222") {
                         alert("This is the correct user number");
+                        return true;
                     }
-                    else{
-                      (usernumber !== "222")
-                        alert("This is the wrong user number try again");
+                    else  (usernumber !== "222")
+                    {
+                        alert("This is the wrong user number");
+                        return false;
                     }
                 }
             </script>
