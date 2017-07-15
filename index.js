@@ -368,8 +368,7 @@ app.get('/searchResultsInstr4', function(request, response) {
     response.render('pages/searchResultsInstr4', {results: result.rows} );
 });
 
-/*
+
 app.get('/searchResultsInstr5', function(request, response) {
     response.render('pages/searchResultsInstr5', {results: result.rows} );
 });
-    */
