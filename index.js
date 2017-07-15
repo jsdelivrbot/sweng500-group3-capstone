@@ -264,8 +264,15 @@ app.get('/instructorSearch', function(request, response) {
                 }
             });
         } else if (typeof request.param('exe2') != 'undefined') {
-            //Execute All surveys all respondents for 30 days
-            response.render('pages/instructorSearch');
+            //Call the render page searchResultsInstr2 to do query and output the results.
+            client.query('SELECT * FROM es_table', function(err, result) {
+                done();
+                if (err) {
+                    console.error(err); response.send("Error " + err);
+                } else {
+                    response.render('pages/searchResultsInstr2', {results: result.rows} );
+                }
+            });
         } else if (typeof request.param('exe3') != 'undefined') {
             //Execute All surveys all respondents for a date range
             response.render('pages/instructorSearch');
@@ -336,4 +343,8 @@ app.get('/searchResultsTemplate', function(request, response) {
 
 app.get('/searchResultsInstr1', function(request, response) {
     response.render('pages/searchResultsInstr1', {results: result.rows} );
+});
+
+app.get('/searchResultsInstr2', function(request, response) {
+    response.render('pages/searchResultsInstr2', {results: result.rows} );
 });
