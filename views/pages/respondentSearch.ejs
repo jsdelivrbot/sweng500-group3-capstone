@@ -121,14 +121,11 @@
 
             </script>
         </head>
-        <script>
-            function myFunction(){
-                document.getElementById("x", "y").readOnly = false;
-            }
-        </script>
-        <h3>Select your report! 11</h3>
+
+        <h3>Select your report! 12</h3>
 
         Reports types:
+        <input  name = "ddl1" id="ddl1" disabled="disabled" />
         <select id="ddl1" name="ddl1" width="400" style="width:400px" onchange="populate('ddl1','ddl2')">
             <option value=""></option>
             <option value="Please chose a report" selected="selected">Please chose a report</option>
@@ -141,8 +138,8 @@
             <option value="Select a type of survey">Select a type of survey</option>
         </select>
 
+        <input  name = "ddl2" id="ddl2" disabled="disabled" />
         <select id="ddl2" name="ddl2" width="400" style="width:400px"></select>
-        <button onclick="myFunction()">Submit</button>
 
         <p></p>
         <p></p>
