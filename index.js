@@ -375,3 +375,4 @@ app.get('/searchResultsInstr5', function(request, response) {
 
 app.get('/rstest', function(request, response) {
     response.render('pages/rstest');
+});
