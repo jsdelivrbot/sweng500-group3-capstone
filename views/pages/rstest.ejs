@@ -68,7 +68,15 @@
 
 				<div>
 
-					<p>next div section after the submit button.</p>
+					<h2>Code for query results.</h2>
+
+
+
+					<ul>
+                        <% results.forEach(function(r) { %>
+						<li><%= r.id %> - <%= r.name %></li>
+                        <% }); %>
+					</ul>
 
 
 				</div>
