@@ -372,3 +372,8 @@ app.get('/searchResultsInstr4', function(request, response) {
 app.get('/searchResultsInstr5', function(request, response) {
     response.render('pages/searchResultsInstr5', {results: result.rows} );
 });
+
+// ML - 15JUL17 -- Testing respondent search queries using a seperate page called rstest
+app.get('/rstest', function(request, response) {
+    response.render('pages/rstest');
+});
