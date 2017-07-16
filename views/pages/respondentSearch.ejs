@@ -84,14 +84,9 @@
             <input type="number" name="usernumber" id="usernumber" width="100" style="width:100px">
             <p></p>
             <p></p>
-            //code to hidden report options
-            <p id="ddl1"></p>
-            <input type="submit" value="Submit"onclick= "myFunction()">View content of p</button>
-            <script>
-                function myFunction() {
-                    document.getElementById("ddl1").style.visibility = "show";
-                }
-            </script>
+
+            <input type="submit" value="Submit">
+
 
         </form>
 
@@ -140,7 +135,7 @@
         <h3>Select your report! 1</h3>
 
         Reports types:
-        <select id="ddl1" name="ddl1" width="400" style="width:400px" onchange="populate('ddl1','ddl2').hide()">
+        <select id="ddl1" name="ddl1" width="400" style="width:400px" onchange="populate('ddl1','ddl2')">
             <option value=""></option>
             <option value="Please chose a report" selected="selected">Please chose a report</option>
             <option value="Select Last 7 days - Retrieves All Surveys">Select Last 7 days - Retrieves All Surveys
