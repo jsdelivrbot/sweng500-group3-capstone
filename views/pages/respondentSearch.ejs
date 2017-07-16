@@ -122,9 +122,28 @@
             </script>
         </head>
         <body>
+        <html>
+        <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script>
+                $(document).ready(function(){
+                    $("p").click(function(){
+                        $(this).hide();
+                    });
+                });
+            </script>
+        </head>
+        <body>
+
+        <p>If you click on me, I will disappear.</p>
+        <p>Click me away!</p>
+        <p>Click me too!</p>
+
+        </body>
+        </html>
 
 
-        <h3>Select your report!</h3>
+        <p></p><h3>Select your report!</h3></p>
 
         Reports types:
         <select id="ddl1" name="ddl1" width="400" style="width:400px" onchange="populate('ddl1','ddl2')">
