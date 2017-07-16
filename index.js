@@ -380,7 +380,7 @@ app.get('/rstest', function(request, response) {
             client.query('SELECT * FROM es_table WHERE usernumber=1$,' [request.param('username, essurveynumber, esname, esdescription, esepisode')];
                 done();
                 response.render('pages/rstest', [results;: results.rows;] }
-
+                else
            };
          };
 
