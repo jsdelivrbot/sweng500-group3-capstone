@@ -69,6 +69,17 @@
                     }
                 }
             </script>
+
+            <script>
+                function myFunction() {
+                    var a = document.getElementById('ddl1');
+                    if (a.style.display === 'none') {
+                        a.style.display = 'block';
+                    } else {
+                        a.style.display = 'none';
+                    }
+                }
+            </script>
         </head>
         <body>
         <html>
@@ -85,22 +96,13 @@
             <p></p>
             <p></p>
 
-            <input type="submit" value="Submit">
+            <button onclick="myFunction()">Submit</button>
 
 
         </form>
-
         </body>
         </html>
 
-
-
-
-
-
-
-        </body>
-        </html>
 
         <!-- code for drop down menu for reports-->
 
@@ -132,7 +134,7 @@
         <body>
 
         <body>
-        <h3>Select your report! 1</h3>
+        <h3>Select your report!</h3>
 
         Reports types:
         <select id="ddl1" name="ddl1" width="400" style="width:400px" onchange="populate('ddl1','ddl2')">
