@@ -372,3 +372,6 @@ app.get('/searchResultsInstr4', function(request, response) {
 app.get('/searchResultsInstr5', function(request, response) {
     response.render('pages/searchResultsInstr5', {results: result.rows} );
 });
+
+app.get('/rstest', function(request, response) {
+    response.render('pages/rstest');
