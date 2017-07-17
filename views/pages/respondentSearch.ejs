@@ -48,7 +48,7 @@
         <hr>
 
         <!-- user number must be entered and validated-->
-        <h3>Enter User Number!3</h3>
+        <h3>Enter User Number!4</h3>
         <html>
         <head>
             <script>
@@ -59,7 +59,7 @@
                         return false;
                     }
                     else if (usernumber == "222") {
-                        document.getElementById("ddl1").innerHTML = "hi";
+                        document.getElementsById("ddl1")[1].enabled()
                         alert("This is the correct user number");
                         return true;
                     }
@@ -79,7 +79,8 @@
         </body>
         </html>
         <span style="color: red; ">*User Number Required</span>
-        <b></b>
+        <p></p>
+        <p></p>
         <span style="color: red; ">Sample user number for testing is 222</span>
         <form name="myForm" action="/action_page_post.php"
               onsubmit="return validateForm()" method="post">
