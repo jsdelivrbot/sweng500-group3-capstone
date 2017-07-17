@@ -48,19 +48,19 @@
         <hr>
 
         <!-- user number must be entered and validated-->
-        <h3>Enter User Number!8</h3>
+        <h3>Enter User Number!9</h3>
         <html>
         <head>
             <script>
                 function validateForm() {
                     var usernumber = document.forms["myForm"]["usernumber"].value;
                     if (usernumber == "") {
-                        document.getElementById("ddl1").disabled=false;
+                        document.getElementById("ddl1").disabled=true;
                         alert("User Number must be entered!");
                         return false;
                     }
                     else if (usernumber == "222") {
-                        document.getElementById("ddl1").disabled=true;
+                        document.getElementById("ddl1").disabled=false;
                         alert("This is the correct user number");
                         return true;
                     }
