@@ -48,7 +48,7 @@
         <hr>
 
         <!-- user number must be entered and validated-->
-        <h3>Enter User Number!7</h3>
+        <h3>Enter User Number!8</h3>
         <html>
         <head>
             <script>
@@ -60,7 +60,7 @@
                         return false;
                     }
                     else if (usernumber == "222") {
-                        document.getElementById("ddl1").disabled=false;
+                        document.getElementById("ddl1").disabled=true;
                         alert("This is the correct user number");
                         return true;
                     }
@@ -129,7 +129,7 @@
 
         Reports types:
 
-        <select id="ddl1" name="ddl1" width="400" style="width:400px" onchange="populate('ddl1','ddl2')" />
+        <select id="ddl1" name="ddl1" width="400" style="width:400px" onchange="populate('ddl1','ddl2')" disabled="disabled" />
             <option value=""></option>
             <option value="Please chose a report" selected="selected">Please chose a report</option>
             <option value="Select Last 7 days - Retrieves All Surveys">Select Last 7 days - Retrieves All Surveys
