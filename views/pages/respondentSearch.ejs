@@ -48,7 +48,7 @@
         <hr>
 
         <!-- user number must be entered and validated-->
-        <h3>Enter User Number!9</h3>
+        <h3>Enter User Number!</h3>
         <html>
         <head>
             <script>
@@ -66,6 +66,7 @@
                     }
                     else  (usernumber !== "222")
                     {
+                        document.getElementById("ddl1").disabled=true;
                         alert("This is the wrong user number");
                         return false;
                     }
@@ -266,16 +267,16 @@
                 document.getElementById("NReport").innerHTML = x;
                 var y = document.getElementById("ddl2").value;
                 document.getElementById("NSurvey").innerHTML = y;
-                var z = document.getElementById("ddl3").value;
+                var z = document.getElementById("usernumber").value;
                 document.getElementById("").innerHTML = z;
             }
         </script>
 
         <!-- Report section begins -->
         <hr>
-        <h3>Your Report!</h3>
+        <h3>Your Report!1</h3>
         <b>Name:</b> <input type="text" id="myText" width="400" style="width:400px">
-        <b>User Number:</b> <input type="text" id="myText" width="400" style="width:400px">
+        <b>User Number:</b> <input type="text" id="usernumber" width="400" style="width:400px">
         <b>Name of Report:</b>
         <p id="NReport"></p>
         <b>Name of Survey:</b>
