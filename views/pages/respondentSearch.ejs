@@ -162,10 +162,8 @@
              <div class="4u 12u$(small)">
                  <h3>Retrieve All Episode Surveys</h3>
                  <p>All Respondents</p>
-                 <form method="get" action="/instructorSearch" class="instRetrieve2">
-                     <input type="checkbox" id="exe7" name="exe7" required>
-                     <label for="exe2">Execute this query</label><br>
-                     <input type="submit" class="btn btn-primary instRetrieve2Button" value="Submit" />
+                 <form method="get" action="/respondentSearch" class="instRetrieve7">
+
                  </form>
              </div>
               <!-- Date range:
@@ -315,13 +313,7 @@
 
         <h3>Body of the report</h3>
 
-           <p id="report"></p>
 
-                  <ul>
-                      <% results.forEach(function(r) { %>
-                      <li><%= r.essurveynumber %> - <%= r.esname %> - <%= r.esdescription %> - <%= r.esepisode %> - <%= r.usernumber %> - <%= r.date %></li>
-                      <% }); %>
-                  </ul>
 
 
 
