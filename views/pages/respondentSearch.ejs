@@ -48,7 +48,7 @@
         <hr>
 
         <!-- user number must be entered and validated-->
-        <h3>Enter User Number!4</h3>
+        <h3>Enter User Number!5</h3>
         <html>
         <head>
             <script>
@@ -60,7 +60,8 @@
                         return false;
                     }
                     else if (usernumber == "222") {
-                        document.getElementById("ddl1", "ddl2").disabled=false;
+                        document.getElementById("ddl1").disabled=false;
+                        document.getElementById("ddl2").disabled=false;
                         alert("This is the correct user number");
                         return false;
                     }
@@ -292,7 +293,7 @@
 
         <!-- Report section begins -->
         <hr>
-        <h3>Your Report!3</h3>
+        <h3>Your Report!</h3>
         <b>Name:</b> <input type="text" id="myText" width="400" style="width:400px">
         <b>User Number:</b>
         <p id="UNumber"></p>
