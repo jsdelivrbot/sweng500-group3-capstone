@@ -286,7 +286,7 @@ app.get('/instructorSearch', function(request, response) {
                     response.render('pages/searchResultsInstr4', {results: result.rows} );
                 }
             });
-/*        } else if (typeof request.param('exe5') != 'undefined') {
+        } else if (typeof request.param('exe5') != 'undefined') {
             //Execute Retrieve all adjustment responses using searchResultsInstr5
             client.query('SELECT * FROM adresp_table', function(err, result) {
                 done();
@@ -295,7 +295,7 @@ app.get('/instructorSearch', function(request, response) {
                 } else {
                     response.render('pages/searchResultsInstr5', {results: result.rows} );
                 }
-            });   */
+            });
         } else if (typeof request.param('exe6') != 'undefined') {
             //Execute SQL-6
             response.render('pages/instructorSearch');
