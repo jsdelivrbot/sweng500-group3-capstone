@@ -377,19 +377,21 @@ app.get('/searchResultsInstr5', function(request, response) {
 //    response.render('pages/rstest');
 //});
 
-app.get(‘/rstest’, function(request, response) {
+app.get('/rstest', function(request, response) {
 pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-
-    if (typeof request.param(‘usernumber’) != 'undefined') {
-        //Call the render page searchResultsRS1 to do query and output the results for emotional survey.
-        client.query('SELECT * FROM es_table WHERE usernumber=$1’, function(err, result) {
+    if (typeof request.param('usernumber') != 'undefined') {
+    client.query('SELECT * FROM es_table WHERE usernumber=$1', function(err, result) {
         done();
         if (err) {
-            console.error(err); response.send("Error " + err);
+            console.error(err); response.send("Error" + err);
         } else {
             response.render('pages/searchResultsRS1', {results: result.rows} );
         }
-    });
+
+    }
+    }
+}
+});
 
 
 
