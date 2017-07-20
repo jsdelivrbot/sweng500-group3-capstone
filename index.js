@@ -388,23 +388,11 @@ pg.connect(process.env.DATABASE_URL, function(err, client, done) {
             response.render('pages/searchResultsRS1', {results: result.rows} );
         }
 
-    }
-    }
-}
+     };
+     };
+    };
 });
 
-
-
-// // ML - 15JUL17 -- Testing respondent search queries using a seperate page called rstest
-// app.get('/rstest', function(request, response) {
-//     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-//         if (typeof request.param(‘usernumber;’) != 'undefined';) {
-//             client.query('SELECT * FROM es_table WHERE usernumber=1$,' [request.param('username, essurveynumber, esname, esdescription, esepisode')];
-//                 done();
-//                 response.render('pages/rstest', [results;: results.rows;] }
-//                 else
-//            };
-//          };
 
 
 
