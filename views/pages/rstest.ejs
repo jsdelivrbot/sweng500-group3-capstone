@@ -34,14 +34,14 @@
 				<div class="inner">
 					<header class="align-center">
 						<h2>Respondent Search Query Testing</h2>
-						<p>Testing SQL query pull and formatting of displayed results </p>
+						<p>Testing SQL query pull and formatting of displayed results!!!! </p>
 					</header>
 
 
 
 
 					<!-- Content (Sample Content part at top of screen) -->
-					<h2 id="content">Sample Query for the Emotional State Survey</h2>
+					<h2 id="content">Sample Query for the Emotional State Survey!!!!</h2>
 					<p>Sample testing of a query. Using a User Number being entered to query results of the student.</p>
 
 					<form method="get" action="/rstest">
@@ -69,7 +69,16 @@
 				<div>
 
 					<h2>Code for query results.</h2>
+					<div class="container">
+						<h2>Database Results for Respondent Search - Emotional State Survey</h2>
+						<hr class="major" />
 
+						<ul>
+                            <% results.forEach(function(r) { %>
+							<li><%= r.essurveynumber %> - <%= r.esname %> - <%= r.esdescription %> - <%= r.esepisode %> - <%= r.usernumber %> - <%= r.date %></li>
+                            <% }); %>
+						</ul>
+					</div>
 
 
 
