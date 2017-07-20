@@ -69,7 +69,16 @@
 				<div>
 
 					<h2>Code for query results.</h2>
+					<div class="container">
+						<h2>Database Results for Respondent Search - Emotional State Survey</h2>
+						<hr class="major" />
 
+						<ul>
+                            <% results.forEach(function(r) { %>
+							<li><%= r.essurveynumber %> - <%= r.esname %> - <%= r.esdescription %> - <%= r.esepisode %> - <%= r.usernumber %> - <%= r.date %></li>
+                            <% }); %>
+						</ul>
+					</div>
 
 
 
