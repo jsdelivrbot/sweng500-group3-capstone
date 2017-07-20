@@ -144,6 +144,7 @@
         </select>
 
 
+
         <select id="ddl2" name="ddl2" width="400" style="width:400px" disabled="disabled" /></select>
 
         <p></p>
@@ -151,6 +152,12 @@
 
 
         <!-- All Episode surveys for this user-->
+
+
+                <h3> Retrieve All Emotional State Surveys</h3>
+                <form method="get" action="/respondentSearch" class="EmotionalReport">
+                    <input id="ddl2" value="Emotional State" required>
+                </form>
 
 
 
@@ -201,8 +208,22 @@
         </script>
 
 
-        <h3>Body of the report 3</h3>
+        <h3>Body of the report 4</h3>
 
+        <!-- Main -->
+        <section id="main" class="wrapper">
+            <div class="container">
+                <h2>Database Results</h2>
+                <h3>All Emotional State Surveys</h3>
+                <hr class="major" />
+
+                <ul>
+                    <% results.forEach(function(r) { %>
+                    <li><%= r.essurveynumber %> - <%= r.esname %> - <%= r.esdescription %> - <%= r.esepisode %> - <%= r.usernumber %> - <%= r.date %></li>
+                    <% }); %>
+                </ul>
+            </div>
+        </section>
 
 
         <!-- Footer -->
