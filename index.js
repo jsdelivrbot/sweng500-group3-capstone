@@ -311,7 +311,7 @@ app.get('/respondentSearch', function(request, response) {
     //and then call the correct searchResultsTemplate based rendering.
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
 
-        if (typeof request.param('Emotional State') != 'undefined') {
+        if (typeof request.param('d2') != 'undefined') {
             //Call the render page searchResultsInstr1 to do query and output the results for emotional survey.
             client.query('SELECT * FROM es_table', function(err, result) {
                 done();
