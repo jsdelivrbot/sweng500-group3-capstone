@@ -377,6 +377,9 @@ app.get('/searchResultsInstr5', function(request, response) {
 //    response.render('pages/rstest');
 //});
 
+
+// this code was added by Wendy and Mike to use rstest as a proof of concept page
+// if we get this working, then once Wendy has her HTML ready, we can use this as code reference
 app.get('/rstest', function(request, response) {
 pg.connect(process.env.DATABASE_URL, function(err, client, done) {
     if (typeof request.param('usernumber') != 'undefined') {
@@ -393,6 +396,7 @@ pg.connect(process.env.DATABASE_URL, function(err, client, done) {
 })
 });
 
+//this is here to support the search results page for rstest
 app.get('/searchResultsRS1', function(request, response) {
     response.render('pages/searchResultsRS1', {results: result.rows} );
 });
