@@ -392,7 +392,9 @@ pg.connect(process.env.DATABASE_URL, function(err, client, done) {
   })
 });
 
-
+app.get('/searchResultsRS1', function(request, response) {
+    response.render('pages/searchResultsRS1', {results: result.rows} );
+});
 
 
 
