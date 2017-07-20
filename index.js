@@ -306,6 +306,7 @@ app.get('/instructorSearch', function(request, response) {
     });
 });
 
+
 //TODO: Enable post operation for database updates/inserts
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); //support json encoded bodies
