@@ -379,7 +379,7 @@ app.get('/searchResultsInstr5', function(request, response) {
 
 app.get('/rstest', function(request, response) {
 pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-    if (typeof request.param('usernumber') != 'undefined') {
+  //  if (typeof request.param('usernumber') != 'undefined') {
     client.query('SELECT * FROM es_table WHERE usernumber=$1', function(err, result) {
         done();
         if (err) {
@@ -388,7 +388,7 @@ pg.connect(process.env.DATABASE_URL, function(err, client, done) {
             response.render('pages/rstest', {results: result.rows} );
         }
       })
-    }
+ //   }
   })
 });
 
