@@ -382,7 +382,9 @@ app.get('/searchResultsInstr5', function(request, response) {
 // if we get this working, then once Wendy has her HTML ready, we can use this as code reference
 app.get('/rstest', function(request, response) {
 pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-    if (typeof request.param('usernumber') != 'undefined') {
+
+
+   // if (typeof request.param('usernumber') != 'undefined') {
         client.query('SELECT * FROM es_table WHERE usernumber=444', function (err, result) {
             done();
             if (err) {
@@ -392,7 +394,7 @@ pg.connect(process.env.DATABASE_URL, function(err, client, done) {
                 response.render('pages/searchResultsRS1', {results: result.rows});
             }
         })
-    }
+   // }
 })
 });
 
