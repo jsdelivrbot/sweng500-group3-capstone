@@ -400,6 +400,10 @@ app.get('/searchResultsRS1', function(request, response) {
     response.render('pages/searchResultsRS1', {results: result.rows} );
 });
 
+// Mike - 21 Jul 17 - adding this in for the respondentSearch page
+app.get('/respondentSearch', function(request,response) {
+    response.render('pages/respondentSearch');
+});
 
 
 
