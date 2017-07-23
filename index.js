@@ -306,7 +306,7 @@ app.get('/instructorSearch', function(request, response) {
                         console.error(err);
                         response.send("Error " + err);
                     } else {
-                        response.render('pages/searchResultsInstr62', {results: result.rows});
+                        response.render('pages/searchResultsInstr62');
                     }
                 });
             } else if (typeof request.param('six2') != 'undefined') {
