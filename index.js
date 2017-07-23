@@ -297,8 +297,25 @@ app.get('/instructorSearch', function(request, response) {
                 }
             });
         } else if (typeof request.param('exe6') != 'undefined') {
-            //Execute SQL-6
-            response.render('pages/instructorSearch');
+            //Determine which survey type was requested, then initiate the appropriate query.
+            if (typeof request.param('six1') != 'undefined'){
+                //execute the query with usernumber on episode survey table- render
+                client.query('SELECT * FROM es_table WHERE usernumber=$1', [request.param('usernumber')], function(err, result) {
+                    done();
+                    if (err) {
+                        console.error(err);
+                        response.send("Error " + err);
+                    } else {
+                        response.render('pages/searchResultsInstr62', {results: result.rows});
+                    }
+                });
+            } else if (typeof request.param('six2') != 'undefined') {
+                //execute the query with usernumber on emotional state survey table render
+                response.render('pages/searchResultsInstr61', {results: result.rows} );
+            } else if (typeof request.param('six3') != 'undefined') {
+                //execute the query usernumber:Adjustment response table and render
+                response.render('pages/searchResultsInstr6', {results: result.rows} );
+            }
         } else {
             //Just render the page as no query has been initiated.
             response.render('pages/instructorSearch');
@@ -368,6 +385,10 @@ app.get('/searchResultsInstr4', function(request, response) {
 
 app.get('/searchResultsInstr5', function(request, response) {
     response.render('pages/searchResultsInstr5', {results: result.rows} );
+});
+
+app.get('/searchResultsInstr62', function(request, response) {
+    response.render('pages/searchResultsInstr62', {results: result.rows} );
 });
 
 //app.get('/rstest', function(request,response) {
