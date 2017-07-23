@@ -307,6 +307,7 @@ app.get('/instructorSearch', function(request, response) {
                 //execute the query usernumber:Adjustment response table and render
                 response.render('pages/searchResultsInstr6', {results: result.rows} );
             }
+            response.render('pages/searchResultsInstr62');
         } else {
             //Just render the page as no query has been initiated.
             response.render('pages/instructorSearch');
