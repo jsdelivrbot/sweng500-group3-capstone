@@ -299,16 +299,6 @@ app.get('/instructorSearch', function(request, response) {
         } else if (typeof request.param('exe6') != 'undefined') {
             //Determine which survey type was requested, then initiate the appropriate query.
             if (typeof request.param('six1') != 'undefined'){
-                //execute the query with usernumber on episode survey table- render
-   /*             client.query('SELECT * FROM es_table WHERE usernumber=$1', [request.param('usernumber')], function(err, result) {
-                    done();
-                    if (err) {
-                        console.error(err);
-                        response.send("Error " + err);
-                    } else {
-                        response.render('pages/searchResultsInstr62');
-                    }           */
-
                 response.render('pages/searchResultsInstr62');
             } else if (typeof request.param('six2') != 'undefined') {
                 //execute the query with usernumber on emotional state survey table render
