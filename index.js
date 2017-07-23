@@ -298,7 +298,7 @@ app.get('/instructorSearch', function(request, response) {
             });
         } else if (typeof request.param('exe6') != 'undefined') {
             //Determine which survey type was requested, then initiate the appropriate query.
-            if (typeof request.param('six1') != 'undefined'){
+            if (typeof request.param('six1') == 'Episode Surveys'){
                 response.render('pages/searchResultsInstr62');
             } else if (typeof request.param('six2') != 'undefined') {
                 //execute the query with usernumber on emotional state survey table render
@@ -307,7 +307,7 @@ app.get('/instructorSearch', function(request, response) {
                 //execute the query usernumber:Adjustment response table and render
                 response.render('pages/searchResultsInstr6', {results: result.rows} );
             }
-            response.render('pages/searchResultsInstr62');
+            response.render('pages/instructorSearch');
         } else {
             //Just render the page as no query has been initiated.
             response.render('pages/instructorSearch');
