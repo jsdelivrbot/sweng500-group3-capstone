@@ -298,7 +298,7 @@ app.get('/instructorSearch', function(request, response) {
             });
         } else if (typeof request.param('exe6') != 'undefined') {  //This line does catch properly
             //Determine which survey type was requested, then initiate the appropriate query.
-            if (document.getElementById('six1').checked){
+            if (document.getElementById('six1').checked == true){
                 response.render('pages/searchResultsInstr62');  //this one isn't caught
                 //maybe req.query.six1 as this will come out of the get request used in URL
             } else if (typeof request.param('six2') != 'undefined') {
