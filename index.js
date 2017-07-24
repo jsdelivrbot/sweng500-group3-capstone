@@ -316,7 +316,21 @@ app.get('/instructorSearch', function(request, response) {
 });
 //respondentSearch code for reports starts here
 
+app.get('/respondentSearch', function(request, response) {
+    //There are six different retrieval forms, so use if statements to determine which was executed
+    //and then call the correct searchResultsTemplate based rendering.
+    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
 
+        if (typeof request.param('exe7') != 'undefined') {
+            //Call the render page searchResultsInstr1 to do query and output the results for emotional survey.
+            client.query('SELECT * FROM es_table', function(err, result) {
+                done();
+                if (err) {
+                    console.error(err); response.send("Error " + err);
+                } else {
+                    response.render('pages/searchResondent1', {results: result.rows} );
+                }
+            });
 
 
 //TODO: Enable post operation for database updates/inserts
