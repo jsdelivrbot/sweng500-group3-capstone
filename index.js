@@ -297,7 +297,16 @@ app.get('/instructorSearch', function(request, response) {
                 }
             });
         } else if (typeof request.param('exe6') != 'undefined') {
-            //Execute SQL-6
+            //Determine which survey type was requested, then initiate the appropriate query.
+            if (typeof request.param('six1') == 'Episode Surveys'){
+                response.render('pages/searchResultsInstr62');
+            } else if (typeof request.param('six2') != 'undefined') {
+                //execute the query with usernumber on emotional state survey table render
+                response.render('pages/searchResultsInstr61', {results: result.rows} );
+            } else if (typeof request.param('six3') != 'undefined') {
+                //execute the query usernumber:Adjustment response table and render
+                response.render('pages/searchResultsInstr6', {results: result.rows} );
+            }
             response.render('pages/instructorSearch');
         } else {
             //Just render the page as no query has been initiated.
@@ -386,6 +395,10 @@ app.get('/searchResultsInstr5', function(request, response) {
     response.render('pages/searchResultsInstr5', {results: result.rows} );
 });
 
+app.get('/searchResultsInstr62', function(request, response) {
+    response.render('pages/searchResultsInstr62');
+});
+
 //app.get('/rstest', function(request,response) {
 //    response.render('pages/rstest');
 //});
@@ -416,6 +429,10 @@ app.get('/searchResultsRS1', function(request, response) {
     response.render('pages/searchResultsRS1', {results: result.rows} );
 });
 
+// Mike - 21 Jul 17 - adding this in for the respondentSearch page
+app.get('/respondentSearch', function(request,response) {
+    response.render('pages/respondentSearch');
+});
 
 
 
