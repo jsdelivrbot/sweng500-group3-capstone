@@ -331,7 +331,7 @@ app.get('/respondentSearch', function(request, response) {
                     response.render('pages/respondentSearch', {results: result.rows} );
                 }
             });
-        } else if (typeof request.param('exe8') != 'undefined') {
+        /*} else if (typeof request.param('exe8') != 'undefined') {
             //Call the render page searchResultsInstr2 to do query and output the results for episode survey.
             client.query('SELECT * FROM eps_table', function(err, result) {
                 done();
@@ -382,7 +382,7 @@ app.get('/respondentSearch', function(request, response) {
         }
     });
 });
-
+*/
 
 
 //TODO: Enable post operation for database updates/inserts
