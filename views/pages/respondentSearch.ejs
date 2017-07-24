@@ -39,7 +39,7 @@
         <!-- Content -->
 
 
-        <h2 id="content">Introduction</h2>
+        <h2 id="content">Introduction 1</h2>
         <p>The forms below allow the respondent to retrieve their own surveys from the collection of surveys. Surveys
             are saved for up to one year.</p>
         <hr>
@@ -63,13 +63,19 @@
                         alert("This is the correct user number");
                         return false;
                     }
-                    else (usernumber !== "222")
-                    {
-                        document.getElementById("ddl1").disabled = true;
-                        alert("This is the wrong user number");
-                        return false;
-                    }
-                }
+                    else if (typeof request.param('usernumber') != 'undefined') {
+                        client.query('SELECT * from user_table where usernumber = VALUES($1) [request.param('
+                        usernumber
+                        ')], function(err, result))
+                        {
+                            done();
+                            if (err) {
+                                console.error(err);
+                                response.send("Error " + err);
+                                return false;
+                            }
+                            //do something with the result variable
+                        }
             </script>
         </html>
         </head>
@@ -77,7 +83,7 @@
         <!-- color for *User Number header-->
         <body>
         <html>
-        <span style="color: red; ">*User Number Required 1</span>
+        <span style="color: red; ">*User Number Required</span>
         <p></p>
         <p></p>
         <span style="color: red; ">Sample user number for testing is 222</span>
@@ -97,31 +103,31 @@
 
         <html>
         <head>
+            <script type="text/javascript">
+                function dropdown(d1, d2) {
+                    var d1 = document.getElementById(d1);
+                    var d2 = document.getElementById(d2);
 
-        <script>
-            function validateuser() {
-            var usernumber = document.forms["myForm"]["usernumber"].value;
-            if (usernumber == "") {
-            document.getElementById("ddl1").disabled = true;
-            alert("User Number must be entered!");
-            return false;
-            }
-            else if (typeof request.param('usernumber') != 'undefined') {
-            client.query('SELECT * from user_table where usernumber = VALUES($1) [request.param('usernumber')], function(err, result))
-            {
-            done();
-            if (err) {
-            console.error(err); response.send("Error " + err);
-            return false;
-            }
-            //do something with the result variable
-            }
+                    d2.innerHTML = "";
+
+                    if (d1.value == "Select a type of survey") {
+                        var optionArray = ["|", "Episode|Episode", "Adjustment Response|Adjustment Response", "Emotional State|Emotional State"];
+                    }
+
+                    for (var option in optionArray) {
+                        var pair = optionArray[option].split("|");
+                        var newOption = document.createElement("option");
+                        newOption.value = pair[0];
+                        newOption.innerHTML = pair[1];
+                        d2.options.add(newOption);
+                    }
+                }
+
+
             </script>
         </head>
-        </html>
 
-        <body>
-        <h3>Select your report! 4</h3>
+        <h3>Select your report!</h3>
 
         Reports types:
 
@@ -149,77 +155,76 @@
         <!-- All Emotional State Surveys for this user-->
 
 
-
-            <!-- spaces between select your report and the button don't remove Wendy-->
-            <p></p>
-            <p></p>
-
-
-            <!-- This button populates the myFunction fields-->
+        <!-- spaces between select your report and the button don't remove Wendy-->
+        <p></p>
+        <p></p>
 
 
-            <!-- This function populates the report fields-->
-            <script>
-                function myFunction() {
-                    var x = document.getElementById("ddl1").value;
-                    document.getElementById("NReport").innerHTML = x;
-                    var y = document.getElementById("ddl2").value;
-                    document.getElementById("NSurvey").innerHTML = y;
-                    var z = document.getElementById("usernumber").value;
-                    document.getElementById("UNumber").innerHTML = z;
-
-                }
-            </script>
-
-            <!-- Report section begins -->
-            <hr>
-            <h3>Your Report!</h3>
-            <!--<b>Name:</b> <input type="text" id="myText" width="400" style="width:400px">-->
-            <b>User Number:</b>
-            <p id="UNumber"></p>
-            <b>Name of Report:</b>
-            <p id="NReport"></p>
-            <b>Name of Survey:</b>
-            <p id="NSurvey"></p>
-            <b>Date Report Was Ran:</b>
-            <p id="CDate"></p>
-
-            <!-- This code populates current date in the report area-->
-
-            <script>
-                document.getElementById("CDate").innerHTML = Date();
-
-            </script>
+        <!-- This button populates the myFunction fields-->
 
 
-            <h3>Body of the report</h3>
+        <!-- This function populates the report fields-->
+        <script>
+            function myFunction() {
+                var x = document.getElementById("ddl1").value;
+                document.getElementById("NReport").innerHTML = x;
+                var y = document.getElementById("ddl2").value;
+                document.getElementById("NSurvey").innerHTML = y;
+                var z = document.getElementById("usernumber").value;
+                document.getElementById("UNumber").innerHTML = z;
+
+            }
+        </script>
+
+        <!-- Report section begins -->
+        <hr>
+        <h3>Your Report!</h3>
+        <!--<b>Name:</b> <input type="text" id="myText" width="400" style="width:400px">-->
+        <b>User Number:</b>
+        <p id="UNumber"></p>
+        <b>Name of Report:</b>
+        <p id="NReport"></p>
+        <b>Name of Survey:</b>
+        <p id="NSurvey"></p>
+        <b>Date Report Was Ran:</b>
+        <p id="CDate"></p>
+
+        <!-- This code populates current date in the report area-->
+
+        <script>
+            document.getElementById("CDate").innerHTML = Date();
+
+        </script>
 
 
-            <!-- Footer -->
-            <footer id="footer">
-                <div class="inner">
-                    <div class="flex">
-                        <div class="copyright">
-                            &copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a
-                                    href="https://unsplash.com">Unsplash</a>.
-                        </div>
-                        <ul class="icons">
-                            <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                            <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                            <li><a href="#" class="icon fa-linkedin"><span class="label">linkedIn</span></a></li>
-                            <li><a href="#" class="icon fa-pinterest-p"><span class="label">Pinterest</span></a></li>
-                            <li><a href="#" class="icon fa-vimeo"><span class="label">Vimeo</span></a></li>
-                        </ul>
+        <h3>Body of the report</h3>
+
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                <div class="flex">
+                    <div class="copyright">
+                        &copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a
+                                href="https://unsplash.com">Unsplash</a>.
                     </div>
+                    <ul class="icons">
+                        <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon fa-linkedin"><span class="label">linkedIn</span></a></li>
+                        <li><a href="#" class="icon fa-pinterest-p"><span class="label">Pinterest</span></a></li>
+                        <li><a href="#" class="icon fa-vimeo"><span class="label">Vimeo</span></a></li>
+                    </ul>
                 </div>
-            </footer>
+            </div>
+        </footer>
 
-            <!-- Scripts -->
-            <script src="assets/js/jquery.min.js"></script>
-            <script src="assets/js/skel.min.js"></script>
-            <script src="assets/js/util.js"></script>
-            <script src="assets/js/main.js"></script>
-        </div>
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/skel.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+    </div>
 </section>
 </body>
 </html>
