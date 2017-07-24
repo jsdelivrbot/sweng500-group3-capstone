@@ -316,73 +316,7 @@ app.get('/instructorSearch', function(request, response) {
 });
 //respondentSearch code for reports starts here
 
-app.get('/respondentSearch', function(request, response) {
-    //There are six different retrieval forms, so use if statements to determine which was executed
-    //and then call the correct searchResultsTemplate based rendering.
-    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
 
-        if (typeof request.param('exe7') != 'undefined') {
-            //Call the render page searchResultsInstr1 to do query and output the results for emotional survey.
-            client.query('SELECT * FROM es_table', function(err, result) {
-                done();
-                if (err) {
-                    console.error(err); response.send("Error " + err);
-                } else {
-                    response.render('pages/respondentSearch', {results: result.rows} );
-                }
-            });
-        /*} else if (typeof request.param('exe8') != 'undefined') {
-            //Call the render page searchResultsInstr2 to do query and output the results for episode survey.
-            client.query('SELECT * FROM eps_table', function(err, result) {
-                done();
-                if (err) {
-                    console.error(err); response.send("Error " + err);
-                } else {
-                    response.render('pages/searchResultsInstr2', {results: result.rows} );
-                }
-            });
-        } else if (typeof request.param('exe9') != 'undefined') {
-            //Execute All surveys all respondents for a date range
-            response.render('pages/respondentSearch');
-        } else if (typeof request.param('exe10') != 'undefined') {
-            //Execute Retrieve all userIDs using searchResultsInstr4
-            client.query('SELECT * FROM user_table', function(err, result) {
-                done();
-                if (err) {
-                    console.error(err); response.send("Error " + err);
-                } else {
-                    response.render('pages/searchResultsInstr4', {results: result.rows} );
-                }
-            });
-        } else if (typeof request.param('exe11') != 'undefined') {
-            //Execute Retrieve all adjustment responses using searchResultsInstr5
-            client.query('SELECT * FROM adresp_table', function(err, result) {
-                done();
-                if (err) {
-                    console.error(err); response.send("Error " + err);
-                } else {
-                    response.render('pages/searchResultsInstr5', {results: result.rows} );
-                }
-            });
-        } else if (typeof request.param('exe12') != 'undefined') {
-            //Determine which survey type was requested, then initiate the appropriate query.
-            if (typeof request.param('six1') == 'Episode Surveys'){
-                response.render('pages/searchResultsInstr62');
-            } else if (typeof request.param('six2') != 'undefined') {
-                //execute the query with usernumber on emotional state survey table render
-                response.render('pages/searchResultsInstr61', {results: result.rows} );
-            } else if (typeof request.param('six3') != 'undefined') {
-                //execute the query usernumber:Adjustment response table and render
-                response.render('pages/searchResultsInstr6', {results: result.rows} );
-            }
-            response.render('pages/respondentSearch');
-        } else {
-            //Just render the page as no query has been initiated.
-            response.render('pages/respondentSearch');
-        }
-    });
-});
-*/
 
 
 //TODO: Enable post operation for database updates/inserts
