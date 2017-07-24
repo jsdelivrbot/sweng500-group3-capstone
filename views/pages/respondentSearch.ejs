@@ -5,6 +5,10 @@
    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
    Edit by Wendy Hartman for SWENG500
 -->
+<?php
+
+?>
+
 <html xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Respondent Search</title>
@@ -86,7 +90,7 @@
         <span style="color: red; ">Sample user number for testing is 222</span>
         <form name="myForm" action="/action_page_post.php"
               onsubmit="return validateForm()" method="post">
-            <input type="number" name="usernumber" id="usernumber" width="100" style="width:100px">
+            <input type="number" name="usernumber" id="usernumber"  width="100" style="width:100px">
             <p></p>
             <p></p>
 
@@ -150,9 +154,18 @@
         <p></p>
 
 
-        <!-- All Episode surveys for this user-->
+        <!-- All Emotional State Surveys for this user-->
 
-
+        <div class="row">
+            <div class="4u 12u$(small)">
+                <h3> Retrieve All Emotional State Surveys</h3>
+                <p>All Respondents</p>
+                <form method="get" action="/respondentSearch" class="1">
+                    <input type="dropdown" id="emotionalstatereport" name="emotionalstatereport" required>
+                    <label for="emotionalstatereport">Execute this query</label><br>
+                    <input type="submit" class="Button" value="Submit" />
+                </form>
+            </div>
 
 
 
@@ -164,7 +177,7 @@
 
 
         <!-- This button populates the myFunction fields-->
-        <button type="button" onclick="myFunction()">Submit</button>
+
 
 
         <!-- This function populates the report fields-->
@@ -204,6 +217,21 @@
 
         <h3>Body of the report</h3>
 
+            <section id="main" class="wrapper">
+                <div class="container">
+                    <h2>Database Results</h2>
+                    <h3>All Emotional State Surveys</h3>
+                    <hr class="major" />
+
+                    <ul>
+                        <% results.forEach(function(r) { %>
+                        <li><%= r.essurveynumber %> - <%= r.esname %> - <%= r.esdescription %> - <%= r.esepisode %> - <%= r.usernumber %> - <%= r.date %></li>
+                        <% }); %>
+                    </ul>
+                </div>
+
+
+            </section>
 
     </div>
 </section>
