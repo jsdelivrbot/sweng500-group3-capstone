@@ -328,7 +328,7 @@ app.get('/respondentSearch', function(request, response) {
                 if (err) {
                     console.error(err); response.send("Error " + err);
                 } else {
-                    response.render('pages/searchResondent1', {results: result.rows} );
+                    response.render('pages/searchRespondent1', {results: result.rows} );
                 }
             });
 
