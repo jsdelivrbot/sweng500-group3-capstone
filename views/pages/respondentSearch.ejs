@@ -97,30 +97,28 @@
 
         <html>
         <head>
-            <script type="text/javascript">
-                function dropdown(d1, d2) {
-                    var d1 = document.getElementById(d1);
-                    var d2 = document.getElementById(d2);
 
-                    d2.innerHTML = "";
-
-                    if (d1.value == "Select a type of survey") {
-                        var optionArray = ["|", "Episode|Episode", "Adjustment Response|Adjustment Response", "Emotional State|Emotional State"];
-                    }
-
-                    for (var option in optionArray) {
-                        var pair = optionArray[option].split("|");
-                        var newOption = document.createElement("option");
-                        newOption.value = pair[0];
-                        newOption.innerHTML = pair[1];
-                        d2.options.add(newOption);
-                    }
-                }
-
-
+        <script>
+            function validateuser() {
+            var usernumber = document.forms["myForm"]["usernumber"].value;
+            if (usernumber == "") {
+            document.getElementById("ddl1").disabled = true;
+            alert("User Number must be entered!");
+            return false;
+            }
+            else if (typeof request.param('usernumber') != 'undefined') {
+            client.query('SELECT * from user_table where usernumber = VALUES($1) [request.param('usernumber')], function(err, result))
+            {
+            done();
+            if (err) {
+            console.error(err); response.send("Error " + err);
+            return false;
+            }
+            //do something with the result variable
+            }
             </script>
         </head>
-
+        </html>
 
         <body>
         <h3>Select your report! 4</h3>
