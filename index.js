@@ -362,7 +362,7 @@ app.post('/surveyreportslogin', function (request, response) {
     // response.send(username + ' ' + password);
 });
 
-<<<<<<< Updated upstream
+ //Updated upstream
 //TODO: Add query logic
 app.get('/drespondentSearch', function(request, response) {
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
@@ -374,18 +374,18 @@ app.get('/drespondentSearch', function(request, response) {
             response.render('pages/drespondentSearch');
         }
     });
-=======
+
 
 //To call on usernumber for respondentSearch page for validation
-app.post('/usernamefield', function (request, response) {
-    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-        client.query('SELECT usernumber FROM user_table WHERE userfirstname=$1 AND userlastname=$2', [request.body.usernumber], function(err, result) {
-            done();
-            if (err) {
-                console.error(err); response.send("Error " + err);
-            } else {
-                if (typeof result.rows[0] != 'undefined') {
-                    if (result.rows[0].usernumber == 'usernumberfield') {
+//app.post('/usernamefield', function (request, response) {
+   // pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+       // client.query('SELECT usernumber FROM user_table WHERE userfirstname=$1 AND userlastname=$2', [request.body.usernumber], function(err, result) {
+            //done();
+           // if (err) {
+              //  console.error(err); response.send("Error " + err);
+           // } else {
+               // if (typeof result.rows[0] != 'undefined') {
+                   // if (result.rows[0].usernumber == 'usernumberfield') {
                         // response.send('Student');
                         //response.render('pages/respondentSearch');
                     //} else if (result.rows[0].userrole == 'faculty') {
@@ -398,10 +398,10 @@ app.post('/usernamefield', function (request, response) {
                // } else {
                     // response.send('Undefined');
                    // response.render('pages/surveyreports');
-                }
-            }
-        };
-    });
+               // }
+           // }
+       // };
+   // });
 
     // var username = request.body.username;
     // var password = request.body.password;
