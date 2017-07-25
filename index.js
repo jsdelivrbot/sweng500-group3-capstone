@@ -368,21 +368,19 @@ app.get('/respondentSearch', function (request, response) {
                     response.render('pages/searchResultsRespondent2', {results: result.rows});
                 }
             });
-            } else if (typeof request.param('exe9') != 'undefined') {
-                    //Call the render page searchResultsRespondent3 to do query and output the results for adjustment survey.
-                    client.query('SELECT * FROM eps_table', function (err, result) {
-                        done();
-                        if (err) {
-                            console.error(err);
-                            response.send("Error " + err);
-                        } else {
-                            response.render('pages/searchResultsRespondent3', {results: result.rows});
-                        }
-                    });
+        } else if (typeof request.param('exe9') != 'undefined') {
+            //Call the render page searchResultsRespondent3 to do query and output the results for adjustment survey.
+            client.query('SELECT * FROM eps_table', function (err, result) {
+                done();
+                if (err) {
+                    console.error(err);
+                    response.send("Error " + err);
+                } else {
+                    response.render('pages/searchResultsRespondent3', {results: result.rows});
                 }
             });
-        }
-    );
+
+
 
 
 //TODO: Enable post operation for database updates/inserts
