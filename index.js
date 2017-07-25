@@ -428,6 +428,13 @@ app.get('/instructorSearch', function (request, response) {
         pg.connect(process.env.DATABASE_URL, function(err, client, done) {
             if (typeof request.param('exe6') != 'undefined') {
                 console.log('Submit action page load');
+                if (request.query.six == 'Episode Surveys') {
+                    console.log('Episode Surveys selected...');
+                } else if (request.query.six == 'Emotional State') {
+                    console.log('Emotional State selected...');
+                } else if (request.query.six == 'Adjustment Response') {
+                    console.log('Adjustment Response selected...');
+                }
                 response.render('pages/drespondentsearch');
             } else {
                 console.log('Initial page load');
