@@ -428,7 +428,7 @@ app.get('/instructorSearch', function (request, response) {
         pg.connect(process.env.DATABASE_URL, function(err, client, done) {
             if (typeof request.param('exe6') != 'undefined') {
                 console.log('Submit action page load');
-                response.render('pages/drespondentSearch');
+                response.render('pages/drespondentsearch');
             } else {
                 console.log('Initial page load');
                 response.render('pages/drespondentsearch');
