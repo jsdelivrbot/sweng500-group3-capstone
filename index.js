@@ -312,7 +312,7 @@ app.get('/instructorSearch', function (request, response) {
                     response.render('pages/searchResultsInstr5', {results: result.rows});
                 }
             });
-        } else if (typeof request.param('exe6') != 'undefined') {  //This line does catch properly
+        } else if (typeof request.param('exe6') != 'undefined') {
             //Determine which survey type was requested, then initiate the appropriate query.
             //Not sure this query will work yet, so searchResultsInstr62 is turned off at the moment below.
             if (request.query.six == 'Episode Surveys') {
@@ -322,7 +322,13 @@ app.get('/instructorSearch', function (request, response) {
                         console.error(err);
                         response.send("Error " + err);
                     } else {
-                        response.render('pages/searchResultsInstr62', {results: result.rows});
+                        if (typeof result.rows[0] != 'undefined'){
+                            //If we got results then render the results page which is 62
+                            response.render('pages/searchResultsInstr62', {results: result.rows});
+                        } else {
+                            //If we don't get results then just render the original search page
+                            response.render('pages/instructorSearch');
+                        }
                     }
                 });
             } else if (request.query.six == 'Emotional State') {
@@ -332,7 +338,7 @@ app.get('/instructorSearch', function (request, response) {
                 //execute the query usernumber:Adjustment response table and render
                 response.render('pages/searchResultsInstr6', {results: result.rows});
             }
-            response.render('pages/instructorSearch');  //it always falls out here
+           // response.render('pages/instructorSearch');  //it always falls out here
         } else {
             //Just render the page as no query has been initiated.
             response.render('pages/instructorSearch');
@@ -510,9 +516,9 @@ app.get('/instructorSearch', function (request, response) {
         response.render('pages/searchResultsInstr5', {results: result.rows});
     });
 
-//app.get('/searchResultsInstr62', function(request, response) {
-//    response.render('pages/searchResultsInstr62');
-//});
+    app.get('/searchResultsInstr62', function(request, response) {
+        response.render('pages/searchResultsInstr62', {results: result.rows});
+    });
 
 //app.get('/rstest', function(request,response) {
 //    response.render('pages/rstest');
