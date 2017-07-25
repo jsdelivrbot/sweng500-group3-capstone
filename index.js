@@ -379,8 +379,8 @@ app.get('/respondentSearch', function (request, response) {
                     response.render('pages/searchResultsRespondent3', {results: result.rows});
                 }
             });
-
-
+        }
+        });
 
 
 //TODO: Enable post operation for database updates/inserts
