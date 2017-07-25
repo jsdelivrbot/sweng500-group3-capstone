@@ -391,7 +391,7 @@ app.get('/searchResultsInstr5', function(request, response) {
 });
 
 app.get('/searchResultsInstr62', function(request, response) {
-    response.render('pages/searchResultsInstr62');
+    response.render('pages/searchResultsInstr62', {results: result.rows});
 });
 
 //app.get('/rstest', function(request,response) {
