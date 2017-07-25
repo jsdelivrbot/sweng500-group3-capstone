@@ -407,8 +407,8 @@ app.get('/drespondentSearch', function(request, response) {
     // var password = request.body.password;
     //
     // response.send(username + ' ' + password);
->>>>>>> Stashed changes
-});
+
+//});
 
 // Down here is where I am putting the searchResultsTemplate.  You will need to add your own searchResultsX with
 // the individual render logic tailored to the column names for that specific query.
