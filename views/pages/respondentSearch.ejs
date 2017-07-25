@@ -47,12 +47,7 @@
         <hr class="major" />
 
         <!-- Enter in usernumber to validate against the usertable to run respondent reports-->
-        <h3> Please enter in your user number! 1</h3>
-        <form action="/action_usernumberfield">
-            <input type="text" id="myusernumber" name="usernumber" value="user number" width="200" style="width:200px" required><br>
-
-        </form>
-
+        <h3> Please enter in your user number! 2</h3>
         <script>
             function myFunction() {
                 var x = document.getElementById("myusernumber").required;
@@ -60,7 +55,14 @@
             }
         </script>
 
-        <input type="submit" value="Submit">
+        <form action="/action_usernumberfield">
+            <input type="text" id="myusernumber" name="usernumber" value="user number" width="200" style="width:200px" required><br>
+            <input type="submit">
+        </form>
+
+
+
+
 
 
         <div class="row">
