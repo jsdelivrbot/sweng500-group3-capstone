@@ -301,10 +301,10 @@ app.get('/instructorSearch', function(request, response) {
             if (request.query.six == 'Episode Surveys'){
                 response.render('pages/searchResultsInstr62');  //this one isn't caught
                 //maybe req.query.six1 as this will come out of the get request used in URL
-            } else if (typeof request.param('six2') != 'undefined') {
+            } else if (request.query.six == 'Emotional State') {
                 //execute the query with usernumber on emotional state survey table render
                 response.render('pages/searchResultsInstr61', {results: result.rows} );
-            } else if (typeof request.param('six3') != 'undefined') {
+            } else if (request.query.six == 'Adjustment Response') {
                 //execute the query usernumber:Adjustment response table and render
                 response.render('pages/searchResultsInstr6', {results: result.rows} );
             }
