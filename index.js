@@ -298,9 +298,17 @@ app.get('/instructorSearch', function(request, response) {
             });
         } else if (typeof request.param('exe6') != 'undefined') {  //This line does catch properly
             //Determine which survey type was requested, then initiate the appropriate query.
+            //Not sure this query will work yet, so searchResultsInstr62 is turned off at the moment below.
             if (request.query.six == 'Episode Surveys'){
-                response.render('pages/searchResultsInstr62');  //this one isn't caught
-                //maybe req.query.six1 as this will come out of the get request used in URL
+                client.query('SELECT * FROM es_table WHERE usernumber=$1', [request.param('usernumber')], function(err, result) {
+                    done();
+                    if (err) {
+                        console.error(err);
+                        response.send("Error " + err);
+                    } else {
+                        response.render('pages/searchResultsInstr62', {results: result.rows});
+                    }
+                });
             } else if (request.query.six == 'Emotional State') {
                 //execute the query with usernumber on emotional state survey table render
                 response.render('pages/searchResultsInstr61', {results: result.rows} );
@@ -382,9 +390,9 @@ app.get('/searchResultsInstr5', function(request, response) {
     response.render('pages/searchResultsInstr5', {results: result.rows} );
 });
 
-app.get('/searchResultsInstr62', function(request, response) {
-    response.render('pages/searchResultsInstr62');
-});
+//app.get('/searchResultsInstr62', function(request, response) {
+//    response.render('pages/searchResultsInstr62');
+//});
 
 //app.get('/rstest', function(request,response) {
 //    response.render('pages/rstest');
