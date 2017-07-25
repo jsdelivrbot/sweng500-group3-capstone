@@ -298,7 +298,7 @@ app.get('/instructorSearch', function(request, response) {
             });
         } else if (typeof request.param('exe6') != 'undefined') {  //This line does catch properly
             //Determine which survey type was requested, then initiate the appropriate query.
-            if (typeof request.param('six') == 'Episode Surveys'){
+            if (request.query.six == 'Episode Surveys'){
                 response.render('pages/searchResultsInstr62');  //this one isn't caught
                 //maybe req.query.six1 as this will come out of the get request used in URL
             } else if (typeof request.param('six2') != 'undefined') {
@@ -308,7 +308,7 @@ app.get('/instructorSearch', function(request, response) {
                 //execute the query usernumber:Adjustment response table and render
                 response.render('pages/searchResultsInstr6', {results: result.rows} );
             }
-          //  response.render('pages/instructorSearch');  //it always falls out here
+            response.render('pages/instructorSearch');  //it always falls out here
         } else {
             //Just render the page as no query has been initiated.
             response.render('pages/instructorSearch');
