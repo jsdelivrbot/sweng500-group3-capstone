@@ -39,7 +39,7 @@
         <!-- Content -->
 
 
-        <h2 id="content">Introduction 1</h2>
+        <h2 id="content">Introduction 2</h2>
         <p>The forms below allow the respondent to retrieve their own surveys from the collection of surveys. Surveys
             are saved for up to one year.</p>
         <hr>
@@ -62,20 +62,11 @@
                         document.getElementById("ddl2").disabled = false;
                         alert("This is the correct user number");
                         return false;
-                    }
-                    else if (typeof request.param('usernumber') != 'undefined') {
-                        client.query('SELECT * from user_table where usernumber = VALUES($1) [request.param('
-                        usernumber
-                        ')], function(err, result))
-                        {
-                            done();
-                            if (err) {
-                                console.error(err);
-                                response.send("Error " + err);
-                                return false;
-                            }
-                            //do something with the result variable
-                        }
+                    }if (typeof request.param('usernumber') == 'undefined') {
+                    } else client.query('SELECT * from user_table where usernumber = VALUES($1) [request.body.username], function(err, result) done();if (err) {
+                        console.error(err); response.send("Error " + err);
+
+                }
             </script>
         </html>
         </head>
@@ -87,7 +78,7 @@
         <p></p>
         <p></p>
         <span style="color: red; ">Sample user number for testing is 222</span>
-        <form name="myForm" action="/action_page_post.php"
+        <form method="post" action="/action_usernumberfield"
               onsubmit="return validateForm()" method="post">
             <input type="number" name="usernumber" id="usernumber" width="100" style="width:100px">
             <p></p>
