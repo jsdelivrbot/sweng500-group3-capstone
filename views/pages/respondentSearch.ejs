@@ -47,45 +47,39 @@
         <hr class="major" />
 
         <!-- Enter in usernumber to validate against the usertable to run respondent reports-->
-        <h3> Please enter in your user number! 3</h3>
-        <script>
-            function myFunction() {
-                var x = document.getElementById("myusernumber").required;
-                //document.getElementById("myusernumber").innerHTML = x;
-            }
-        </script>
+        <h3> Please enter in your user number!</h3>
 
-        <form action="/action_usernumberfield">
-            <input type="text" id="myusernumber" name="usernumber" value="user number" width="200" style="width:200px" required><br>
-            <input type="submit">
-        </form>
+         <form action="/action_usernumberfield">
+             <input type="text" id="myusernumber" name="usernumber" width="200" style="width:200px" required><br>
+             <input type="submit" class="btn" value="Submit" />
+         </form>
 
 
 
 
 
 
-        <div class="row">
-            <div class="4u 12u$(small)">
-                <h3> Retrieve All Emotional State Surveys</h3>
-                <p>All Respondents</p>
-                <form method="get" action="/respondentSearch" class="reptRetrieve7">
-                    <input type="checkbox" id="exe7" name="exe7" required>
-                    <label for="exe7">Execute this query</label><br>
-                    <input type="submit" class="btn btn-primary instRetrieve1Button" value="Submit" />
-                </form>
-            </div>
-            <div class="4u 12u$(small)">
-                <h3>Retrieve All Episode Surveys</h3>
-                <p>All Respondents</p>
-                <form method="get" action="/respondentSearch" class="repRetrieve8">
-                    <input type="checkbox" id="exe8" name="exe8" required>
-                    <label for="exe8">Execute this query</label><br>
-                    <input type="submit" class="btn btn-primary instRetrieve2Button" value="Submit" />
-                </form>
-            </div>
+         <div class="row">
+             <div class="4u 12u$(small)">
+                 <h3> Retrieve All Emotional State Surveys</h3>
+                 <p>All Respondents</p>
+                 <form method="get" action="/respondentSearch" class="reptRetrieve7">
+                     <input type="checkbox" id="exe7" name="exe7" required>
+                     <label for="exe7">Execute this query</label><br>
+                     <input type="submit" class="btn btn-primary instRetrieve1Button" value="Submit" />
+                 </form>
+             </div>
+             <div class="4u 12u$(small)">
+                 <h3>Retrieve All Episode Surveys</h3>
+                 <p>All Respondents</p>
+                 <form method="get" action="/respondentSearch" class="repRetrieve8">
+                     <input type="checkbox" id="exe8" name="exe8" required>
+                     <label for="exe8">Execute this query</label><br>
+                     <input type="submit" class="btn btn-primary instRetrieve2Button" value="Submit" />
+                 </form>
+             </div>
 
-            <!-- Break -->
+             <!-- Break -->
             <div class="4u 12u$(medium)">
                 <h3>Retrieve All Adjustment Response Surveys</h3>
                 <p>All Respondents</p>
