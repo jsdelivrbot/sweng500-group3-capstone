@@ -522,6 +522,7 @@ app.get('/instructorSearch', function (request, response) {
 // the individual render logic tailored to the column names for that specific query.
 
 // The template below was only for development and a placeholder
+//Making a change to re-start.
     app.get('/searchResultsTemplate', function (request, response) {
         response.render('pages/searchResultsTemplate');
     });
