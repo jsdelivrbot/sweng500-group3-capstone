@@ -423,6 +423,19 @@ app.get('/instructorSearch', function (request, response) {
         // response.send(username + ' ' + password);
     });
 
+//TODO: Add query logic
+    app.get('/drespondentsearch', function(request, response) {
+        pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+            if (typeof request.param('exe6') != 'undefined') {
+                console.log('Submit action page load');
+                response.render('pages/drespondentSearch');
+            } else {
+                console.log('Initial page load');
+                response.render('pages/drespondentSearch');
+            }
+        });
+    });
+
 // Down here is where I am putting the searchResultsTemplate.  You will need to add your own searchResultsX with
 // the individual render logic tailored to the column names for that specific query.
 
