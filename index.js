@@ -261,7 +261,7 @@ app.get('/episodesurvey', function (request, response) {
     });
 });
 app.get('/instructorSearch', function (request, response) {
-    //There are six different retrieval forms, so use if statements to determine which was executed
+    //There are five different retrieval forms, so use if statements to determine which was executed
     //and then call the correct searchResultsTemplate based rendering.
     pg.connect(process.env.DATABASE_URL, function (err, client, done) {
 
@@ -316,7 +316,7 @@ app.get('/instructorSearch', function (request, response) {
             //Determine which survey type was requested, then initiate the appropriate query.
             //Not sure this query will work yet, so searchResultsInstr62 is turned off at the moment below.
             if (request.query.six == 'Episode Surveys') {
-                client.query('SELECT * FROM es_table WHERE usernumber=$1', [request.param('usernumber')], function (err, result) {
+                client.query('SELECT * FROM eps_table WHERE usernumber=$1', [request.param('usernumber')], function (err, result) {
                     done();
                     if (err) {
                         console.error(err);
