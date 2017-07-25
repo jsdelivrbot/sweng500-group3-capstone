@@ -1,18 +1,19 @@
 <!DOCTYPE HTML>
 <!--
-   Theory by TEMPLATED
-   templated.co @templatedco
-   Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
-   Edit by Wendy Hartman for SWENG500
+	Theory by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+	Edited Wendy Hartman
 -->
 <html xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Respondent Search</title>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="assets/css/main.css"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body class="subpage">
+
 <!-- Header -->
 <header id="header">
     <div class="inner">
@@ -28,8 +29,12 @@
         <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
     </div>
 </header>
+
+
+
 <!-- Main -->
 <section id="main" class="wrapper">
+
     <div class="inner">
         <header class="align-center">
             <h2>Respondent Data Search</h2>
@@ -37,181 +42,74 @@
         </header>
 
         <!-- Content -->
-
-
         <h2 id="content">Introduction</h2>
-        <p>The forms below allow the respondent to retrieve their own surveys from the collection of surveys. Surveys
-            are saved for up to one year.</p>
-        <hr>
+        <p>The forms below allow the respondent to retrieve respondent surveys from the collection of surveys.  Respondent surveys are saved for up to one year.</p>
+        <hr class="major" />
 
 
-        <!-- user number must be entered and validated-->
-        <h3>Enter User Number!</h3>
-        <html>
-        <head>
-            <script type="text/javascript">
-                function validateForm() {
-                    var usernumber = ["usernumber"].value;
-                    if (usernumber == "") {
-                        document.getElementById("ddl1").disabled = true;
-                        alert("User Number must be entered!");
-                        return false;
-                    }
-                    else if (usernumber == "222") {
-                        document.getElementById("ddl1").disabled = false;
-                        document.getElementById("ddl2").disabled = false;
-                        alert("This is the correct user number");
-                        return false;
-                    }
-                }
-            </script>
-        </html>
-        </head>
-
-        <!-- color for *User Number header-->
-        <body>
-        <html>
-        <span style="color: red; ">*User Number Required 1</span>
-        <p></p>
-        <p></p>
-        <form method="post" action="/action_usernumberfield"
-              onsubmit="return validateForm()" method="post">
-            <input type="number" name="usernumber" id="usernumber" width="100" style="width:100px">
-            <p></p>
-            <p></p>
-
-            <button onclick="validateForm()">Submit</button>
-
-        </form>
-        </html>
-
-
-        <!-- code for drop down menu for reports-->
-
-
-        <head>
-            <script type="text/javascript">
-                function dropdown(d1, d2) {
-                    var d1 = document.getElementById(d1);
-                    var d2 = document.getElementById(d2);
-
-                    d2.innerHTML = "";
-
-                    if (d1.value == "Select a type of survey") {
-                        var optionArray = ["|", "Episode|Episode", "Adjustment Response|Adjustment Response", "Emotional State|Emotional State"];
-                    }
-
-                    for (var option in optionArray) {
-                        var pair = optionArray[option].split("|");
-                        var newOption = document.createElement("option");
-                        newOption.value = pair[0];
-                        newOption.innerHTML = pair[1];
-                        d2.options.add(newOption);
-                    }
-                }
-
-
-            </script>
-        </head>
-
-        <h3>Select your report!</h3>
-
-        Reports types:
-
-        <select id="ddl1" name="ddl1" width="400" style="width:400px" onchange="dropdown('ddl1','ddl2')"
-                disabled="disabled"/>
-        <option value=""></option>
-        <option value="Please chose a report" selected="selected">Please chose a report</option>
-        <option value="Select Last 7 days - Retrieves All Surveys">Select Last 7 days - Retrieves All Surveys
-        </option>
-        <option value="Select Last 30 days - Retrieves All Surveys">Select Last 30 days - Retrieves All Surveys
-        </option>
-        <option value="Select a date range - Retrieves All Surveys">Select a date range - Retrieves All Surveys
-        </option>
-        <option value="Select a type of survey">Select a type of survey</option>
-        </select>
-
-
-        <select id="ddl2" name="ddl2" width="400" style="width:400px" disabled="disabled"/></select>
-        <button onclick="myFunction()">Submit</button>
-        <p></p>
-        <p></p>
-        </body>
-
-
-        <!-- All Emotional State Surveys for this user-->
-
-
-        <!-- spaces between select your report and the button don't remove Wendy-->
-        <p></p>
-        <p></p>
-
-
-        <!-- This button populates the myFunction fields-->
-
-
-        <!-- This function populates the report fields-->
-        <script>
-            function myFunction() {
-                var x = document.getElementById("ddl1").value;
-                document.getElementById("NReport").innerHTML = x;
-                var y = document.getElementById("ddl2").value;
-                document.getElementById("NSurvey").innerHTML = y;
-                var z = document.getElementById("usernumber").value;
-                document.getElementById("UNumber").innerHTML = z;
-
-            }
-        </script>
-
-        <!-- Report section begins -->
-        <hr>
-        <h3>Your Report!</h3>
-        <!--<b>Name:</b> <input type="text" id="myText" width="400" style="width:400px">-->
-        <b>User Number:</b>
-        <p id="UNumber"></p>
-        <b>Name of Report:</b>
-        <p id="NReport"></p>
-        <b>Name of Survey:</b>
-        <p id="NSurvey"></p>
-        <b>Date Report Was Ran:</b>
-        <p id="CDate"></p>
-
-        <!-- This code populates current date in the report area-->
-
-        <script>
-            document.getElementById("CDate").innerHTML = Date();
-
-        </script>
-
-
-        <h3>Body of the report</h3>
-
-
-        <!-- Footer -->
-        <footer id="footer">
-            <div class="inner">
-                <div class="flex">
-                    <div class="copyright">
-                        &copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a
-                                href="https://unsplash.com">Unsplash</a>.
-                    </div>
-                    <ul class="icons">
-                        <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                        <li><a href="#" class="icon fa-linkedin"><span class="label">linkedIn</span></a></li>
-                        <li><a href="#" class="icon fa-pinterest-p"><span class="label">Pinterest</span></a></li>
-                        <li><a href="#" class="icon fa-vimeo"><span class="label">Vimeo</span></a></li>
-                    </ul>
-                </div>
+        <div class="row">
+            <div class="4u 12u$(small)">
+                <h3> Retrieve All Emotional State Surveys</h3>
+                <p>All Respondents</p>
+                <form method="get" action="/respondentSearch" class="instRetrieve7">
+                    <input type="checkbox" id="exe7" name="exe7" required>
+                    <label for="exe1">Execute this query</label><br>
+                    <input type="submit" class="btn btn-primary instRetrieve1Button" value="Submit" />
+                </form>
             </div>
-        </footer>
+            <div class="4u 12u$(small)">
+                <h3>Retrieve All Episode Surveys</h3>
+                <p>All Respondents</p>
+                <form method="get" action="/respondentSearch" class="instRetrieve8">
+                    <input type="checkbox" id="exe8" name="exe8" required>
+                    <label for="exe2">Execute this query</label><br>
+                    <input type="submit" class="btn btn-primary instRetrieve2Button" value="Submit" />
+                </form>
+            </div>
 
-        <!-- Scripts -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/skel.min.js"></script>
-        <script src="assets/js/util.js"></script>
-        <script src="assets/js/main.js"></script>
+            <!-- Break -->
+            <div class="4u 12u$(medium)">
+                <h3>Retrieve All Adjustment Response Surveys</h3>
+                <p>All Respondents</p>
+                <form method="get" action="/respondentSearch" class="instRetrieve9">
+                    <input type="checkbox" id="exe9" name="exe9" required>
+                    <label for="exe5">Execute this query</label><br>
+                    <input type="submit" class="btn btn-primary instRetrieve5Button" value="Submit" />
+                </form>
+            </div>
+
+
+        <hr class="major" />
+
     </div>
 </section>
+
+
+
+
+<!-- Footer -->
+<footer id="footer">
+    <div class="inner">
+        <div class="flex">
+            <div class="copyright">
+                &copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
+            </div>
+            <ul class="icons">
+                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon fa-linkedin"><span class="label">linkedIn</span></a></li>
+                <li><a href="#" class="icon fa-pinterest-p"><span class="label">Pinterest</span></a></li>
+                <li><a href="#" class="icon fa-vimeo"><span class="label">Vimeo</span></a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
 </body>
 </html>
