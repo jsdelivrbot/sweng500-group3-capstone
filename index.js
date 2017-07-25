@@ -341,10 +341,10 @@ app.get('/instructorSearch', function (request, response) {
 });
 //respondentSearch code for reports starts here
 
-app.get('/respondentSearch', function (request, response) {
+//app.get('/respondentSearch', function (request, response) {
     //There are six different retrieval forms, so use if statements to determine which was executed
     //and then call the correct searchResultsTemplate based rendering.
-   pg.connect(process.env.DATABASE_URL, function (err, client, done) {
+   /*pg.connect(process.env.DATABASE_URL, function (err, client, done) {
 
         if (typeof request.param('exe7') != 'undefined') {
             //Call the render page searchResultsRespondent1 to do query and output the results for emotional survey.
