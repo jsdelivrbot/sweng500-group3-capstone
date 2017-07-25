@@ -325,9 +325,6 @@ app.get('/instructorSearch', function(request, response) {
 });
 //respondentSearch code for reports starts here
 
-
-
-//TODO: Enable post operation for database updates/inserts
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); //support json encoded bodies
 app.use(bodyParser.urlencoded({extended: true})); //support encoded bodies
@@ -363,6 +360,19 @@ app.post('/surveyreportslogin', function (request, response) {
     // var password = request.body.password;
     //
     // response.send(username + ' ' + password);
+});
+
+//TODO: Add query logic
+app.get('/drespondentSearch', function(request, response) {
+    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+        if (typeof request.param('exe6') != 'undefined') {
+            console.log('Submit action page load');
+            response.render('pages/drespondentSearch');
+        } else {
+            console.log('Initial page load');
+            response.render('pages/drespondentSearch');
+        }
+    });
 });
 
 // Down here is where I am putting the searchResultsTemplate.  You will need to add your own searchResultsX with
