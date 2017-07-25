@@ -430,9 +430,7 @@ app.get('/instructorSearch', function (request, response) {
                 console.log('Submit action page load');
                 if (request.query.six == 'Episode Surveys') {
                     console.log('Episode Surveys selected...');
-                    //START
                     client.query('SELECT * FROM eps_table WHERE usernumber=$1', [request.param('usernumber')], function (err, result) {
-                    // client.query('SELECT * FROM eps_table', function (err, result) {
                         done();
                         if (err) {
                             console.error(err);
@@ -446,9 +444,22 @@ app.get('/instructorSearch', function (request, response) {
                             }
                         }
                     });
-                    //END
                 } else if (request.query.six == 'Emotional State') {
                     console.log('Emotional State selected...');
+                    client.query('SELECT * FROM es_table WHERE usernumber=$1', [request.param('usernumber')], function (err, result) {
+                        done();
+                        if (err) {
+                            console.error(err);
+                            response.send("Error " + err);
+                        } else {
+                            if (typeof result.rows[0] != 'undefined') {
+                                // response.render('pages/drespondentresultsepisode');
+                                response.render('pages/drespondentresultsemotional', {results: result.rows});
+                            } else {
+                                response.render('pages/drespondentsearch');
+                            }
+                        }
+                    });
                 } else if (request.query.six == 'Adjustment Response') {
                     console.log('Adjustment Response selected...');
                 }
