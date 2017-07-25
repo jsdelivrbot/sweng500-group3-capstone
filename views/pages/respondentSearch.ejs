@@ -46,6 +46,24 @@
         <p>The forms below allow the respondent to retrieve respondent surveys from the collection of surveys.  Respondent surveys are saved for up to one year.</p>
         <hr class="major" />
 
+        <!-- Enter in usernumber to validate against the usertable to run respondent reports-->
+        <h3> Please enter in your user number! 3</h3>
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myusernumber").required;
+                //document.getElementById("myusernumber").innerHTML = x;
+            }
+        </script>
+
+        <form action="/action_usernumberfield">
+            <input type="text" id="myusernumber" name="usernumber" value="user number" width="200" style="width:200px" required><br>
+            <input type="submit">
+        </form>
+
+
+
+
+
 
         <div class="row">
             <div class="4u 12u$(small)">
