@@ -521,9 +521,10 @@ app.get('/instructorSearch', function (request, response) {
 // Down here is where I am putting the searchResultsTemplate.  You will need to add your own searchResultsX with
 // the individual render logic tailored to the column names for that specific query.
 
-    app.get('/searchResultsTemplate', function (request, response) {
-        response.render('pages/searchResultsTemplate');
-    });
+// The template below was only for development and a placeholder
+//    app.get('/searchResultsTemplate', function (request, response) {
+//        response.render('pages/searchResultsTemplate');
+//    });
 
     app.get('/searchResultsInstr1', function (request, response) {
         response.render('pages/searchResultsInstr1', {results: result.rows});
