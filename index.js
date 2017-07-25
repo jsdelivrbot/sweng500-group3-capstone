@@ -431,7 +431,8 @@ app.get('/instructorSearch', function (request, response) {
                 if (request.query.six == 'Episode Surveys') {
                     console.log('Episode Surveys selected...');
                     //START
-                    client.query('SELECT * FROM eps_table WHERE usernumber=$1', [request.param('usernumber')], function (err, result) {
+                    // client.query('SELECT * FROM eps_table WHERE usernumber=$1', [request.param('usernumber')], function (err, result) {
+                    client.query('SELECT * FROM eps_table', function (err, result) {
                         done();
                         if (err) {
                             console.error(err);
