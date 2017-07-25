@@ -431,7 +431,7 @@ app.get('/instructorSearch', function (request, response) {
                 response.render('pages/drespondentSearch');
             } else {
                 console.log('Initial page load');
-                response.render('pages/drespondentSearch');
+                response.render('pages/drespondentsearch');
             }
         });
     });
