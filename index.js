@@ -390,9 +390,9 @@ app.get('/searchResultsInstr5', function(request, response) {
     response.render('pages/searchResultsInstr5', {results: result.rows} );
 });
 
-//app.get('/searchResultsInstr62', function(request, response) {
-//    response.render('pages/searchResultsInstr62');
-//});
+app.get('/searchResultsInstr62', function(request, response) {
+    response.render('pages/searchResultsInstr62');
+});
 
 //app.get('/rstest', function(request,response) {
 //    response.render('pages/rstest');
