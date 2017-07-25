@@ -439,7 +439,8 @@ app.get('/instructorSearch', function (request, response) {
                             response.send("Error " + err);
                         } else {
                             if (typeof result.rows[0] != 'undefined') {
-                                response.render('pages/drespondentresultsepisode');
+                                // response.render('pages/drespondentresultsepisode');
+                                response.render('pages/drespondentresultsepisode', {results: result.rows});
                             } else {
                                 response.render('pages/drespondentsearch');
                             }
