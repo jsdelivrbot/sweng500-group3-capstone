@@ -314,7 +314,7 @@ app.get('/instructorSearch', function (request, response) {
             });
         } else if (typeof request.param('exe6') != 'undefined') {
             //Determine which survey type was requested, then initiate the appropriate query.
-            //Not sure this query will work yet, so searchResultsInstr62 is turned off at the moment below.
+
             if (request.query.six == 'Episode Surveys') {
                 client.query('SELECT * FROM eps_table WHERE usernumber=$1', [request.param('usernumber')], function (err, result) {
                     done();
@@ -332,13 +332,40 @@ app.get('/instructorSearch', function (request, response) {
                     }
                 });
             } else if (request.query.six == 'Emotional State') {
-                //execute the query with usernumber on emotional state survey table render
-                response.render('pages/searchResultsInstr61', {results: result.rows});
+                //execute the query with usernumber on emotional state survey table & render
+                client.query('SELECT * FROM es_table WHERE usernumber=$1', [request.param('usernumber')], function (err, result) {
+                    done();
+                    if (err) {
+                        console.error(err);
+                        response.send("Error " + err);
+                    } else {
+                        if (typeof result.rows[0] != 'undefined'){
+                            //If we got results then render the results page which is 62
+                            response.render('pages/searchResultsInstr61', {results: result.rows});
+                        } else {
+                            //If we don't get results then just render the original search page
+                            response.render('pages/instructorSearch');
+                        }
+                    }
+                });
             } else if (request.query.six == 'Adjustment Response') {
                 //execute the query usernumber:Adjustment response table and render
-                response.render('pages/searchResultsInstr6', {results: result.rows});
+                client.query('SELECT * FROM adresp_table WHERE usernumber=$1', [request.param('usernumber')], function (err, result) {
+                    done();
+                    if (err) {
+                        console.error(err);
+                        response.send("Error " + err);
+                    } else {
+                        if (typeof result.rows[0] != 'undefined'){
+                            //If we got results then render the results page which is 62
+                            response.render('pages/searchResultsInstr6', {results: result.rows});
+                        } else {
+                            //If we don't get results then just render the original search page
+                            response.render('pages/instructorSearch');
+                        }
+                    }
+                });
             }
-           // response.render('pages/instructorSearch');  //it always falls out here
         } else {
             //Just render the page as no query has been initiated.
             response.render('pages/instructorSearch');
@@ -518,6 +545,14 @@ app.get('/instructorSearch', function (request, response) {
 
     app.get('/searchResultsInstr62', function(request, response) {
         response.render('pages/searchResultsInstr62', {results: result.rows});
+    });
+
+    app.get('/searchResultsInstr61', function(request, response) {
+       response.render('pages/searchResultsInstr61', {results: result.rows});
+    });
+
+    app.get('/searchResultsInstr6', function(request, response) {
+       response.render('pages/searchResultsInstr6', {results: result.rows});
     });
 
 //app.get('/rstest', function(request,response) {
