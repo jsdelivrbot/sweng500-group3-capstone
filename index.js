@@ -434,7 +434,7 @@ app.get('/instructorSearch', function (request, response) {
                     if (typeof result.rows[0] != 'undefined') {
                         if (result.rows[0].userrole == 'student') {
                             // response.send('Student');
-                            response.render('pages/respondentSearch');
+                            response.render('pages/drespondentsearch');
                         } else if (result.rows[0].userrole == 'faculty') {
                             // response.send('Faculty');
                             response.render('pages/instructorSearch');
